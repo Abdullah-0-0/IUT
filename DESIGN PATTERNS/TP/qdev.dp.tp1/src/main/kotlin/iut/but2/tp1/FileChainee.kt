@@ -78,6 +78,6 @@ class FileChainee<E> : File<E>{
     }
 
     override fun iterator(): Iterator<E> {
-        TODO("Not yet implemented")
+        return
     }
 }
