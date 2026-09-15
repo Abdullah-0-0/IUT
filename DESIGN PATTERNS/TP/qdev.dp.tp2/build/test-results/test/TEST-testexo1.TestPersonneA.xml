@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="testexo1.TestPersonneA" tests="12" skipped="0" failures="0" errors="0" timestamp="2026-09-14T15:50:23" hostname="u-inf-j-e113-05" time="0.039">
+  <properties/>
+  <testcase name="EURL ANONYME is a society()" classname="testexo1.TestPersonneA" time="0.013"/>
+  <testcase name="AXBG azerty is not a person()" classname="testexo1.TestPersonneA" time="0.003"/>
+  <testcase name="AXBG Azerty is a person()" classname="testexo1.TestPersonneA" time="0.002"/>
+  <testcase name="SA a is not a society()" classname="testexo1.TestPersonneA" time="0.002"/>
+  <testcase name="Azerty AXBG is a person()" classname="testexo1.TestPersonneA" time="0.002"/>
+  <testcase name="SCP ANONYME is a society()" classname="testexo1.TestPersonneA" time="0.002"/>
+  <testcase name="SA ANONYME is a society()" classname="testexo1.TestPersonneA" time="0.002"/>
+  <testcase name="A X is a person()" classname="testexo1.TestPersonneA" time="0.002"/>
+  <testcase name="SARL ANONYME is a society()" classname="testexo1.TestPersonneA" time="0.001"/>
+  <testcase name="SCP X is a society()" classname="testexo1.TestPersonneA" time="0.001"/>
+  <testcase name="azerty AXBG is not a person()" classname="testexo1.TestPersonneA" time="0.001"/>
+  <testcase name="Sarl ANONYME is not a society()" classname="testexo1.TestPersonneA" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
