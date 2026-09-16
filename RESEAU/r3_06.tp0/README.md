@@ -149,13 +149,25 @@ ip route add 172.20.11.0/24 via 192.168.1.253
 Observez la configuration réseau initiale de `S1`. 
 
 * Combien d'interfaces réseaux sont-elles disponibles ? 
+ avec la commande ip a pour moi les differnetes interface , il y en a 6 
+<!-- il faut faire ip a 
+![alt text](capture/image0.png)-->
 * Quelle(s) est(sont) vos ip ? 
-* Qu'avez-vous comme route(s) ? 
+<!-- 172.21.180.104/24  dans le -->
+* Qu'avez-vous comme route(s) ? ip
+<!-- j'ai une route pour l'ip 172.21.180.173 et 172.21.180.1 
+![alt text](image.png) -->
 * Quels type de liens sont disponibles ? 
+<!-- j'ai un lien avec le localhost , le BROADCAST et les autre  interfaces  -->
 * Quelles sont vos adresses MAC ? 
+<!-- j'ai l'adresse mac 00:00:00:00:00:00 sur le broadcast et  02:cc:15:db:33:f3 sur le broadcast ![alt text](image-1.png) -->
 * Quel est l'état du cache arp ?
+<!-- ![alt text](image-2.png) -->
 * ajoutez les ip `192.168.X.101/24` sur `s1` et `192.168.X.102/24` sur `s2` en utilisant dans les deux cas l'interface `eth3`
+<!-- ![alt text](image-3.png)-->
 * lancer un `ping` (qui génère un trafic ICMP `echo request/echo reply` permettant de tester la connectivité) entre `S1` et `S2`
+<!-- il faudra verifier que l'interface et ouverte sur chaque machine apres faire le ping 
+![alt text](image-4.png)-->
 * reconsultez l'ensemble des informations.
 
 
@@ -163,6 +175,7 @@ Il est également possible de capturer le traffic réseau sur une machine.
 * consultez le manuel de `vm-tcpdump`
 * lancez un `ping` entre `S1` et `S2`
 * utilisez la commande  `vm-tcpdump` pour observer le traffic ICMP
+<!-- vm-tcpdump s1 eth3 -->
 
 ## 3 Routage statique
 
@@ -199,11 +212,13 @@ pour modifier cette valeur, deux possibilités existent :
 `sysctl` peut permettre de pérenniser la modification. (Dé)commentez la ligne `net.ipv4.ip_forward=1` dans le fichier `/etc/sysctl.conf`. Puis recharger la configuration, `sysctl -p`
 
 * ajoutez la route ”retour” sur `S2`
-
+<!-- ip r  a 172.31.1.0/24 via 172.31.2.254
+-->
 * testez
 
 * Sur `S1` et `S2`, supprimez les routes ajoutées et mettez seulement des routes par défaut
-
+<!-- ip r a default via 172.31.2.254
+-->
 * testez
 
 ### 3.2 Situation 2
