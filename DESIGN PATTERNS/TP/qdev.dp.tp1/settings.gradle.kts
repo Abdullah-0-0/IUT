@@ -1,10 +1,10 @@
 pluginManagement {
     repositories {
-        maven {
-            url = uri("https://nexus-proxy.iut-nantes.univ-nantes.prive/repository/gradle/")
-            //isAllowInsecureProtocol = true
-        }
-        //gradlePluginPortal()        
+//        maven {
+//            url = uri("https://nexus-proxy.iut-nantes.univ-nantes.prive/repository/gradle/")
+//            //isAllowInsecureProtocol = true
+//        }
+        gradlePluginPortal()
     }
 }
 

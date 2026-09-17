@@ -8,11 +8,11 @@ version = "2026.1.0"
 
 
 repositories {
-    maven {
-        url = uri("https://nexus-proxy.iut-nantes.univ-nantes.prive/repository/maven/")
-        //isAllowInsecureProtocol = true
-    }
-    //mavenCentral()
+//    maven {
+//        url = uri("https://nexus-proxy.iut-nantes.univ-nantes.prive/repository/maven/")
+//        //isAllowInsecureProtocol = true
+//    }
+    mavenCentral()
 }
 
 dependencies {
