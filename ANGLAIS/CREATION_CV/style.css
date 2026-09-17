@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+}
+.profile-container{
+    background-color: #000;
+}
+.profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid white;
+        display: block;
+        margin: 0 auto 20px;
+        transition: transform 260ms ease, box-shadow 260ms ease;
+        animation: fadeInUp 0.7s ease-out;
+    }
+section  h1{
+    /*text-decoration:underline;*/
+}
+.IUT p {
+    text-decoration: none;
+}
+.IUT .position p {
+    text-decoration: underline;
+}
+
+.liste_Project{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+.liste_Project .Personnel , .liste_Project .Academic{
+    border: #9b9494 solid;
+    padding: 0px 10px 0px 10px;
+    margin-top: 0;
+}
