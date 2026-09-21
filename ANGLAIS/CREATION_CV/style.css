@@ -35,4 +35,9 @@ section  h1{
     border: #9b9494 solid;
     padding: 0px 10px 0px 10px;
     margin-top: 0;
+    
+}
+
+.CONFERENCE h3 , .BACK_END h3{
+    font-weight: normal;
 }
