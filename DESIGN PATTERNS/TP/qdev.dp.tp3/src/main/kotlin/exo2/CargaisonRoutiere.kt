@@ -2,10 +2,10 @@ package exo2
 
 class CargaisonRoutiere(distance :Int): Cargaison(distance) {
     override fun limite(): Double {
-        return CARGAISON.ROUTIERE.limite
+        return CARGAISONENUM.ROUTIERE.limite
     }
 
     override fun facteur(): Int {
-        return CARGAISON.ROUTIERE.facteur
+        return CARGAISONENUM.ROUTIERE.facteur
     }
 }
