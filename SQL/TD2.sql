@@ -1,5 +1,6 @@
 //CREATION TRIGGERS
 
+//************Triggers de type For each row et utilisation de « :NEW » et « :OLD »*********
 //A- Ecrire un trigger de type for each row qui interdit la diminution du salaire d'un employé. Ce
 //trigger se déclenche après la modification du salaire
 
@@ -43,7 +44,18 @@ UPDATE EMPLOYE SET SALAIRE = 10 WHERE NUEMPL = 37;
 //ORA-06512: à "S3A02A.TRIGHEBDOAUGMEN", ligne 2
 //ORA-04088: erreur lors d'exécution du déclencheur 'S3A02A.TRIGHEBDOAUGMEN'
 
+//***************************Trigger de type : Delete**********************************
+
+//A –La spécification de l'opération supprimer_employe impose que 
+//  la suppression d'unemployé soit accompagnée de la suppression 
+//  des lignes de travail correspondantes. Mettezen place un trigger 
+//  table qui le fait. (pas de problème si on a déclaré "deferred" 
+//  la contrainteFK_employe de la table travail vers la table employe 
+//  "les employés de travailexistent").
+
 
 
 // ALTER TABLE TRAVAIL DROP CONSTRAINT NOM_CONSTRAINT
 // REÉCRIRE AVEC INITILLY DEFERRED A LA FIN 
+
+
