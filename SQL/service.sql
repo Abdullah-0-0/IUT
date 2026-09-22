@@ -1,0 +1,48 @@
+--------------------------------------------------------
+--  Fichier créé - mardi-septembre-22-2026   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table SERVICE
+--------------------------------------------------------
+
+  CREATE TABLE "S3A02A"."SERVICE" 
+   (	"NUSERV" NUMBER(2,0), 
+	"NOMSERV" CHAR(20 BYTE), 
+	"CHEF" NUMBER(4,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+REM INSERTING into S3A02A.SERVICE
+SET DEFINE OFF;
+Insert into S3A02A.SERVICE (NUSERV,NOMSERV,CHEF) values ('1','achat               ','41');
+Insert into S3A02A.SERVICE (NUSERV,NOMSERV,CHEF) values ('2','vente               ','17');
+Insert into S3A02A.SERVICE (NUSERV,NOMSERV,CHEF) values ('3','informatique        ','23');
+Insert into S3A02A.SERVICE (NUSERV,NOMSERV,CHEF) values ('4','comptabilite        ','68');
+Insert into S3A02A.SERVICE (NUSERV,NOMSERV,CHEF) values ('5','direction           ','65');
+Insert into S3A02A.SERVICE (NUSERV,NOMSERV,CHEF) values ('10','                    ','99');
+--------------------------------------------------------
+--  DDL for Index PK_SERVICE
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "S3A02A"."PK_SERVICE" ON "S3A02A"."SERVICE" ("NUSERV") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table SERVICE
+--------------------------------------------------------
+
+  ALTER TABLE "S3A02A"."SERVICE" ADD CONSTRAINT "PK_SERVICE" PRIMARY KEY ("NUSERV")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "S3A02A"."SERVICE" MODIFY ("CHEF" NOT NULL ENABLE);
+  ALTER TABLE "S3A02A"."SERVICE" MODIFY ("NOMSERV" NOT NULL ENABLE);
