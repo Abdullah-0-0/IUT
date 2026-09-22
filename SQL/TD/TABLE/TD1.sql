@@ -91,6 +91,32 @@ INSERT INTO SERVICE VALUES (10 ,' ',99);
 INSERT INTO EMPLOYE VALUES ( 99 , ' ',0,1);
 
 
+
+// mise a jour 
+
+alter table employe add salaire number;
+
+//tous les employe leur salaire a 2000
+update  employe set salaire = 2000 ;
+
+// Les chefs de service gagnent 3500 euros.
+update employe set employe.salaire =3500 where employe.nuempl in (select chef from service) ;
+
+//Les responsables de projet
+update employe set employe.salaire =2500 where nuempl in (select distinct resp from projet);
+
+
+// La somme des durées d'un employé (de la table travail) doit être inférieur à la durée
+//hebdomadaire (Sum(duree) <= hebdo).
+
+//select distinct nuempl from travail order by nuempl;
+//select distinct nuempl , (select SUM(t2.duree) from travail t2 where t1.nuempl = t2.nuempl  )as heure from travail t1  ;
+
+//SELECT nuempl from employe e where nuempl in (select t2.nuempl from travail t2 where employe.hebdo <= sum(t2.duree));
+
+select * from employe e where e.hebdo < (select sum(t.duree) from travail t where t.nuempl = e.nuempl );
+
+
 DELETE SERVICE WHERE NUSERV = 10;
 commit ;
 
