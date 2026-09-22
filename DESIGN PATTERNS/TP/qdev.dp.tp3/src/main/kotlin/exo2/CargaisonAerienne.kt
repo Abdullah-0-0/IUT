@@ -6,10 +6,10 @@ open class CargaisonAerienne(distance : Int) : Cargaison(distance){
     }
 
     override fun limite(): Double {
-        return CARGAISON.AERIENNE.limite
+        return CARGAISONENUM.AERIENNE.limite
     }
 
     override fun facteur(): Int {
-        return CARGAISON.AERIENNE.facteur
+        return CARGAISONENUM.AERIENNE.facteur
     }
 }
