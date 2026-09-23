@@ -5,85 +5,86 @@
 --  DDL for Table EMPLOYE
 --------------------------------------------------------
 
-  CREATE TABLE "S3A02A"."EMPLOYE" 
-   (	"NUEMPL" NUMBER(4,0), 
-	"NOMEMPL" CHAR(20 BYTE), 
-	"HEBDO" NUMBER(2,0), 
-	"AFFECT" NUMBER(2,0)
+  CREATE TABLE EMPLOYE 
+   (	NUEMPL NUMBER(4,0), 
+	NOMEMPL CHAR(20 BYTE), 
+	HEBDO NUMBER(2,0), 
+	AFFECT NUMBER(2,0)
    ) SEGMENT CREATION IMMEDIATE 
   PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
  NOCOMPRESS LOGGING
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
-REM INSERTING into S3A02A.EMPLOYE
+  TABLESPACE USERS ;
+REM INSERTING into EMPLOYE
 SET DEFINE OFF;
-Insert into S3A02A.EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('20','marcel              ','35','3');
-Insert into S3A02A.EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('23','claude              ','20','3');
-Insert into S3A02A.EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('37','michele             ','35','3');
-Insert into S3A02A.EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('39','leon                ','35','1');
-Insert into S3A02A.EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('41','jules               ','35','1');
-Insert into S3A02A.EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('42','albert              ','20','1');
-Insert into S3A02A.EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('48','jean                ','35','2');
-Insert into S3A02A.EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('51','paul                ','20','2');
-Insert into S3A02A.EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('17','sophie              ','35','2');
-Insert into S3A02A.EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('52','pierre              ','30','2');
-Insert into S3A02A.EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('57','anne                ','35','2');
-Insert into S3A02A.EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('14','alexandre           ','20','2');
-Insert into S3A02A.EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('28','marie               ','35','3');
-Insert into S3A02A.EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('30','edith               ','30','4');
-Insert into S3A02A.EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('62','marcelle            ','35','4');
-Insert into S3A02A.EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('68','casimir             ','20','4');
-Insert into S3A02A.EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('71','gedeon              ','35','4');
-Insert into S3A02A.EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('19','bruno               ','30','5');
-Insert into S3A02A.EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('65','simone              ','30','5');
-Insert into S3A02A.EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('67','bertrand            ','35','5');
-Insert into S3A02A.EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('73','germaine            ','30','5');
-Insert into S3A02A.EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('90','test                ','10','2');
-Insert into S3A02A.EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('99','                    ','0','1');
+Insert into EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('20','marcel              ','35','3');
+Insert into EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('23','claude              ','20','3');
+Insert into EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('37','michele             ','35','3');
+Insert into EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('39','leon                ','35','1');
+Insert into EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('41','jules               ','35','1');
+Insert into EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('42','albert              ','20','1');
+Insert into EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('48','jean                ','35','2');
+Insert into EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('51','paul                ','20','2');
+Insert into EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('17','sophie              ','35','2');
+Insert into EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('52','pierre              ','30','2');
+Insert into EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('57','anne                ','35','2');
+Insert into EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('14','alexandre           ','20','2');
+Insert into EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('28','marie               ','35','3');
+Insert into EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('30','edith               ','30','4');
+Insert into EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('62','marcelle            ','35','4');
+Insert into EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('68','casimir             ','20','4');
+Insert into EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('71','gedeon              ','35','4');
+Insert into EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('19','bruno               ','30','5');
+Insert into EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('65','simone              ','30','5');
+Insert into EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('67','bertrand            ','35','5');
+Insert into EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('73','germaine            ','30','5');
+Insert into EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('90','test                ','10','2');
+Insert into EMPLOYE (NUEMPL,NOMEMPL,HEBDO,AFFECT) values ('99','                    ','0','1');
 --------------------------------------------------------
 --  DDL for Index FK_SERVICEEMPLO
 --------------------------------------------------------
 
-  CREATE INDEX "S3A02A"."FK_SERVICEEMPLO" ON "S3A02A"."EMPLOYE" ("NUEMPL", "AFFECT") 
+  CREATE INDEX FK_SERVICEEMPLO ON EMPLOYE (NUEMPL, AFFECT) 
   PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
+  TABLESPACE USERS ;
 --------------------------------------------------------
 --  DDL for Index PK_EMPL
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "S3A02A"."PK_EMPL" ON "S3A02A"."EMPLOYE" ("NUEMPL") 
+  CREATE UNIQUE INDEX PK_EMPL ON EMPLOYE (NUEMPL) 
   PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS" ;
+  TABLESPACE USERS ;
 --------------------------------------------------------
 --  Constraints for Table EMPLOYE
 --------------------------------------------------------
 
-  ALTER TABLE "S3A02A"."EMPLOYE" ADD CONSTRAINT "PK_EMPL" PRIMARY KEY ("NUEMPL")
+  ALTER TABLE EMPLOYE ADD CONSTRAINT PK_EMPL PRIMARY KEY (NUEMPL)
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "S3A02A"."EMPLOYE" MODIFY ("AFFECT" NOT NULL ENABLE);
-  ALTER TABLE "S3A02A"."EMPLOYE" MODIFY ("HEBDO" NOT NULL ENABLE);
-  ALTER TABLE "S3A02A"."EMPLOYE" MODIFY ("NOMEMPL" NOT NULL ENABLE);
-  ALTER TABLE "S3A02A"."EMPLOYE" ADD CONSTRAINT "FK_SERVICEEMPLO" UNIQUE ("NUEMPL", "AFFECT") DEFERRABLE INITIALLY DEFERRED
+  TABLESPACE USERS  ENABLE;
+  ALTER TABLE EMPLOYE MODIFY (AFFECT NOT NULL ENABLE);
+  ALTER TABLE EMPLOYE MODIFY (HEBDO NOT NULL ENABLE);
+  ALTER TABLE EMPLOYE MODIFY (NOMEMPL NOT NULL ENABLE);
+  ALTER TABLE EMPLOYE ADD CONSTRAINT FK_SERVICEEMPLO UNIQUE (NUEMPL, AFFECT) DEFERRABLE INITIALLY DEFERRED
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
+  TABLESPACE USERS  ENABLE;
 --------------------------------------------------------
 --  Ref Constraints for Table EMPLOYE
 --------------------------------------------------------
 
-  ALTER TABLE "S3A02A"."EMPLOYE" ADD CONSTRAINT "FK_AFFECT" FOREIGN KEY ("AFFECT")
-	  REFERENCES "S3A02A"."SERVICE" ("NUSERV") ENABLE;
+  ALTER TABLE EMPLOYE ADD CONSTRAINT FK_AFFECT FOREIGN KEY (AFFECT)
+	  REFERENCES SERVICE (NUSERV) ENABLE;
+
