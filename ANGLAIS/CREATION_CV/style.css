@@ -1,43 +1,1133 @@
-*{
+/* ============================================================
+   RESET
+============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-.profile-container{
-    background-color: #000;
-}
-.profile-img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 5px solid white;
-        display: block;
-        margin: 0 auto 20px;
-        transition: transform 260ms ease, box-shadow 260ms ease;
-        animation: fadeInUp 0.7s ease-out;
-    }
-section  h1{
-    /*text-decoration:underline;*/
-}
-.IUT p {
-    text-decoration: none;
-}
-.IUT .position p {
-    text-decoration: underline;
+
+
+
+/* ============================================================
+   VARIABLES
+============================================================ */
+
+:root {
+
+    --dark: #111827;
+
+    --dark-blue: #172554;
+
+    --blue: #1d4ed8;
+
+    --medium-blue: #2563eb;
+
+    --light-blue: #eff6ff;
+
+    --very-light-blue: #f8fafc;
+
+    --grey: #6b7280;
+
+    --dark-grey: #374151;
+
+    --light-grey: #e5e7eb;
+
+    --background: #f3f4f6;
+
+    --white: #ffffff;
 }
 
-.liste_Project{
+
+
+/* ============================================================
+   BODY
+============================================================ */
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background-color:
+        var(--background);
+
+    color:
+        var(--dark);
+
+    line-height:
+        1.5;
+
+}
+
+
+
+/* ============================================================
+   CV CONTAINER
+============================================================ */
+
+.cv {
+
+    width:
+        210mm;
+
+    min-height:
+        297mm;
+
+    margin:
+        30px auto;
+
+    background-color:
+        var(--white);
+
+    box-shadow:
+        0 10px 40px
+        rgba(0, 0, 0, 0.15);
+
+}
+
+
+
+/* ============================================================
+   HEADER
+============================================================ */
+
+.header {
+    min-height: 165px;
+    background: linear-gradient(135deg, #111827, #172554);
+    color: white;
+    padding: 28px 38px;
+
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    
-}
-.liste_Project .Personnel , .liste_Project .Academic{
-    border: #9b9494 solid;
-    padding: 0px 10px 0px 10px;
-    margin-top: 0;
-    
+    justify-content: center;   /* centre horizontalement */
+    align-items: center;       /* centre verticalement */
 }
 
-.CONFERENCE h3 , .BACK_END h3{
-    font-weight: normal;
+.identity {
+    display: flex;
+    align-items: center;
+    justify-content: center;   /* centre le contenu interne */
+    gap: 25px;
+    width: 100%;
+}
+
+.identity-text {
+    text-align: left;
+}
+
+
+.profile-img {
+
+    width:
+        120px;
+
+    height:
+        120px;
+
+    border-radius:
+        50%;
+
+    object-fit:
+        cover;
+
+    border:
+        4px solid
+        var(--white);
+
+}
+
+
+
+.identity-text h1 {
+
+    font-size:
+        30px;
+
+    line-height:
+        1.05;
+
+    letter-spacing:
+        1.3px;
+
+}
+
+
+
+.identity-text h1 span {
+
+    display:
+        block;
+
+    color:
+        #93c5fd;
+
+}
+
+
+
+.identity-text h2 {
+
+    margin-top:
+        10px;
+
+    font-size:
+        17px;
+
+    font-weight:
+        400;
+
+}
+
+
+
+.target {
+
+    margin-top:
+        5px;
+
+    font-size:
+        13px;
+
+    font-weight:
+        bold;
+
+    color:
+        #bfdbfe;
+
+}
+
+
+
+/* ============================================================
+   MAIN LAYOUT
+============================================================ */
+
+main {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        30% 70%;
+
+    min-height:
+        calc(297mm - 165px);
+
+}
+
+
+
+/* ============================================================
+   SIDEBAR
+============================================================ */
+
+.sidebar {
+
+    background-color:
+        var(--very-light-blue);
+
+    padding:
+        28px 24px;
+
+    border-right:
+        1px solid
+        var(--light-grey);
+
+}
+
+
+
+.sidebar section {
+
+    margin-bottom:
+        30px;
+
+}
+
+
+
+/* ============================================================
+   SECTION TITLES
+============================================================ */
+
+.sidebar h3,
+.content > .cv-section > h3 {
+
+    font-size:
+        14px;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        1.3px;
+
+    color:
+        var(--dark-blue);
+
+    margin-bottom:
+        14px;
+
+    padding-bottom:
+        7px;
+
+    border-bottom:
+        3px solid
+        var(--medium-blue);
+
+}
+
+
+
+/* ============================================================
+   PERSONAL INFORMATION
+============================================================ */
+
+.personal-info .info-item {
+
+    margin-bottom:
+        14px;
+
+}
+
+
+
+.personal-info .info-title {
+
+    display:
+        block;
+
+    margin-bottom:
+        2px;
+
+    font-size:
+        9.5px;
+
+    font-weight:
+        bold;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        0.5px;
+
+    color:
+        var(--medium-blue);
+
+}
+
+
+
+.personal-info p {
+
+    font-size:
+        11.5px;
+
+    color:
+        var(--dark-grey);
+
+    word-break:
+        break-word;
+
+}
+
+
+
+/* ============================================================
+   SKILLS
+============================================================ */
+
+.skill {
+
+    margin-bottom:
+        16px;
+
+}
+
+
+
+.skill h4 {
+
+    margin-bottom:
+        7px;
+
+    font-size:
+        11.5px;
+
+    color:
+        var(--dark-grey);
+
+}
+
+
+
+.tags {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        5px;
+
+}
+
+
+
+.tags span {
+
+    padding:
+        4px 7px;
+
+    background-color:
+        var(--light-blue);
+
+    color:
+        var(--dark-blue);
+
+    border:
+        1px solid
+        #bfdbfe;
+
+    border-radius:
+        5px;
+
+    font-size:
+        9.5px;
+
+    font-weight:
+        600;
+
+}
+
+
+
+/* ============================================================
+   SOFT SKILLS
+============================================================ */
+
+.soft-skills {
+
+    list-style:
+        none;
+
+}
+
+
+
+.soft-skills li {
+
+    margin:
+        7px 0;
+
+    font-size:
+        11.5px;
+
+    color:
+        var(--dark-grey);
+
+}
+
+
+
+.soft-skills li::before {
+
+    content:
+        "✓";
+
+    margin-right:
+        8px;
+
+    color:
+        var(--medium-blue);
+
+    font-weight:
+        bold;
+
+}
+
+
+
+/* ============================================================
+   LANGUAGES
+============================================================ */
+
+.language {
+
+    margin-bottom:
+        12px;
+
+    font-size:
+        11.5px;
+
+}
+
+
+
+.language p:first-child {
+
+    color:
+        var(--dark-grey);
+
+}
+
+
+
+.language p:last-child {
+
+    color:
+        var(--grey);
+
+}
+
+
+
+/* ============================================================
+   CENTRAL CONTENT
+============================================================ */
+
+.content {
+
+    padding:
+        28px 34px;
+
+}
+
+
+
+.cv-section {
+
+    margin-bottom:
+        27px;
+
+}
+
+
+
+/* ============================================================
+   PROFILE
+============================================================ */
+
+.profile-main p {
+
+    font-size:
+        12px;
+
+    line-height:
+        1.65;
+
+    text-align:
+        justify;
+
+    color:
+        var(--dark-grey);
+
+}
+
+
+
+/* ============================================================
+   EDUCATION
+============================================================ */
+
+.timeline-header {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        flex-start;
+
+    gap:
+        20px;
+
+}
+
+
+
+.timeline-item h4 {
+
+    font-size:
+        14px;
+
+    color:
+        var(--dark);
+
+}
+
+
+
+.timeline-item h5 {
+
+    margin-top:
+        3px;
+
+    font-size:
+        11.5px;
+
+    color:
+        var(--medium-blue);
+
+}
+
+
+
+.timeline-item p {
+
+    margin-top:
+        7px;
+
+    font-size:
+        11.5px;
+
+    color:
+        var(--dark-grey);
+
+}
+
+
+
+.date {
+
+    white-space:
+        nowrap;
+
+    font-size:
+        10.5px;
+
+    font-weight:
+        bold;
+
+    color:
+        var(--grey);
+
+}
+
+
+
+.subtitle {
+
+    margin:
+        15px 0 8px;
+
+    font-size:
+        11px;
+
+    color:
+        var(--dark);
+
+}
+
+
+
+/* ============================================================
+   COURSEWORK
+============================================================ */
+
+.course-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        6px;
+
+}
+
+
+
+.course-grid span {
+
+    background-color:
+        #f3f4f6;
+
+    padding:
+        6px 8px;
+
+    border-radius:
+        4px;
+
+    font-size:
+        10px;
+
+    color:
+        var(--dark-grey);
+
+}
+
+
+
+/* ============================================================
+   PROJECTS
+============================================================ */
+
+.project {
+
+    margin-bottom:
+        22px;
+
+    padding-left:
+        14px;
+
+    border-left:
+        3px solid
+        var(--medium-blue);
+
+}
+
+
+
+.project-header {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        flex-start;
+
+    gap:
+        15px;
+
+}
+
+
+
+.project h4 {
+
+    font-size:
+        13.5px;
+
+    color:
+        var(--dark);
+
+}
+
+
+
+.project-type {
+
+    margin-top:
+        2px;
+
+    font-size:
+        10.5px;
+
+    color:
+        var(--grey);
+
+}
+
+
+
+.project-tech {
+
+    flex-shrink:
+        0;
+
+    padding:
+        4px 9px;
+
+    background-color:
+        var(--dark-blue);
+
+    color:
+        var(--white);
+
+    border-radius:
+        15px;
+
+    font-size:
+        9.5px;
+
+}
+
+
+
+.project ul {
+
+    margin:
+        9px 0 0 18px;
+
+}
+
+
+
+.project li {
+
+    margin:
+        4px 0;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.45;
+
+    color:
+        var(--dark-grey);
+
+}
+
+
+
+/* ============================================================
+   EXPERIENCE
+============================================================ */
+
+.experience {
+
+    padding-left:
+        14px;
+
+    border-left:
+        3px solid
+        var(--medium-blue);
+
+}
+
+
+
+.experience h4 {
+
+    font-size:
+        13.5px;
+
+}
+
+
+
+.experience h5 {
+
+    margin-top:
+        2px;
+
+    color:
+        var(--medium-blue);
+
+    font-size:
+        11px;
+
+}
+
+
+
+.experience p {
+
+    margin-top:
+        9px;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.5;
+
+    color:
+        var(--dark-grey);
+
+}
+
+
+
+/* ============================================================
+   INTERESTS
+============================================================ */
+
+.interest-list {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        8px;
+
+}
+
+
+
+.interest-list span {
+
+    padding:
+        6px 9px;
+
+    background-color:
+        #f3f4f6;
+
+    border-radius:
+        5px;
+
+    font-size:
+        10.5px;
+
+    color:
+        var(--dark-grey);
+
+}
+
+
+
+/* ============================================================
+   HOVER EFFECTS - SCREEN ONLY
+============================================================ */
+
+@media screen {
+
+    .tags span,
+    .course-grid span,
+    .interest-list span {
+
+        transition:
+            transform 0.2s ease,
+            background-color 0.2s ease;
+
+    }
+
+
+
+    .tags span:hover,
+    .course-grid span:hover,
+    .interest-list span:hover {
+
+        transform:
+            translateY(-2px);
+
+        background-color:
+            #dbeafe;
+
+    }
+
+}
+
+
+
+/* ============================================================
+   PRINT / PDF
+============================================================ */
+
+@page {
+
+    size:
+        A4;
+
+    margin:
+        0;
+
+}
+
+
+
+@media print {
+
+    body {
+
+        background-color:
+            white;
+
+    }
+
+
+    .cv {
+
+        width:
+            210mm;
+
+        min-height:
+            297mm;
+
+        margin:
+            0;
+
+        box-shadow:
+            none;
+
+    }
+
+
+    .header {
+
+        print-color-adjust:
+            exact;
+
+        -webkit-print-color-adjust:
+            exact;
+
+    }
+
+
+    .sidebar {
+
+        print-color-adjust:
+            exact;
+
+        -webkit-print-color-adjust:
+            exact;
+
+    }
+
+
+    .tags span,
+    .course-grid span,
+    .interest-list span,
+    .project-tech {
+
+        print-color-adjust:
+            exact;
+
+        -webkit-print-color-adjust:
+            exact;
+
+    }
+
+}
+
+
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media screen and (max-width: 900px) {
+
+    .cv {
+
+        width:
+            95%;
+
+        margin:
+            20px auto;
+
+    }
+
+}
+
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media screen and (max-width: 700px) {
+
+
+    .cv {
+
+        width:
+            100%;
+
+        margin:
+            0;
+
+    }
+
+
+    .header {
+
+        padding:
+            25px 20px;
+
+    }
+
+
+    .identity {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .profile-img {
+
+        width:
+            100px;
+
+        height:
+            100px;
+
+    }
+
+
+    .identity-text h1 {
+
+        font-size:
+            25px;
+
+    }
+
+
+    main {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .sidebar {
+
+        border-right:
+            none;
+
+        border-bottom:
+            1px solid
+            var(--light-grey);
+
+    }
+
+
+    .content {
+
+        padding:
+            25px 20px;
+
+    }
+
+
+    .timeline-header {
+
+        flex-direction:
+            column;
+
+        gap:
+            4px;
+
+    }
+
+
+    .course-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .project-header {
+
+        flex-direction:
+            column;
+
+    }
+
 }
