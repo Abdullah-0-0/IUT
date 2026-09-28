@@ -1,0 +1,24 @@
+id,categorie,destination,type_voyage,nombre_jours,budget,profil,souhaits,non_souhaits,resultat_attendu
+TC-01,canonique,Islande,sportif,7 jours,3000 euros total,jeune couple,"randonnée, aurores boréales, baignade thermale","musées, vie nocturne",Itinéraire cohérent Islande/7j/sportif dans le budget
+TC-02,canonique,Paris,culturel,week-end (2 jours),400 euros total,célibataire,"musées, gastronomie, quartier historiques","sports, foule",City-trip 2j culturel budget respecté
+TC-03,canonique,Maldives,détente,10 jours,5000 euros total,jeune couple,"plage, spa, farniente","activités physiques, excursions fatigantes",Séjour détente cohérent avec budget/jour ~500
+TC-04,canonique,Tokyo,insolite,une semaine,2000 euros total,amis (4 personnes),"expériences originales, quartiers atypiques, street food","tourisme classique, monuments",Propositions insolites adaptées au budget serré
+TC-05,canonique,Portugal (Lisbone et Algarve),famille,quinze jours,4000 euros total,famille avec 4 enfants,"plages adaptées, activités enfants, repos","longues marches, hébergement sans cuisine",Itinéraire familial 15j avec options pour enfants
+TC-06,limite_missing,,culturel,3 jours,1000 euros maximum,célibataire,"découverte, bons plans",,Le prompt doit suggérer une ou plusieurs destinations adaptées
+TC-07,limite_missing,Marrakech,,,700 euros total,célibataire,"détente, souks",,Le prompt doit proposer une durée raisonnable par défaut
+TC-08,limite_missing,Bali,détente,5 jours,,jeune couple,"plage, yoga",,Le prompt doit signaler le budget manquant ou proposer plusieurs gammes
+TC-09,limite_empty,,,,,,,,Toutes variables absentes : le prompt doit poser des questions ou proposer un voyage générique
+TC-10,limite_contradiction,Maldives,sportif,3 jours,300 euros total,étudiant seul,"plage, luxe",,Contradiction budget/luxe : le prompt doit expliquer l'incompatibilité et ajuster
+TC-11,limite_contradiction,Islande,détente au bord de mer et plage,,1500 euros,célibataire,"baignade en mer, bronzer",froid,Contradiction climat : le prompt doit relativiser/anticiper l'attente irréaliste
+TC-12,limite_contradiction,Paris,sportif,week-end,150 euros total,famille avec 4 enfants,"séjour de luxe, château",transports en commun,"Contradictions multiples : budget, luxe et 	famille nombreuse"
+TC-13,limite_contradiction,Rome,culturel,une semaine,2000 euros total,jeune couple,"visiter tous les musées, faire la fête chaque soir, repos absolu","foule, early rising",Le prompt doit arbitrer entre souhaits incompatibles et prioriser
+TC-14,limite_extreme,,,90 jours,50000 euros total,célibataire,"tour du monde, aventure",,Cas extrême : durée très longue ; le prompt doit structurer un itinéraire ou découper en étapes
+TC-15,limite_extreme,Micronésie,insolite,2 jours,10000 euros total,célibataire,expérience unique,,Temps de trajet > durée du séjour : le prompt doit avertir de l'impossibilité pratique
+TC-16,limite_extreme,Paris,détente,week-end,50 euros total,célibataire,"confort, hôtel 4 étoiles",,Budget/jour très faible : le prompt doit proposer extrêmement low-cost ou signaler l'invraisemblance
+TC-17,limite_extreme,Disney World Floride,famille,7 jours,5000 euros total,famille avec 8 enfants,,Le prompt doit vérifier la faisabilité et proposer alternatives (location,prix Disney)
+TC-18,limite_inconnu,Atlantide (pays fictif),insolite,5 jours,2000 euros,célibataire,expérience unique,,Destination inexistante : le prompt doit le signaler au lieu d'inventer
+TC-19,limite_inconnu,Nouvelle-Zélande (hiver),sportif,week-end,800 euros total,célibataire,"ski, surf",vols longs,Vérifier faisabilité géographique et saisonnière
+TC-20,limite_conflict_wishes,Nepal,sportif,10 jours,1200 euros total,célibataire,"trek haut altitude, confort hôtel",,Le prompt doit arbitrer confort vs trek (lodge vs hôtel)
+TC-21,limite_conflict_wishes,Venise,romantique,3 jours,900 euros total,couple avec bébé de 6 mois,"calme, gondole, restaurants gastronomiques",,"Intégrer contrainte bébé (horaires, pousset, Vaporetto)"
+TC-22,limite_format,775,,5 jours,1200 euros total,célibataire,histoire locale,,Destination aberrante (numéro) : le prompt doit demander clarification
+TC-23,limite_format,"Bali (un peu partout, éventuellement Lombok, Indonésie, pourquoi pas ailleurs)","détente ou sportif ou culturel, au choix","4 jours, ou plus si budget permet",1500 euros,jeune couple,"plage, montagne, ville, désert, selon",,Variables mal formées / trop vagues : le prompt doit reformuler une demande claire
