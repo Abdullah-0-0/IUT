@@ -278,37 +278,9 @@ un [`<VirtualHost>`](https://httpd.apache.org/docs/2.4/fr/mod/core.html#virtualh
 
 On souhaite que `http://wwwX.fai.com` nous donne le site par défaut (le nôtre).
 * Désactivez le site initial
-<!-- a2dissite default-ssl.conf -->
 * Créez et éditez le fichier `web.conf` dans le répertoire `/etc/apache2/sites-available`
 * Récupérez et décompactez le fichier `r3_06.tp1.tgz` dans le répertoire `/var/www/html` avec la commande suivante :
 ```
-<!-- cd /etc/apache2/sites-available 
-      touch web.conf 
-      modifier le web par :
-
-      <VirtualHost *:80>
-  ServerAdmin webmaster@site
-  ServerName ww9.fai.com
-		
-  # définition de la racine du site
-  DocumentRoot /var/www/html/rep1
-	
-  # fichier à charger automatiquement
-  DirectoryIndex index.html
-
-  # valable sur /var/www (la racine du site)
-  <Directory /var/www/html>
-      # listing activé
-      Options Indexes FollowSymLinks
-      AllowOverride None
-      # accès autorisé 
-      Require all granted
-  </Directory>
-  apres active la nouvelle conf
-  
--->
-  CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>>
 wget https://gitlab.univ-nantes.fr/iut.info2.r3_06/r3_06.tp1/-/raw/main/r3_06.tp1.tgz --output-document=- | tar xz -C /var/www/html
 ```
 * le répertoire `/var/www/html/web` inclut un fichier `index.html` qui contient la page d'accueil du site. En vous inspirant de l'exemple plus haut, définissez votre site :
