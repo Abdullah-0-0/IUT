@@ -80,7 +80,29 @@ nmap -n -A -T4 192.168.0.254
 ```
 
 * à quoi servent les options `-n` `-A` et `-T4` ?
+<!-- 
+-n signifie ne pas effectuer de résolution DNS.n
 
+-A: Enable OS detection, version detection, script scanning, and traceroute.
+en somme Activer la détection du système d'exploitation, la détection de version, l'analyse par scripts et le traceroute.
+en resume elle fait une détection agressive.
+
+-T4 définit le niveau de rapidité/agressivité du scan.
+-T0 : très lent, très discret
+
+-T1 : lent
+
+-T2 : plus lent que la normale
+
+-T3 : comportement par défaut
+
+-T4 : rapide/agressif, généralement utilisé sur un réseau fiable
+
+-T5 : extrêmement rapide, avec davantage de risques de faux résultats
+
+
+
+-->
 * si besoin, il est possible de rendre `nmap` plus bavard avec les options `-v` et `-vv`
 
 * découvrir les hôtes présents sur votre réseau
@@ -88,6 +110,9 @@ nmap -n -A -T4 192.168.0.254
 ```
 nmap 192.168.X.1-254
 ```
+<!--
+nmap -n 192.168.1.1-254
+-->
 
 * quels serveurs sont actifs sur l'hôte repéré (vous pouvez étendre la plage de ports testés) ?
 
