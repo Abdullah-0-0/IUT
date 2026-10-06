@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="testexo2.TestUmlDock" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-10-06T16:08:49" hostname="LAPTOP-9CDQ7NIQ" time="0.089">
+  <properties/>
+  <testcase name="test1 - class Dock is open or not()" classname="testexo2.TestUmlDock" time="0.013"/>
+  <testcase name="test7 - 'Dock' has method(s)()" classname="testexo2.TestUmlDock" time="0.021"/>
+  <testcase name="test8 - 'Dock' has a method 'get'()" classname="testexo2.TestUmlDock" time="0.004"/>
+  <testcase name="test3 - 'Dock' has a constructor()" classname="testexo2.TestUmlDock" time="0.019"/>
+  <testcase name="test4 - 'Dock' has attribute(s)()" classname="testexo2.TestUmlDock" time="0.002"/>
+  <testcase name="test9 - 'Dock' has a method 'set'()" classname="testexo2.TestUmlDock" time="0.004"/>
+  <testcase name="test2 - 'Dock' extends other classe(s)()" classname="testexo2.TestUmlDock" time="0.003"/>
+  <testcase name="test6 - 'Dock' has an attribute 'elements'()" classname="testexo2.TestUmlDock" time="0.004"/>
+  <testcase name="test0 - class Dock is abstract or not()" classname="testexo2.TestUmlDock" time="0.003"/>
+  <testcase name="test5 - 'Dock' has an attribute 'size'()" classname="testexo2.TestUmlDock" time="0.003"/>
+  <system-out><![CDATA[18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dock réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test si la classe Dock est open réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dock réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test du nombre de méthodes de la classe Dock réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dock réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode get de la classe Dock réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dock réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test du constructeur de la classe Dock réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dock réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test du nombre d'attributs de la classe Dock réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dock réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode set de la classe Dock réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dock réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test d'aucun héritage de la classe Dock réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dock réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test de l'attribut elements de la classe Dock réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dock réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test si la classe Dock est abstraite réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dock réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test de l'attribut size de la classe Dock réussi
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

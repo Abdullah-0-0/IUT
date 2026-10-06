@@ -1,0 +1,59 @@
+package testexo2
+
+import exo2.Spatioport
+import org.junit.jupiter.api.AfterEach
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.BeforeEach
+
+/**
+ * Base des tests d'usage d'un spatioport.
+ *
+ * - `@BeforeEach` crée un spatioport vide de [nbPlaces] places.
+ * - `@AfterEach` vérifie que le spatioport est cohérent et, si le test a appelé [assertSpatioportInchange],
+ *   qu'il est identique à l'état qu'il avait à cet appel (consultation ou opération en échec).
+ */
+abstract class TestSpatioportBase(private val nbPlaces: Int = 10) {
+
+    protected lateinit var spatioport: Spatioport
+
+    private var etatAttendu: String? = null
+
+    @BeforeEach
+    fun creerSpatioport() {
+        spatioport = Spatioport(nbPlaces)
+    }
+
+    @AfterEach
+    fun verifierEtatFinal() {
+        verifierCoherence()
+        etatAttendu?.let { assertEquals(it, etat(), "le spatioport ne devait pas être modifié") }
+    }
+
+    /** À appeler juste avant l'opération qui ne doit pas modifier le spatioport. */
+    protected fun assertSpatioportInchange() {
+        etatAttendu = etat()
+    }
+
+    /** État observable du spatioport : compteurs, tonnage, et place de chaque vaisseau. */
+    private fun etat(): String {
+        val places = spatioport.vaisseauxTriesParNom().map { "${it.nom} (${it.type}) -> ${spatioport.estAmarreA(it)}" }
+        return "totales=${spatioport.nbPlacesTotales()} libres=${spatioport.nbPlacesLibres()} " +
+                "occupées=${spatioport.nbPlacesOccupees()} inutilisables=${spatioport.nbPlacesInutilisables()} " +
+                "tonnage=${spatioport.tonnagesTotalAmarres()} vaisseaux=$places"
+    }
+
+    private fun verifierCoherence() {
+        val vaisseaux = spatioport.vaisseauxTriesParNom()
+        val places = vaisseaux.map { spatioport.estAmarreA(it) }
+
+        assertEquals(
+            spatioport.nbPlacesTotales(),
+            spatioport.nbPlacesLibres() + spatioport.nbPlacesOccupees() + spatioport.nbPlacesInutilisables()
+        )
+        assertEquals(spatioport.nbPlacesOccupees(), vaisseaux.size)
+        assertEquals(vaisseaux.sumOf { it.type.tonnage }, spatioport.tonnagesTotalAmarres())
+        assertTrue(places.all { it in 0 until spatioport.nbPlacesTotales() })
+        assertEquals(places.size, places.toSet().size, "deux vaisseaux ne partagent pas une place")
+    }
+}

@@ -1,0 +1,200 @@
+package testexo2
+
+import exo2.*
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
+
+class TestUsageNbPlaces : TestSpatioportBase() {
+
+    // Tests pour nbPlacesOccupees()
+    @Test
+    fun `nbPlacesOccupees retourne 0 pour un spatioport vide`() {
+        assertSpatioportInchange()
+        assertEquals(0, spatioport.nbPlacesOccupees())
+    }
+
+    @Test
+    fun `nbPlacesOccupees retourne 1 après amarrage d'un vaisseau`() {
+        val vaisseau = Vaisseau("V1", TypeVaisseau.CARGO)
+        spatioport.amarrer(vaisseau)
+        assertSpatioportInchange()
+        assertEquals(1, spatioport.nbPlacesOccupees())
+    }
+
+    @Test
+    fun `nbPlacesOccupees retourne le nombre correct après plusieurs amarrages`() {
+        val v1 = Vaisseau("V1", TypeVaisseau.CARGO)
+        val v2 = Vaisseau("V2", TypeVaisseau.CHASSEUR)
+        val v3 = Vaisseau("V3", TypeVaisseau.CROISEUR)
+
+        spatioport.amarrer(v1)
+        spatioport.amarrer(v2)
+        spatioport.amarrer(v3)
+
+        assertSpatioportInchange()
+        assertEquals(3, spatioport.nbPlacesOccupees())
+    }
+
+    @Test
+    fun `nbPlacesOccupees diminue après désamarrage`() {
+        val v1 = Vaisseau("V1", TypeVaisseau.CARGO)
+        val v2 = Vaisseau("V2", TypeVaisseau.CHASSEUR)
+
+        spatioport.amarrer(v1)
+        spatioport.amarrer(v2)
+        spatioport.desamarrer(v1)
+
+        assertSpatioportInchange()
+        assertEquals(1, spatioport.nbPlacesOccupees())
+    }
+
+    @Test
+    fun `nbPlacesOccupees ne compte pas les places inutilisables`() {
+        spatioport.emplacementInutilisable(0)
+        spatioport.emplacementInutilisable(1)
+        val vaisseau = Vaisseau("V1", TypeVaisseau.CARGO)
+        spatioport.amarrer(vaisseau)
+
+        assertSpatioportInchange()
+        assertEquals(1, spatioport.nbPlacesOccupees())
+    }
+
+    // Tests pour nbPlacesInutilisables()
+    @Test
+    fun `nbPlacesInutilisables retourne 0 pour un spatioport neuf`() {
+        assertSpatioportInchange()
+        assertEquals(0, spatioport.nbPlacesInutilisables())
+    }
+
+    @Test
+    fun `nbPlacesInutilisables retourne 1 après avoir rendu une place inutilisable`() {
+        spatioport.emplacementInutilisable(0)
+        assertSpatioportInchange()
+        assertEquals(1, spatioport.nbPlacesInutilisables())
+    }
+
+    @Test
+    fun `nbPlacesInutilisables retourne le nombre correct après plusieurs opérations`() {
+        spatioport.emplacementInutilisable(0)
+        spatioport.emplacementInutilisable(2)
+        spatioport.emplacementInutilisable(5)
+
+        assertSpatioportInchange()
+        assertEquals(3, spatioport.nbPlacesInutilisables())
+    }
+
+    @Test
+    fun `nbPlacesInutilisables diminue après réparation`() {
+        spatioport.emplacementInutilisable(0)
+        spatioport.emplacementInutilisable(1)
+        spatioport.reparerEmplacement(0)
+
+        assertSpatioportInchange()
+        assertEquals(1, spatioport.nbPlacesInutilisables())
+    }
+
+    @Test
+    fun `nbPlacesInutilisables ne compte pas les places occupées`() {
+        spatioport.emplacementInutilisable(0)
+        val vaisseau = Vaisseau("V1", TypeVaisseau.CARGO)
+        spatioport.amarrer(vaisseau)
+
+        assertSpatioportInchange()
+        assertEquals(1, spatioport.nbPlacesInutilisables())
+    }
+
+    // Tests pour nbPlacesLibres()
+    @Test
+    fun `nbPlacesLibres retourne le nombre total au départ`() {
+        assertSpatioportInchange()
+        assertEquals(10, spatioport.nbPlacesLibres())
+    }
+
+    @Test
+    fun `nbPlacesLibres diminue après amarrage d'un vaisseau`() {
+        val vaisseau = Vaisseau("V1", TypeVaisseau.CARGO)
+        spatioport.amarrer(vaisseau)
+        assertSpatioportInchange()
+        assertEquals(9, spatioport.nbPlacesLibres())
+    }
+
+    @Test
+    fun `nbPlacesLibres diminue après avoir rendu des places inutilisables`() {
+        spatioport.emplacementInutilisable(0)
+        spatioport.emplacementInutilisable(1)
+        assertSpatioportInchange()
+        assertEquals(8, spatioport.nbPlacesLibres())
+    }
+
+    @Test
+    fun `nbPlacesLibres augmente après désamarrage`() {
+        val vaisseau = Vaisseau("V1", TypeVaisseau.CARGO)
+        spatioport.amarrer(vaisseau)
+        spatioport.desamarrer(vaisseau)
+        assertSpatioportInchange()
+        assertEquals(10, spatioport.nbPlacesLibres())
+    }
+
+    @Test
+    fun `nbPlacesLibres augmente après réparation d'un emplacement`() {
+        spatioport.emplacementInutilisable(0)
+        spatioport.reparerEmplacement(0)
+        assertSpatioportInchange()
+        assertEquals(10, spatioport.nbPlacesLibres())
+    }
+
+    // Tests combinés
+    @Test
+    fun `la somme des trois compteurs égale le nombre total de places`() {
+        val v1 = Vaisseau("V1", TypeVaisseau.CARGO)
+        val v2 = Vaisseau("V2", TypeVaisseau.CHASSEUR)
+
+        spatioport.amarrer(v1)
+        spatioport.amarrer(v2)
+        spatioport.emplacementInutilisable(5)
+        spatioport.emplacementInutilisable(6)
+
+        assertSpatioportInchange()
+        val total = spatioport.nbPlacesLibres() +
+                spatioport.nbPlacesOccupees() +
+                spatioport.nbPlacesInutilisables()
+
+        assertEquals(spatioport.nbPlacesTotales(), total)
+    }
+
+    @Test
+    fun `nbPlacesLibres retourne 0 quand toutes les places sont utilisées`() {
+        repeat(5) { spatioport.amarrer(Vaisseau("V$it", TypeVaisseau.CARGO)) }
+        repeat(5) { spatioport.emplacementInutilisable(it + 5) }
+
+        assertSpatioportInchange()
+        assertEquals(0, spatioport.nbPlacesLibres())
+    }
+
+    @Test
+    fun `les compteurs restent cohérents après opérations multiples`() {
+        val v1 = Vaisseau("V1", TypeVaisseau.CARGO)
+        val v2 = Vaisseau("V2", TypeVaisseau.CHASSEUR)
+
+        spatioport.amarrer(v1)
+        spatioport.emplacementInutilisable(5)
+        spatioport.amarrer(v2)
+        spatioport.desamarrer(v1)
+        spatioport.reparerEmplacement(5)
+
+        assertSpatioportInchange()
+        assertEquals(1, spatioport.nbPlacesOccupees())
+        assertEquals(0, spatioport.nbPlacesInutilisables())
+        assertEquals(9, spatioport.nbPlacesLibres())
+    }
+
+    @Test
+    fun `les compteurs ne modifient pas un spatioport vide`() {
+        assertSpatioportInchange()
+
+        assertSpatioportInchange()
+        assertEquals(0, spatioport.nbPlacesOccupees())
+        assertEquals(0, spatioport.nbPlacesInutilisables())
+        assertEquals(10, spatioport.nbPlacesLibres())
+    }
+}

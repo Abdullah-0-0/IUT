@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="testexo2.TestUmlDockable" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-06T16:08:49" hostname="LAPTOP-9CDQ7NIQ" time="0.014">
+  <properties/>
+  <testcase name="test2 - 'Dockable' has attribute(s)()" classname="testexo2.TestUmlDockable" time="0.003"/>
+  <testcase name="test0 - class Dockable is interface or not()" classname="testexo2.TestUmlDockable" time="0.003"/>
+  <testcase name="test1 - 'Dockable' extends other classe(s)()" classname="testexo2.TestUmlDockable" time="0.004"/>
+  <testcase name="test3 - 'Dockable' has method(s)()" classname="testexo2.TestUmlDockable" time="0.002"/>
+  <system-out><![CDATA[18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dockable réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test du nombre d'attributs de la classe Dockable réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dockable réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test si la classe Dockable est une interface réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dockable réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test d'aucun héritage de la classe Dockable réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dockable réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test du nombre de méthodes de la classe Dockable réussi
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

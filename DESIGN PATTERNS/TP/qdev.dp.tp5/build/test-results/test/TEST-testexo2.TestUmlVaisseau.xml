@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="testexo2.TestUmlVaisseau" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-10-06T16:08:47" hostname="LAPTOP-9CDQ7NIQ" time="2.011">
+  <properties/>
+  <testcase name="test10 - 'Vaisseau' has a method 'equals'()" classname="testexo2.TestUmlVaisseau" time="1.906"/>
+  <testcase name="test4 - 'Vaisseau' has attribute(s)()" classname="testexo2.TestUmlVaisseau" time="0.009"/>
+  <testcase name="test8 - 'Vaisseau' has a method 'renommer'()" classname="testexo2.TestUmlVaisseau" time="0.005"/>
+  <testcase name="test2 - 'Vaisseau' extends other classe(s)()" classname="testexo2.TestUmlVaisseau" time="0.005"/>
+  <testcase name="test7 - 'Vaisseau' has method(s)()" classname="testexo2.TestUmlVaisseau" time="0.003"/>
+  <testcase name="test5 - 'Vaisseau' has an attribute 'nom'()" classname="testexo2.TestUmlVaisseau" time="0.013"/>
+  <testcase name="test6 - 'Vaisseau' has an attribute 'type{readOnly}'()" classname="testexo2.TestUmlVaisseau" time="0.004"/>
+  <testcase name="test1 - class Vaisseau is open or not()" classname="testexo2.TestUmlVaisseau" time="0.006"/>
+  <testcase name="test9 - 'Vaisseau' has a method 'tonnage'()" classname="testexo2.TestUmlVaisseau" time="0.006"/>
+  <testcase name="test3 - 'Vaisseau' has a constructor 1()" classname="testexo2.TestUmlVaisseau" time="0.02"/>
+  <testcase name="test0 - class Vaisseau is abstract or not()" classname="testexo2.TestUmlVaisseau" time="0.006"/>
+  <system-out><![CDATA[18:08:47 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Vaisseau réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode equals de la classe Vaisseau réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Vaisseau réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test du nombre d'attributs de la classe Vaisseau réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Vaisseau réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode renommer de la classe Vaisseau réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Vaisseau réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test d'héritage de la classe Vaisseau réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Vaisseau réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test du nombre de méthodes de la classe Vaisseau réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Vaisseau réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test de l'attribut nom de la classe Vaisseau réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Vaisseau réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test de l'attribut type de la classe Vaisseau réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Vaisseau réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test si la classe Vaisseau est open réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Vaisseau réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode tonnage de la classe Vaisseau réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Vaisseau réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test du constructeur de la classe Vaisseau réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Vaisseau réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test si la classe Vaisseau est abstraite réussi
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

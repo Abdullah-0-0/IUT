@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="testexo2.TestUmlUsageSpatioport" tests="19" skipped="0" failures="0" errors="0" timestamp="2026-10-06T16:08:49" hostname="LAPTOP-9CDQ7NIQ" time="0.173">
+  <properties/>
+  <testcase name="test13 - 'UsageSpatioport' has a method 'tonnagesTotalAmarres'()" classname="testexo2.TestUmlUsageSpatioport" time="0.007"/>
+  <testcase name="test6 - 'UsageSpatioport' has a method 'nbPlacesLibres'()" classname="testexo2.TestUmlUsageSpatioport" time="0.004"/>
+  <testcase name="test0 - class UsageSpatioport is interface or not()" classname="testexo2.TestUmlUsageSpatioport" time="0.003"/>
+  <testcase name="test12 - 'UsageSpatioport' has a method 'nbPlacesOccupees'()" classname="testexo2.TestUmlUsageSpatioport" time="0.006"/>
+  <testcase name="test5 - 'UsageSpatioport' has a method 'nbPlacesTotales'()" classname="testexo2.TestUmlUsageSpatioport" time="0.009"/>
+  <testcase name="test8 - 'UsageSpatioport' has a method 'reparerEmplacement'()" classname="testexo2.TestUmlUsageSpatioport" time="0.016"/>
+  <testcase name="test10 - 'UsageSpatioport' has a method 'estAmarreA'()" classname="testexo2.TestUmlUsageSpatioport" time="0.008"/>
+  <testcase name="test4 - 'UsageSpatioport' has method(s)()" classname="testexo2.TestUmlUsageSpatioport" time="0.004"/>
+  <testcase name="test11 - 'UsageSpatioport' has a method 'amarrer'()" classname="testexo2.TestUmlUsageSpatioport" time="0.003"/>
+  <testcase name="test19 - 'UsageSpatioport' has a method 'vaisseauxTriesParTonnageDecroissantPuisNom'()" classname="testexo2.TestUmlUsageSpatioport" time="0.007"/>
+  <testcase name="test1 - 'UsageSpatioport' extends other classe(s)()" classname="testexo2.TestUmlUsageSpatioport" time="0.002"/>
+  <testcase name="test14 - 'UsageSpatioport' has a method 'desamarrer'()" classname="testexo2.TestUmlUsageSpatioport" time="0.004"/>
+  <testcase name="test7 - 'UsageSpatioport' has a method 'emplacementInutilisable'()" classname="testexo2.TestUmlUsageSpatioport" time="0.019"/>
+  <testcase name="test9 - 'UsageSpatioport' has a method 'nbPlacesInutilisables'()" classname="testexo2.TestUmlUsageSpatioport" time="0.003"/>
+  <testcase name="test17 - 'UsageSpatioport' has a method 'amarrerAuPlusPresDe'()" classname="testexo2.TestUmlUsageSpatioport" time="0.007"/>
+  <testcase name="test18 - 'UsageSpatioport' has a method 'vaisseauxTriesParNom'()" classname="testexo2.TestUmlUsageSpatioport" time="0.004"/>
+  <testcase name="test2 - 'UsageSpatioport' has attribute(s)()" classname="testexo2.TestUmlUsageSpatioport" time="0.004"/>
+  <testcase name="test15 - 'UsageSpatioport' has a method 'amarrerA'()" classname="testexo2.TestUmlUsageSpatioport" time="0.006"/>
+  <testcase name="test16 - 'UsageSpatioport' has a method 'desamarrerDe'()" classname="testexo2.TestUmlUsageSpatioport" time="0.006"/>
+  <system-out><![CDATA[18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode tonnagesTotalAmarres de la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode nbPlacesLibres de la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test si la classe UsageSpatioport est une interface réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode nbPlacesOccupees de la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode nbPlacesTotales de la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode reparerEmplacement de la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode estAmarreA de la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test du nombre de méthodes de la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode amarrer de la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode vaisseauxTriesParTonnageDecroissantPuisNom de la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test d'aucun héritage de la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode desamarrer de la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode emplacementInutilisable de la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode nbPlacesInutilisables de la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode amarrerAuPlusPresDe de la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode vaisseauxTriesParNom de la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test du nombre d'attributs de la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode amarrerA de la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode desamarrerDe de la classe UsageSpatioport réussi
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,123 @@
+package testexo2
+
+import exo2.INUTILISABLE
+import exo2.LIBRE
+import exo2.TypeVaisseau
+import exo2.Vaisseau
+import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Test
+
+class TestEgaliteVaisseaux {
+
+    // Égalité
+
+    @Test
+    fun `deux vaisseaux de même nom et même type sont égaux mais pas identiques`() {
+        val vaisseau1 = Vaisseau("Enterprise", TypeVaisseau.CARGO)
+        val vaisseau2 = Vaisseau("Enterprise", TypeVaisseau.CARGO)
+        assertNotSame(vaisseau1, vaisseau2)
+        assertEquals(vaisseau1, vaisseau2)
+    }
+
+    @Test
+    fun `l'égalité est réflexive`() {
+        val vaisseau = Vaisseau("Enterprise", TypeVaisseau.CARGO)
+        assertEquals(vaisseau, vaisseau)
+    }
+
+    @Test
+    fun `l'égalité est symétrique`() {
+        val vaisseau1 = Vaisseau("Enterprise", TypeVaisseau.CARGO)
+        val vaisseau2 = Vaisseau("Enterprise", TypeVaisseau.CARGO)
+        assertTrue(vaisseau1 == vaisseau2)
+        assertTrue(vaisseau2 == vaisseau1)
+    }
+
+    @Test
+    fun `l'égalité est transitive`() {
+        val vaisseau1 = Vaisseau("Enterprise", TypeVaisseau.CARGO)
+        val vaisseau2 = Vaisseau("Enterprise", TypeVaisseau.CARGO)
+        val vaisseau3 = Vaisseau("Enterprise", TypeVaisseau.CARGO)
+        assertTrue(vaisseau1 == vaisseau2 && vaisseau2 == vaisseau3)
+        assertEquals(vaisseau1, vaisseau3)
+    }
+
+    @Test
+    fun `l'égalité est cohérente entre plusieurs appels`() {
+        val vaisseau1 = Vaisseau("Enterprise", TypeVaisseau.CARGO)
+        val vaisseau2 = Vaisseau("Enterprise", TypeVaisseau.CARGO)
+        repeat(3) { assertEquals(vaisseau1, vaisseau2) }
+    }
+
+    // Inégalité
+
+    @Test
+    fun `deux vaisseaux de noms différents ne sont pas égaux`() {
+        val vaisseau1 = Vaisseau("Enterprise", TypeVaisseau.CARGO)
+        val vaisseau2 = Vaisseau("Voyager", TypeVaisseau.CARGO)
+        assertNotEquals(vaisseau1, vaisseau2)
+        assertNotEquals(vaisseau2, vaisseau1)
+    }
+
+    @Test
+    fun `deux vaisseaux de types différents ne sont pas égaux`() {
+        val vaisseau1 = Vaisseau("Enterprise", TypeVaisseau.CARGO)
+        val vaisseau2 = Vaisseau("Enterprise", TypeVaisseau.CHASSEUR)
+        assertNotEquals(vaisseau1, vaisseau2)
+        assertNotEquals(vaisseau2, vaisseau1)
+    }
+
+    @Test
+    fun `deux vaisseaux de nom et type différents ne sont pas égaux`() {
+        val vaisseau1 = Vaisseau("Enterprise", TypeVaisseau.CARGO)
+        val vaisseau2 = Vaisseau("Voyager", TypeVaisseau.CHASSEUR)
+        assertNotEquals(vaisseau1, vaisseau2)
+    }
+
+    @Test
+    fun `la casse du nom est significative`() {
+        assertNotEquals(Vaisseau("Enterprise", TypeVaisseau.CARGO), Vaisseau("enterprise", TypeVaisseau.CARGO))
+    }
+
+    @Test
+    fun `un vaisseau n'est pas égal à null`() {
+        assertNotEquals(null, Vaisseau("Enterprise", TypeVaisseau.CARGO))
+    }
+
+    @Test
+    fun `un vaisseau n'est pas égal à un objet d'un autre type`() {
+        val vaisseau = Vaisseau("Enterprise", TypeVaisseau.CARGO)
+        assertNotEquals(vaisseau, "Enterprise")
+        assertNotEquals(vaisseau, TypeVaisseau.CARGO)
+    }
+
+    // Vaisseau et singletons
+
+    @Test
+    fun `un vaisseau est différent de LIBRE et INUTILISABLE`() {
+        val vaisseau = Vaisseau("Falcon", TypeVaisseau.FREGATE)
+        assertNotSame(vaisseau, LIBRE)
+        assertNotSame(vaisseau, INUTILISABLE)
+        assertNotEquals(vaisseau, LIBRE)
+        assertNotEquals(vaisseau, INUTILISABLE)
+        assertNotEquals(LIBRE, vaisseau)
+        assertNotEquals(INUTILISABLE, vaisseau)
+    }
+
+    // Renommage
+
+    @Test
+    fun `renommer change le nom du vaisseau`() {
+        val vaisseau = Vaisseau("Enterprise", TypeVaisseau.CARGO)
+        vaisseau.renommer("Voyager")
+        assertEquals("Voyager", vaisseau.nom)
+    }
+
+    @Test
+    fun `un vaisseau renommé n'est plus égal à un vaisseau de l'ancien nom`() {
+        val vaisseau = Vaisseau("Enterprise", TypeVaisseau.CARGO)
+        vaisseau.renommer("Voyager")
+        assertNotEquals(Vaisseau("Enterprise", TypeVaisseau.CARGO), vaisseau)
+        assertEquals(Vaisseau("Voyager", TypeVaisseau.CARGO), vaisseau)
+    }
+}

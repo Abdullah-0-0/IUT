@@ -1,0 +1,55 @@
+package testexo2
+
+import exo2.Dockable
+import exo2.INUTILISABLE
+import exo2.LIBRE
+import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Test
+
+class TestSingletons {
+
+    @Test
+    fun `INUTILISABLE est un singleton`() {
+        val instance1 = INUTILISABLE
+        val instance2 = INUTILISABLE
+        assertSame(instance1, instance2)
+    }
+
+    @Test
+    fun `LIBRE est un singleton`() {
+        val instance1 = LIBRE
+        val instance2 = LIBRE
+        assertSame(instance1, instance2)
+    }
+
+    @Test
+    fun `LIBRE et INUTILISABLE sont deux instances différentes`() {
+        assertNotSame(INUTILISABLE, LIBRE)
+        assertNotEquals(INUTILISABLE, LIBRE)
+        assertNotEquals(LIBRE, INUTILISABLE)
+    }
+
+    @Test
+    fun `LIBRE et INUTILISABLE sont égaux à eux-mêmes`() {
+        assertEquals(LIBRE, LIBRE)
+        assertEquals(INUTILISABLE, INUTILISABLE)
+    }
+
+    @Test
+    fun `LIBRE et INUTILISABLE ne sont pas égaux à null`() {
+        assertNotEquals(null, LIBRE)
+        assertNotEquals(null, INUTILISABLE)
+    }
+
+    @Test
+    fun `le hashCode de LIBRE et INUTILISABLE est stable`() {
+        assertEquals(LIBRE.hashCode(), LIBRE.hashCode())
+        assertEquals(INUTILISABLE.hashCode(), INUTILISABLE.hashCode())
+    }
+
+    @Test
+    fun `LIBRE et INUTILISABLE sont des Dockable`() {
+        assertTrue((LIBRE as Any) is Dockable)
+        assertTrue((INUTILISABLE as Any) is Dockable)
+    }
+}

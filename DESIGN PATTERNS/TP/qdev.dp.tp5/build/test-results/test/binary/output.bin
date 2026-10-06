@@ -1,0 +1,154 @@
+o18:08:47 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Vaisseau réussi
+d18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode equals de la classe Vaisseau réussi
+o18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Vaisseau réussi
+d18:08:49 INFO  - univ.nantes.UMLChecker > Test du nombre d'attributs de la classe Vaisseau réussi
+o18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Vaisseau réussi
+f18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode renommer de la classe Vaisseau réussi
+o18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Vaisseau réussi
+Z18:08:49 INFO  - univ.nantes.UMLChecker > Test d'héritage de la classe Vaisseau réussi
+o18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Vaisseau réussi
+e18:08:49 INFO  - univ.nantes.UMLChecker > Test du nombre de méthodes de la classe Vaisseau réussi
+o18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Vaisseau réussi
+`18:08:49 INFO  - univ.nantes.UMLChecker > Test de l'attribut nom de la classe Vaisseau réussi
+o18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Vaisseau réussi
+a18:08:49 INFO  - univ.nantes.UMLChecker > Test de l'attribut type de la classe Vaisseau réussi
+	o18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Vaisseau réussi
+	W18:08:49 INFO  - univ.nantes.UMLChecker > Test si la classe Vaisseau est open réussi
+
+o18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Vaisseau réussi
+
+e18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode tonnage de la classe Vaisseau réussi
+o18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Vaisseau réussi
+^18:08:49 INFO  - univ.nantes.UMLChecker > Test du constructeur de la classe Vaisseau réussi
+o18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Vaisseau réussi
+\18:08:49 INFO  - univ.nantes.UMLChecker > Test si la classe Vaisseau est abstraite réussi
+k18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dock réussi
+S18:08:49 INFO  - univ.nantes.UMLChecker > Test si la classe Dock est open réussi
+k18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dock réussi
+a18:08:49 INFO  - univ.nantes.UMLChecker > Test du nombre de méthodes de la classe Dock réussi
+k18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dock réussi
+]18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode get de la classe Dock réussi
+k18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dock réussi
+Z18:08:49 INFO  - univ.nantes.UMLChecker > Test du constructeur de la classe Dock réussi
+k18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dock réussi
+`18:08:49 INFO  - univ.nantes.UMLChecker > Test du nombre d'attributs de la classe Dock réussi
+k18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dock réussi
+]18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode set de la classe Dock réussi
+k18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dock réussi
+\18:08:49 INFO  - univ.nantes.UMLChecker > Test d'aucun héritage de la classe Dock réussi
+k18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dock réussi
+a18:08:49 INFO  - univ.nantes.UMLChecker > Test de l'attribut elements de la classe Dock réussi
+k18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dock réussi
+X18:08:49 INFO  - univ.nantes.UMLChecker > Test si la classe Dock est abstraite réussi
+k18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dock réussi
+]18:08:49 INFO  - univ.nantes.UMLChecker > Test de l'attribut size de la classe Dock réussi
+o18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dockable réussi
+d18:08:49 INFO  - univ.nantes.UMLChecker > Test du nombre d'attributs de la classe Dockable réussi
+o18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dockable réussi
+`18:08:49 INFO  - univ.nantes.UMLChecker > Test si la classe Dockable est une interface réussi
+o18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dockable réussi
+`18:08:49 INFO  - univ.nantes.UMLChecker > Test d'aucun héritage de la classe Dockable réussi
+o18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Dockable réussi
+e18:08:49 INFO  - univ.nantes.UMLChecker > Test du nombre de méthodes de la classe Dockable réussi
+s18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe INUTILISABLE réussi
+i18:08:49 INFO  - univ.nantes.UMLChecker > Test du nombre de méthodes de la classe INUTILISABLE réussi
+s18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe INUTILISABLE réussi
+h18:08:49 INFO  - univ.nantes.UMLChecker > Test du nombre d'attributs de la classe INUTILISABLE réussi
+ s18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe INUTILISABLE réussi
+ `18:08:49 INFO  - univ.nantes.UMLChecker > Test si la classe INUTILISABLE est abstraite réussi
+!s18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe INUTILISABLE réussi
+!^18:08:49 INFO  - univ.nantes.UMLChecker > Test d'héritage de la classe INUTILISABLE réussi
+"s18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe INUTILISABLE réussi
+"[18:08:49 INFO  - univ.nantes.UMLChecker > Test si la classe INUTILISABLE est open réussi
+$#l18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe LIBRE réussi
+$#W18:08:49 INFO  - univ.nantes.UMLChecker > Test d'héritage de la classe LIBRE réussi
+$%l18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe LIBRE réussi
+$%T18:08:49 INFO  - univ.nantes.UMLChecker > Test si la classe LIBRE est open réussi
+$&l18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe LIBRE réussi
+$&b18:08:49 INFO  - univ.nantes.UMLChecker > Test du nombre de méthodes de la classe LIBRE réussi
+$'l18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe LIBRE réussi
+$'Y18:08:49 INFO  - univ.nantes.UMLChecker > Test si la classe LIBRE est abstraite réussi
+$(l18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe LIBRE réussi
+$(a18:08:49 INFO  - univ.nantes.UMLChecker > Test du nombre d'attributs de la classe LIBRE réussi
+*)q18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Spatioport réussi
+*)j18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode estAmarreA de la classe Spatioport réussi
+*+q18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Spatioport réussi
+*+Y18:08:49 INFO  - univ.nantes.UMLChecker > Test si la classe Spatioport est open réussi
+*,q18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Spatioport réussi
+*,h18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode amarrerA de la classe Spatioport réussi
+*-q18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Spatioport réussi
+*-g18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode amarrer de la classe Spatioport réussi
+*.q18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Spatioport réussi
+*.t18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode vaisseauxTriesParNom de la classe Spatioport réussi
+*/q18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Spatioport réussi
+*/p18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode nbPlacesOccupees de la classe Spatioport réussi
+*0q18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Spatioport réussi
+*0^18:08:49 INFO  - univ.nantes.UMLChecker > Test si la classe Spatioport est abstraite réussi
+*1q18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Spatioport réussi
+*1c18:08:49 INFO  - univ.nantes.UMLChecker > Test de l'attribut dock de la classe Spatioport réussi
+*2q18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Spatioport réussi
+*2�18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode vaisseauxTriesParTonnageDecroissantPuisNom de la classe Spatioport réussi
+*3q18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Spatioport réussi
+*3o18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode nbPlacesTotales de la classe Spatioport réussi
+*4q18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Spatioport réussi
+*4l18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode desamarrerDe de la classe Spatioport réussi
+*5q18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Spatioport réussi
+*5f18:08:49 INFO  - univ.nantes.UMLChecker > Test du nombre d'attributs de la classe Spatioport réussi
+*6q18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Spatioport réussi
+*6r18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode reparerEmplacement de la classe Spatioport réussi
+*7q18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Spatioport réussi
+*7`18:08:49 INFO  - univ.nantes.UMLChecker > Test du constructeur de la classe Spatioport réussi
+*8q18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Spatioport réussi
+*8\18:08:49 INFO  - univ.nantes.UMLChecker > Test d'héritage de la classe Spatioport réussi
+*9q18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Spatioport réussi
+*9g18:08:49 INFO  - univ.nantes.UMLChecker > Test du nombre de méthodes de la classe Spatioport réussi
+*:q18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Spatioport réussi
+*:j18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode desamarrer de la classe Spatioport réussi
+*;q18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Spatioport réussi
+*;t18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode tonnagesTotalAmarres de la classe Spatioport réussi
+*<q18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Spatioport réussi
+*<n18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode nbPlacesLibres de la classe Spatioport réussi
+*=q18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Spatioport réussi
+*=u18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode nbPlacesInutilisables de la classe Spatioport réussi
+*>q18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Spatioport réussi
+*>s18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode amarrerAuPlusPresDe de la classe Spatioport réussi
+*?q18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe Spatioport réussi
+*?w18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode emplacementInutilisable de la classe Spatioport réussi
+A@v18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+A@y18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode tonnagesTotalAmarres de la classe UsageSpatioport réussi
+ABv18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+ABs18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode nbPlacesLibres de la classe UsageSpatioport réussi
+ACv18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+ACg18:08:49 INFO  - univ.nantes.UMLChecker > Test si la classe UsageSpatioport est une interface réussi
+ADv18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+ADu18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode nbPlacesOccupees de la classe UsageSpatioport réussi
+AEv18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+AEt18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode nbPlacesTotales de la classe UsageSpatioport réussi
+AFv18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+AFw18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode reparerEmplacement de la classe UsageSpatioport réussi
+AGv18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+AGo18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode estAmarreA de la classe UsageSpatioport réussi
+AHv18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+AHl18:08:49 INFO  - univ.nantes.UMLChecker > Test du nombre de méthodes de la classe UsageSpatioport réussi
+AIv18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+AIl18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode amarrer de la classe UsageSpatioport réussi
+AJv18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+AJ�18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode vaisseauxTriesParTonnageDecroissantPuisNom de la classe UsageSpatioport réussi
+AKv18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+AKg18:08:49 INFO  - univ.nantes.UMLChecker > Test d'aucun héritage de la classe UsageSpatioport réussi
+ALv18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+ALo18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode desamarrer de la classe UsageSpatioport réussi
+AMv18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+AM|18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode emplacementInutilisable de la classe UsageSpatioport réussi
+ANv18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+ANz18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode nbPlacesInutilisables de la classe UsageSpatioport réussi
+AOv18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+AOx18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode amarrerAuPlusPresDe de la classe UsageSpatioport réussi
+APv18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+APy18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode vaisseauxTriesParNom de la classe UsageSpatioport réussi
+AQv18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+AQk18:08:49 INFO  - univ.nantes.UMLChecker > Test du nombre d'attributs de la classe UsageSpatioport réussi
+ARv18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+ARm18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode amarrerA de la classe UsageSpatioport réussi
+ASv18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe UsageSpatioport réussi
+ASq18:08:49 INFO  - univ.nantes.UMLChecker > Test de la méthode desamarrerDe de la classe UsageSpatioport réussi

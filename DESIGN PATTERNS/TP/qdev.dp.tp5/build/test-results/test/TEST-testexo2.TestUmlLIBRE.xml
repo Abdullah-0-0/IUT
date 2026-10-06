@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="testexo2.TestUmlLIBRE" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-06T16:08:49" hostname="LAPTOP-9CDQ7NIQ" time="0.029">
+  <properties/>
+  <testcase name="test2 - 'LIBRE' extends other classe(s)()" classname="testexo2.TestUmlLIBRE" time="0.007"/>
+  <testcase name="test1 - class LIBRE is open or not()" classname="testexo2.TestUmlLIBRE" time="0.006"/>
+  <testcase name="test4 - 'LIBRE' has method(s)()" classname="testexo2.TestUmlLIBRE" time="0.004"/>
+  <testcase name="test0 - class LIBRE is abstract or not()" classname="testexo2.TestUmlLIBRE" time="0.002"/>
+  <testcase name="test3 - 'LIBRE' has attribute(s)()" classname="testexo2.TestUmlLIBRE" time="0.004"/>
+  <system-out><![CDATA[18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe LIBRE réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test d'héritage de la classe LIBRE réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe LIBRE réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test si la classe LIBRE est open réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe LIBRE réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test du nombre de méthodes de la classe LIBRE réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe LIBRE réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test si la classe LIBRE est abstraite réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe LIBRE réussi
+18:08:49 INFO  - univ.nantes.UMLChecker > Test du nombre d'attributs de la classe LIBRE réussi
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

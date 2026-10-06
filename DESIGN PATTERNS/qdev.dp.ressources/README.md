@@ -24,6 +24,8 @@
 [Design patterns 2](CMs/04-design-patterns2.pdf) 
 (22/09/2026)
 
+[Design patterns 3](CMs/05-design-patterns3.pdf) 
+(28/09/2026)
 
 <!-- 
 [Nouveautés Kotlin : lamdba-fonctions, etc.](CMs/05-kotlin.nouveau.lambda.pdf) (13/10/2025)
@@ -36,6 +38,8 @@
 
 [TD n°3 : Template method The/cafe & Cargaisons](TDs/td3.pdf)
 
+[TD n°4 : Strategies ou Template methods](TDs/td4.pdf)
+
 ## TPs
 
 
@@ -43,13 +47,12 @@
 
 [TP n°2 : implémentation d'une factory (Personne vs. Entreprise) + algorithmes Date de Pâques (Strategies)](https://gitlab.univ-nantes.fr/iut.info2.qdev.dp/etudiants/qdev.dp.tp2)
 
+[TP n°3 : implémentation de template methods (thé ou café + cargaisons)](https://gitlab.univ-nantes.fr/iut.info2.qdev.dp/etudiants/qdev.dp.tp3)
+
+[TP n°4 : strategies ou template methods](https://gitlab.univ-nantes.fr/iut.info2.qdev.dp/etudiants/qdev.dp.tp4)
+
+
 <!--
-
-[TP n°3 : implémentation de template methods (thé ou café + cargaisons)](https://gitlab.univ-nantes.fr/iut.info2.qdev.dp/2024-2025/qdev.dp.tp3)
-
-[TP n°4 : découverte de KTor](https://gitlab.univ-nantes.fr/iut.info2.qdev.dp/qdev.dp.ressources/-/wikis/TP-SAE-:-d%C3%A9couverte-de-KTor)
-
-[TP n°5 : strategies et template methods, Iterators](https://gitlab.univ-nantes.fr/iut.info2.qdev.dp/2024-2025/qdev.dp.tp5)
 
 [TP n°6 : Composite, delegate et Singleton](https://gitlab.univ-nantes.fr/iut.info2.qdev.dp/2024-2025/qdev.dp.tp6)
 
