@@ -10,39 +10,28 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 class EtudiantAvecEtatMentalTest {
 
     @Test
-    void nombreEtudiantCrees_doitAugmenterApresCreation() {
-        // Arrange
-        int nombreAvant = Etudiant.nombreEtudiantCrees();
+    void testEtatMentalConstructeur() {
+        EtudiantAvecEtatMental etudiant =
+                new EtudiantAvecEtatMental("E01", 15.0f, EtatMental.Heureux);
 
-        // Act
-        new Etudiant("E001", 15.5f);
-
-        // Assert
-        assertEquals(nombreAvant + 1, Etudiant.nombreEtudiantCrees());
+        assertEquals(EtatMental.Heureux, etudiant.getEtatMental());
     }
 
     @Test
-    void nombreEtudiantCrees_doitAugmenterAvecLeConstructeurSimple() {
-        // Arrange
-        int nombreAvant = Etudiant.nombreEtudiantCrees();
+    void testGetEtatMental() {
+        EtudiantAvecEtatMental etudiant =
+                new EtudiantAvecEtatMental("E01", 15.0f, EtatMental.Joyeux);
 
-        // Act
-        new Etudiant("E002");
-
-        // Assert
-        assertEquals(nombreAvant + 1, Etudiant.nombreEtudiantCrees());
+        assertEquals(EtatMental.Joyeux, etudiant.getEtatMental());
     }
 
     @Test
-    void nombreEtudiantCrees_doitAugmenterDeDeuxPourDeuxEtudiants() {
-        // Arrange
-        int nombreAvant = Etudiant.nombreEtudiantCrees();
+    void testSetEtatMental() {
+        EtudiantAvecEtatMental etudiant =
+                new EtudiantAvecEtatMental("E01", 15.0f, EtatMental.Bien);
 
-        // Act
-        new Etudiant("E003", 12.0f);
-        new Etudiant("E004", 14.0f);
+        etudiant.setEtatMental(EtatMental.Joyeux);
 
-        // Assert
-        assertEquals(nombreAvant + 2, Etudiant.nombreEtudiantCrees());
+        assertEquals(EtatMental.Joyeux, etudiant.getEtatMental());
     }
 }
