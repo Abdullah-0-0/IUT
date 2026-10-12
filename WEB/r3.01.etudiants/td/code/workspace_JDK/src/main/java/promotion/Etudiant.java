@@ -1,37 +1,37 @@
-
 package promotion;
 
 public class Etudiant {
+    private String no;
     private Float moyenne;
-    private String no ;
+    private static Integer nb =0;
 
-    private static int nb = 0;
-
-    public Etudiant(String no , Float moyenne){
+    public Etudiant(String no, Float moyenne) {
         this.no = no;
         this.moyenne = moyenne;
         nb++;
     }
-    public Etudiant(String no ){
-        this.no = no;
-        this.moyenne = 10.0f;
-        nb++;
+
+    public static Integer nombreEtudiantCrees() {
+        return nb;
     }
 
-    public String getNo(){
+
+    public Etudiant(String no) {
+        this(no,10.0f);
+    }
+    public String getNo() {
         return no;
     }
-    public Float getMoyenne(){
+
+    public Float getMoyenne() {
         return moyenne;
     }
+
     @Override
-    public  String toString(){
+    public String toString() {
         return "Etudiant{" +
                 "no='" + no + '\'' +
                 ", moyenne=" + moyenne +
                 '}';
-    }
-    public static Integer nombreEtudiantCrees() {
-        return nb;
     }
 }

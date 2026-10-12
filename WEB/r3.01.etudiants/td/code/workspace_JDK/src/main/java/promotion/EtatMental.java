@@ -1,20 +1,16 @@
-
 package promotion;
 
-public enum EtatMental {
-
-    Bien("Bien"),
+public enum  EtatMental {
+    Heureux("Heureux"),
     Joyeux("Joyeux"),
-    Heureux("Heureux");
+    Bien("Biens");
 
     private final String valeur;
 
-    // Constructeur
     EtatMental(String valeur) {
         this.valeur = valeur;
     }
 
-    // Getter
     public String getValeur() {
         return valeur;
     }
