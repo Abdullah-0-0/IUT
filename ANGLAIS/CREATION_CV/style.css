@@ -1,919 +1,347 @@
-/* ============================================================
-   RESET
-============================================================ */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-
-/* ============================================================
-   VARIABLES
-============================================================ */
-
 :root {
-
     --dark: #111827;
-
     --dark-blue: #172554;
-
     --blue: #1d4ed8;
-
     --medium-blue: #2563eb;
-
     --light-blue: #eff6ff;
-
     --very-light-blue: #f8fafc;
-
     --grey: #6b7280;
-
     --dark-grey: #374151;
-
     --light-grey: #e5e7eb;
-
-    --background: #f3f4f6;
-
+    --background: #edf2f7;
     --white: #ffffff;
 }
 
-
-
-/* ============================================================
-   BODY
-============================================================ */
-
 body {
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    background-color:
-        var(--background);
-
-    color:
-        var(--dark);
-
-    line-height:
-        1.5;
-
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--dark);
+    line-height: 1.5;
 }
 
-
-
-/* ============================================================
-   CV CONTAINER
-============================================================ */
-
-.cv {
-
-    width:
-        210mm;
-
-    min-height:
-        297mm;
-
-    margin:
-        30px auto;
-
-    background-color:
-        var(--white);
-
-    box-shadow:
-        0 10px 40px
-        rgba(0, 0, 0, 0.15);
-
+form {
+    max-width: 1200px;
+    margin: 30px auto;
+    background: var(--white);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
 }
 
-
-
-/* ============================================================
-   HEADER
-============================================================ */
-
-.header {
-    min-height: 165px;
+.partie-haute {
     background: linear-gradient(135deg, #111827, #172554);
-    color: white;
-    padding: 28px 38px;
-
-    display: flex;
-    justify-content: center;   /* centre horizontalement */
-    align-items: center;       /* centre verticalement */
+    padding: 30px 35px;
 }
 
-.identity {
+.haute {
     display: flex;
     align-items: center;
-    justify-content: center;   /* centre le contenu interne */
-    gap: 25px;
+    justify-content: center;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
     width: 100%;
+    max-width: 900px;
 }
-
-.identity-text {
-    text-align: left;
-}
-
 
 .profile-img {
-
-    width:
-        120px;
-
-    height:
-        120px;
-
-    border-radius:
-        50%;
-
-    object-fit:
-        cover;
-
-    border:
-        4px solid
-        var(--white);
-
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--white);
+    background: #dbeafe;
 }
 
-
-
-.identity-text h1 {
-
-    font-size:
-        30px;
-
-    line-height:
-        1.05;
-
-    letter-spacing:
-        1.3px;
-
+.name {
+    font-size: clamp(24px, 2vw, 34px);
+    line-height: 1.1;
+    color: var(--white);
+    letter-spacing: 1px;
 }
 
-
-
-.identity-text h1 span {
-
-    display:
-        block;
-
-    color:
-        #93c5fd;
-
+.container {
+    display: grid;
+    grid-template-columns: 330px 1fr;
+    min-height: 700px;
 }
-
-
-
-.identity-text h2 {
-
-    margin-top:
-        10px;
-
-    font-size:
-        17px;
-
-    font-weight:
-        400;
-
-}
-
-
-
-.target {
-
-    margin-top:
-        5px;
-
-    font-size:
-        13px;
-
-    font-weight:
-        bold;
-
-    color:
-        #bfdbfe;
-
-}
-
-
-
-/* ============================================================
-   MAIN LAYOUT
-============================================================ */
-
-main {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        30% 70%;
-
-    min-height:
-        calc(297mm - 165px);
-
-}
-
-
-
-/* ============================================================
-   SIDEBAR
-============================================================ */
 
 .sidebar {
-
-    background-color:
-        var(--very-light-blue);
-
-    padding:
-        28px 24px;
-
-    border-right:
-        1px solid
-        var(--light-grey);
-
+    background: var(--very-light-blue);
+    padding: 28px 22px;
+    border-right: 1px solid var(--light-grey);
 }
-
-
 
 .sidebar section {
-
-    margin-bottom:
-        30px;
-
+    margin-bottom: 28px;
 }
-
-
-
-/* ============================================================
-   SECTION TITLES
-============================================================ */
 
 .sidebar h3,
-.content > .cv-section > h3 {
-
-    font-size:
-        14px;
-
-    font-weight:
-        bold;
-
-    letter-spacing:
-        1.3px;
-
-    color:
-        var(--dark-blue);
-
-    margin-bottom:
-        14px;
-
-    padding-bottom:
-        7px;
-
-    border-bottom:
-        3px solid
-        var(--medium-blue);
-
+.content h3 {
+    font-size: 15px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--dark-blue);
+    border-bottom: 3px solid var(--medium-blue);
+    padding-bottom: 8px;
+    margin-bottom: 14px;
 }
 
-
-
-/* ============================================================
-   PERSONAL INFORMATION
-============================================================ */
-
-.personal-info .info-item {
-
-    margin-bottom:
-        14px;
-
+.info-item {
+    margin-bottom: 14px;
 }
 
-
-
-.personal-info .info-title {
-
-    display:
-        block;
-
-    margin-bottom:
-        2px;
-
-    font-size:
-        9.5px;
-
-    font-weight:
-        bold;
-
-    text-transform:
-        uppercase;
-
-    letter-spacing:
-        0.5px;
-
-    color:
-        var(--medium-blue);
-
+.info-title {
+    display: block;
+    color: var(--medium-blue);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
 }
 
-
-
-.personal-info p {
-
-    font-size:
-        11.5px;
-
-    color:
-        var(--dark-grey);
-
-    word-break:
-        break-word;
-
-}
-
-
-
-/* ============================================================
-   SKILLS
-============================================================ */
-
-.skill {
-
-    margin-bottom:
-        16px;
-
-}
-
-
-
-.skill h4 {
-
-    margin-bottom:
-        7px;
-
-    font-size:
-        11.5px;
-
-    color:
-        var(--dark-grey);
-
-}
-
-
-
-.tags {
-
-    display:
-        flex;
-
-    flex-wrap:
-        wrap;
-
-    gap:
-        5px;
-
-}
-
-
-
+.info-item p,
+.info-item a,
+.language p,
+.project li,
+.project-type,
+.timeline-item p,
+.profile-main p,
+.interest-list span,
+.skill h4,
 .tags span {
-
-    padding:
-        4px 7px;
-
-    background-color:
-        var(--light-blue);
-
-    color:
-        var(--dark-blue);
-
-    border:
-        1px solid
-        #bfdbfe;
-
-    border-radius:
-        5px;
-
-    font-size:
-        9.5px;
-
-    font-weight:
-        600;
-
+    color: var(--dark-grey);
 }
 
+.info-item p,
+.info-item a,
+.language p,
+.project li,
+.project-type,
+.timeline-item p,
+.profile-main p,
+.interest-list span,
+.skill h4 {
+    font-size: 12.5px;
+}
 
+.info-item a {
+    display: inline-block;
+    color: #1d4ed8;
+    text-decoration: none;
+    font-weight: 700;
+    word-break: break-word;
+}
 
-/* ============================================================
-   SOFT SKILLS
-============================================================ */
+.info-item a:hover {
+    text-decoration: underline;
+    color: #1e3a8a;
+}
+
+.portfolio-item {
+    margin-top: 10px;
+}
 
 .soft-skills {
-
-    list-style:
-        none;
-
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
-
-
 
 .soft-skills li {
-
-    margin:
-        7px 0;
-
-    font-size:
-        11.5px;
-
-    color:
-        var(--dark-grey);
-
+    position: relative;
+    padding-left: 18px;
+    margin: 8px 0;
+    font-size: 12.5px;
+    color: var(--dark-grey);
 }
-
-
 
 .soft-skills li::before {
-
-    content:
-        "✓";
-
-    margin-right:
-        8px;
-
-    color:
-        var(--medium-blue);
-
-    font-weight:
-        bold;
-
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--medium-blue);
+    font-weight: bold;
 }
-
-
-
-/* ============================================================
-   LANGUAGES
-============================================================ */
 
 .language {
-
-    margin-bottom:
-        12px;
-
-    font-size:
-        11.5px;
-
+    margin-bottom: 12px;
 }
-
-
 
 .language p:first-child {
-
-    color:
-        var(--dark-grey);
-
+    font-weight: 700;
+    color: var(--dark);
 }
 
-
-
-.language p:last-child {
-
-    color:
-        var(--grey);
-
+.skill {
+    margin-bottom: 16px;
 }
 
+.skill h4 {
+    margin-bottom: 8px;
+    font-weight: 700;
+}
 
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
 
-/* ============================================================
-   CENTRAL CONTENT
-============================================================ */
+.tags span,
+.course-grid span,
+.interest-list span {
+    display: inline-block;
+    background: #dbeafe;
+    border: 1px solid #bfdbfe;
+    border-radius: 5px;
+    padding: 5px 8px;
+    font-size: 11px;
+    color: var(--dark-blue);
+    font-weight: 600;
+}
 
 .content {
-
-    padding:
-        28px 34px;
-
+    padding: 28px 30px;
 }
-
-
 
 .cv-section {
-
-    margin-bottom:
-        27px;
-
+    margin-bottom: 30px;
 }
-
-
-
-/* ============================================================
-   PROFILE
-============================================================ */
 
 .profile-main p {
-
-    font-size:
-        12px;
-
-    line-height:
-        1.65;
-
-    text-align:
-        justify;
-
-    color:
-        var(--dark-grey);
-
+    line-height: 1.7;
+    text-align: justify;
 }
-
-
-
-/* ============================================================
-   EDUCATION
-============================================================ */
 
 .timeline-header {
-
-    display:
-        flex;
-
-    justify-content:
-        space-between;
-
-    align-items:
-        flex-start;
-
-    gap:
-        20px;
-
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 18px;
 }
 
-
-
-.timeline-item h4 {
-
-    font-size:
-        14px;
-
-    color:
-        var(--dark);
-
+.timeline-item h4,
+.project h4 {
+    color: var(--dark);
+    font-size: 15px;
+    margin-bottom: 2px;
 }
-
-
 
 .timeline-item h5 {
-
-    margin-top:
-        3px;
-
-    font-size:
-        11.5px;
-
-    color:
-        var(--medium-blue);
-
+    color: var(--medium-blue);
+    font-size: 12px;
+    font-weight: 700;
 }
-
-
-
-.timeline-item p {
-
-    margin-top:
-        7px;
-
-    font-size:
-        11.5px;
-
-    color:
-        var(--dark-grey);
-
-}
-
-
 
 .date {
-
-    white-space:
-        nowrap;
-
-    font-size:
-        10.5px;
-
-    font-weight:
-        bold;
-
-    color:
-        var(--grey);
-
+    font-size: 11px;
+    color: var(--grey);
+    white-space: nowrap;
+    font-weight: 700;
 }
-
-
 
 .subtitle {
-
-    margin:
-        15px 0 8px;
-
-    font-size:
-        11px;
-
-    color:
-        var(--dark);
-
+    margin: 14px 0 8px;
+    font-size: 12px;
+    color: var(--dark);
+    font-weight: 700;
 }
-
-
-
-/* ============================================================
-   COURSEWORK
-============================================================ */
 
 .course-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap:
-        6px;
-
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
 }
-
-
 
 .course-grid span {
-
-    background-color:
-        #f3f4f6;
-
-    padding:
-        6px 8px;
-
-    border-radius:
-        4px;
-
-    font-size:
-        10px;
-
-    color:
-        var(--dark-grey);
-
+    background: #f3f4f6;
+    border: 1px solid var(--light-grey);
+    color: var(--dark-grey);
 }
-
-
-
-/* ============================================================
-   PROJECTS
-============================================================ */
 
 .project {
-
-    margin-bottom:
-        22px;
-
-    padding-left:
-        14px;
-
-    border-left:
-        3px solid
-        var(--medium-blue);
-
+    margin-bottom: 20px;
+    padding-left: 14px;
+    border-left: 3px solid var(--medium-blue);
 }
-
-
 
 .project-header {
-
-    display:
-        flex;
-
-    justify-content:
-        space-between;
-
-    align-items:
-        flex-start;
-
-    gap:
-        15px;
-
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
 }
-
-
-
-.project h4 {
-
-    font-size:
-        13.5px;
-
-    color:
-        var(--dark);
-
-}
-
-
 
 .project-type {
-
-    margin-top:
-        2px;
-
-    font-size:
-        10.5px;
-
-    color:
-        var(--grey);
-
+    margin-top: 2px;
+    color: var(--grey);
 }
-
-
 
 .project-tech {
-
-    flex-shrink:
-        0;
-
-    padding:
-        4px 9px;
-
-    background-color:
-        var(--dark-blue);
-
-    color:
-        var(--white);
-
-    border-radius:
-        15px;
-
-    font-size:
-        9.5px;
-
+    background: var(--dark-blue);
+    color: var(--white);
+    border-radius: 999px;
+    padding: 5px 10px;
+    font-size: 10.5px;
+    font-weight: 700;
+    white-space: nowrap;
 }
-
-
 
 .project ul {
-
-    margin:
-        9px 0 0 18px;
-
+    margin: 10px 0 0 18px;
 }
-
-
 
 .project li {
-
-    margin:
-        4px 0;
-
-    font-size:
-        11px;
-
-    line-height:
-        1.45;
-
-    color:
-        var(--dark-grey);
-
+    margin: 4px 0;
+    line-height: 1.5;
 }
-
-
-
-/* ============================================================
-   EXPERIENCE
-============================================================ */
-
-.experience {
-
-    padding-left:
-        14px;
-
-    border-left:
-        3px solid
-        var(--medium-blue);
-
-}
-
-
-
-.experience h4 {
-
-    font-size:
-        13.5px;
-
-}
-
-
-
-.experience h5 {
-
-    margin-top:
-        2px;
-
-    color:
-        var(--medium-blue);
-
-    font-size:
-        11px;
-
-}
-
-
-
-.experience p {
-
-    margin-top:
-        9px;
-
-    font-size:
-        11px;
-
-    line-height:
-        1.5;
-
-    color:
-        var(--dark-grey);
-
-}
-
-
-
-/* ============================================================
-   INTERESTS
-============================================================ */
 
 .interest-list {
-
-    display:
-        flex;
-
-    flex-wrap:
-        wrap;
-
-    gap:
-        8px;
-
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
-
-
 
 .interest-list span {
-
-    padding:
-        6px 9px;
-
-    background-color:
-        #f3f4f6;
-
-    border-radius:
-        5px;
-
-    font-size:
-        10.5px;
-
-    color:
-        var(--dark-grey);
-
+    background: #f3f4f6;
+    border: 1px solid var(--light-grey);
+    color: var(--dark-grey);
 }
 
-
-
-/* ============================================================
-   HOVER EFFECTS - SCREEN ONLY
-============================================================ */
-
-@media screen {
-
-    .tags span,
-    .course-grid span,
-    .interest-list span {
-
-        transition:
-            transform 0.2s ease,
-            background-color 0.2s ease;
-
+@media (max-width: 560px) {
+    form {
+        margin: 0;
+        box-shadow: none;
     }
 
-
-
-    .tags span:hover,
-    .course-grid span:hover,
-    .interest-list span:hover {
-
-        transform:
-            translateY(-2px);
-
-        background-color:
-            #dbeafe;
-
+    .container {
+        grid-template-columns: 1fr;
     }
 
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--light-grey);
+    }
+
+    .left {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .timeline-header,
+    .project-header {
+        flex-direction: column;
+    }
 }
 
 

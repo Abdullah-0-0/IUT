@@ -1,0 +1,16 @@
+
+create or replace package lecture is 
+type cur_empl is REF CURSOR ; 
+procedure liste_employes( liste out cur_empl) ; 
+end ; 
+
+-------------------------------------------------------------------------------------------------------------------
+
+create or replace package BODY lecture is
+    procedure liste_employes(liste out cur_empl) is
+        begin
+        set transaction read only;
+        open liste for select * from employe;
+        commit;
+    end;
+end;
