@@ -1,0 +1,323 @@
+*{
+    /*margin: 0; padding: 0;*/
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden; /* empêche le scroll horizontal */
+    font-size: 16px;
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-24px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes pulse {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-24px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes pulse {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+}
+ .parti_centrale p {
+    font-size: 20px;
+    line-height: 1.4;
+    text-align: justify;
+}
+.job li {
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: justify;
+}
+.left {
+        background: #000;
+        color: white;
+        padding: 40px 40px;
+    }
+    .partie-gauche{
+        background: #000;
+        color: white;
+        padding: 40px 40px;
+    }
+    .name {
+        font-size: 2.8rem;
+        text-align: center;
+        margin: 0;
+        line-height: 1.2;
+    }
+    .profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid white;
+        display: block;
+        margin: 0 auto 20px;
+        transition: transform 260ms ease, box-shadow 260ms ease;
+        animation: fadeInUp 0.7s ease-out;
+    }
+
+    h2{
+        font-size: 1.95rem;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        border-bottom: 2px solid #000;
+        padding-bottom: 10px;
+        display: inline-block;
+    }
+    h3{
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        border-bottom: 2px solid #fff;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        margin-bottom: 10px;
+        text-align:start;
+    }
+    .partie-haute {
+        margin-bottom: 10px;
+    }
+    .container{
+    display: flex;
+    gap: 20px; /* espace entre les deux sections */
+    align-items: flex-start; 
+    padding: 12px 20px 10px;
+    flex-wrap: wrap;
+    margin: 10px auto;
+    }
+    .partie-gauche{
+        width: 340px;
+        background: #000;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 10px 10px 10px;
+        border-radius: 20px;
+        flex-shrink: 0;
+        max-width: 360px;
+        flex: 0 0 360px;
+        animation : slideInLeft 0.8s ease-out;
+    }
+    .centrale {
+    flex: 1;            /* prend toute la place restante */
+    min-width: 0;       /* évite les débordements */
+    display: flex;      
+}
+    .parti_centrale{
+        display: flex;
+        flex: 1;                       /* prend tout l’espace restant */
+        min-width: 0;                 /* évite qu’elle devienne trop étroite */
+        background: rgb(237, 237, 237);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        flex-direction: column;
+        animation: fadeInUp 0.9s ease-out;
+    }
+    .contact-info div {
+        margin-bottom: 15px;
+    }
+    .contact-info i {
+        margin-right: 10px;
+        width: 20px;
+    }
+    .img_conctact{
+        border-radius: 50%;
+    }
+    .skills, .langues {
+        list-style: none;
+    }
+    .skills li, .langues li {
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    .stars {
+        color: #969693;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .projet {
+        display: flex;
+        width: 100%;
+    }
+    .ref {
+        flex: 1 1 0;
+        min-width: 0;
+        background: #f9f9f9;
+        padding: 10px;
+        border-left: 4px solid #000;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        transition: transform 220ms ease, box-shadow 220ms ease;
+    }
+        @media (max-width: 768px) {
+        .container { grid-template-columns: 1fr; }
+        .left { padding: 40px 30px; }
+    }
+    .ref:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06); 
+}
+    .ref h4 {
+    margin-bottom: 10px;
+    /*margin-top: 10px;*/
+    }
+    .argu_centrale{
+        font-size: 30px;
+        color: rgb(148, 156, 164);
+    }
+    .caracter{
+        color: rgb(137, 152, 167);
+    }
+    .li_proj{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        list-style: none;
+        margin: 0px;
+    }
+    .li_elem{
+        margin-top: 10px;
+    }
+    .profil_professionnelle h2{
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+    .parti_centrale h2{
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+    .referent h2{
+        margin-bottom: 15px;
+        margin-top: 0px;
+    }
+
+    /* Optionnel : petite amélioration mobile */
+@media (max-width: 900px) {
+    body {
+        padding: 0;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .partie-gauche,
+    .centrale {
+        width: 100%;
+        max-width: none;
+        flex: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .partie-gauche,
+    .parti_centrale {
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .partie-gauche {
+        padding: 20px;
+    }
+
+    .parti_centrale {
+        padding: 30px 20px;
+    }
+}
+@media (max-width: 575px) {
+    .container {
+        width: 100%;
+        margin: 0;
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .partie-gauche,
+    .centrale,
+    .parti_centrale {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .partie-gauche,
+    .parti_centrale {
+        border-radius: 12px;
+    }
+
+    .partie-gauche {
+        padding: 20px;
+    }
+
+    .parti_centrale {
+        padding: 25px 20px;
+    }
+
+    .experience_professionnelle h2,
+    .CURSUS-centrale h2,
+    .referent h2 {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+
+    .profil_professionnelle p,
+    .CURSUS-centrale p {
+        text-align: left;
+        word-spacing: normal;
+        letter-spacing: normal;
+    }
+
+    .profil_professionnelle h2 {
+        font-size: 2rem;
+        margin-bottom: 8px;
+    }
+
+    .profil_professionnelle p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        text-align: left;
+        word-spacing: normal;
+        letter-spacing: normal;
+}
+
+
+    .name {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+
+    .referent .projet {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .ref {
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+
+

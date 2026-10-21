@@ -1,0 +1,619 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #eef2ff;
+    color: #1f2937;
+}
+
+.page {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    background: linear-gradient(180deg, #fbfdff 0%, #f4f6ff 100%);
+    padding: 28px 18px;
+    border-right: 1px solid #e9eefb;
+    box-shadow: inset -10px 0 24px rgba(115, 128, 255, 0.02);
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar nav li {
+    list-style: none;
+}
+
+.sidebar nav a {
+    text-decoration: none;
+    color: #1f2937;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 180ms ease;
+    background: transparent;
+}
+
+.sidebar nav a::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(102, 126, 234, 0.15);
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.sidebar nav a:hover {
+    background: linear-gradient(90deg, rgba(102, 126, 234, 0.06), rgba(118, 75, 162, 0.04));
+    transform: translateX(4px);
+    box-shadow: 0 6px 18px rgba(102, 126, 234, 0.06);
+}
+
+.sidebar nav a.active {
+    background: linear-gradient(90deg, #c8c9d0, #764ba2);
+    color: white;
+}
+
+.sidebar nav a.active::before {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.main {
+    flex: 1;
+    padding: 40px;
+}
+
+.hero h1 {
+    font-size: 34px;
+    margin: 0 0 8px 0;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.hero p {
+    margin: 0 0 24px 0;
+    color: #444;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.profile-section {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-out;
+}
+
+.contact-block {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.contact-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 20px;
+    border-radius: 14px;
+    border: 1px solid #e9eefb;
+    background: #f8fafc;
+}
+
+.social-box {
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e9eefb;
+    background: #ffffff;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+.social-box h3 {
+    margin: 0 0 20px;
+    font-size: 1.3rem;
+    color: #1f2937;
+}
+
+.contact-row span {
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.contact-row a {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-row a:hover {
+    color: #4338ca;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.highlight {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #e53fcc 0%, #8000ff 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    animation: fadeInUp 1.2s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+}
+
+.highlight h4 {
+    margin: 0 0 10px;
+    
+}
+
+.highlight p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.highlight img {
+    width: 88px;
+    height: 88px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-top: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.highlight:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(102, 126, 234, 0.18);
+}
+
+.highlight span {
+    position: absolute;
+    display: block;
+}
+
+.highlight span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #3cd331, #ffd817fc);
+    animation: btn-anim1 1s linear infinite;
+}
+
+.highlight span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, #3cd331, #ffd817fc);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+.highlight span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(270deg, #3cd331, #ffd817fc);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+.highlight span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(360deg, #3cd331, #ffd817fc);
+    animation: btn-anim4 1s linear infinite;
+}
+/*snapchat*/
+.highlight-snapchat {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #32322d 0%, #daf00c 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    animation: fadeInUp 1.2s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+}
+
+
+.highlight-snapchat h4 {
+    margin: 0 0 10px;
+    
+}
+
+.highlight-snapchat p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.highlight-snapchat img {
+    width: 88px;
+    height: 88px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-top: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.highlight-snapchat:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(102, 126, 234, 0.18);
+}
+
+.highlight-snapchat span {
+    position: absolute;
+    display: block;
+}
+
+.highlight-snapchat span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #ffd817fc, #3cd331 );
+    animation: btn-anim1 1s linear infinite;
+}
+
+.highlight-snapchat span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, #ffd817fc, #3cd331 );
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+.highlight-snapchat span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(270deg,#ffd817fc, #3cd331);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+.highlight-snapchat span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(360deg,#ffd817fc, #3cd331);
+    animation: btn-anim4 1s linear infinite;
+}
+
+/*whatsapp*/
+.highlight-whatsapp {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1c1e1c 0%, #3fe212 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    animation: fadeInUp 1.2s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+}
+
+
+.highlight-whatsapp h4 {
+    margin: 0 0 10px;
+    
+}
+
+.highlight-whatsapp p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.highlight-whatsapp img {
+    width: 88px;
+    height: 88px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-top: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.highlight-whatsapp:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(102, 126, 234, 0.18);
+}
+
+.highlight-whatsapp span {
+    position: absolute;
+    display: block;
+}
+
+.highlight-whatsapp span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #1c1e1c 0%, #3fe212 100%);
+    animation: btn-anim1 1s linear infinite;
+}
+
+.highlight-whatsapp span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, #1c1e1c 0%, #3fe212 100%);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+.highlight-whatsapp span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(270deg, #1c1e1c 0%, #3fe212 100%);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+.highlight-whatsapp span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(360deg, #1c1e1c 50%, #3fe212 100%);
+    animation: btn-anim4 1s linear infinite;
+}
+
+/* instagram */
+
+.highlight-instagram {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg,#d32eed 0%, #ff002f 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    animation: fadeInUp 1.2s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+}
+
+
+.highlight-instagram h4 {
+    margin: 0 0 10px;
+    
+}
+
+.highlight-instagram p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.highlight-instagram img {
+    width: 88px;
+    height: 88px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-top: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.highlight-instagram:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(102, 126, 234, 0.18);
+}
+
+.highlight-instagram span {
+    position: absolute;
+    display: block;
+}
+
+.highlight-instagram span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #e91010 0%, #ffd817fc 100%);
+    animation: btn-anim1 1s linear infinite;
+}
+
+.highlight-instagram span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, #e91010 0%, #ffd817fc 100%);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+.highlight-instagram span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(270deg, #e91010 0%, #ffd817fc 100%);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+.highlight-instagram span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(360deg, #e91010 50%, #ffd817fc 100%);
+    animation: btn-anim4 1s linear infinite;
+}
+/*github*/
+
+.highlight-github {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg,#a7a5a6 0%, #2d2d2e 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    animation: fadeInUp 1.2s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+}
+
+
+.highlight-github h4 {
+    margin: 0 0 10px;
+    
+}
+
+.highlight-github p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.highlight-github img {
+    width: 88px;
+    height: 88px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-top: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.highlight-github:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(102, 126, 234, 0.18);
+}
+
+.highlight-github span {
+    position: absolute;
+    display: block;
+}
+
+.highlight-github span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #e91010 0%, #ffd817fc 100%);
+    animation: btn-anim1 1s linear infinite;
+}
+
+.highlight-github span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, #e91010 0%, #ffd817fc 100%);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+.highlight-github span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(270deg, #e91010 0%, #ffd817fc 100%);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+.highlight-github span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(360deg, #e91010 50%, #ffd817fc 100%);
+    animation: btn-anim4 1s linear infinite;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes btn-anim1 {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+@keyframes btn-anim2 {
+    0% { top: -100%; }
+    100% { top: 100%; }
+}
+
+@keyframes btn-anim3 {
+    0% { right: -100%; }
+    100% { right: 100%; }
+}
+
+@keyframes btn-anim4 {
+    0% { bottom: -100%; }
+    100% { bottom: 100%; }
+}
+
+@media (max-width: 900px) {
+    .page {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e9eefb;
+    }
+
+    .main {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .contact-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
