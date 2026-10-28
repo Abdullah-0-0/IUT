@@ -92,3 +92,13 @@ END MODIF_EMPLOYE;
 
 END MAJ;
 /
+
+// creation d'un employé avec un id déjà utilisé , creation impossible
+MAJ.CREE_EMPLOYE(20,'test',35,3,2000);
+
+/*
+ERROR à la ligne 1:
+ORA-20001: Un employe avec le meme numero existe deja
+ORA-06512: à "S3A02A.MAJ", ligne 10
+ORA-06512: à ligne 2
+*/
