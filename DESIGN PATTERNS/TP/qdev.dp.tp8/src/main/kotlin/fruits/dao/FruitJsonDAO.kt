@@ -3,6 +3,7 @@ import fruits.exceptions.FruitDejaPresentException
 import fruits.exceptions.ImportFruitsException
 import fruits.model.Fruit
 import kotlinx.serialization.ExperimentalSerializationApi
+import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.encodeToJsonElement
 import java.io.File
@@ -21,18 +22,11 @@ class FruitJsonDAO(private val fichier: File) : FruitDAO {
         }
         val conv = fichier.readText()
         val fruits : List<Fruit> = Json.decodeFromString(conv)
-        return fruits
+        return fruits.sorted()
     }
 
     override fun donneLesFruitsCoutantMoinsQue(prix: Double): List<Fruit> {
-        val fruits = donneLesFruits()
-        val res : MutableList<Fruit> = mutableListOf()
-        for (i in fruits){
-            if (i.prix< prix){
-                res.add(i)
-            }
-        }
-        return  res
+        return donneLesFruits().filter { it.prix <prix}.sortedBy { it.prix}
     }
 
     override fun donneLeFruit(nom: String): Fruit? {
@@ -46,30 +40,30 @@ class FruitJsonDAO(private val fichier: File) : FruitDAO {
     }
 
     override fun enregistreLesFruits(fruits: List<Fruit>) {
-        var res : String = "[\n"
-        for (i in 0 until fruits.size){
-            if (i==fruits.size-1){
-                res+="{\n" +
-                        """ "nom" """ + " : "+""""${fruits[i].nom}"""" +",\n"+
-                        """"quantite"""" + " : "+""""${fruits[i].quantite}"""" +",\n"+
-                        """"prix"""" + " : "+""""${fruits[i].prix}"""" +"\n"+
-                        "}\n"
-            }
-            else{
-                res+="{\n" +
-                        """"nom"""" + " : "+""""${fruits[i].nom}"""" +",\n"+
-                        """"quantite"""" + " : "+""""${fruits[i].quantite}"""" +",\n"+
-                        """"prix"""" + " : "+""""${fruits[i].prix}"""" +"\n"+
-                        "},\n"
-            }
-
-        }
-        res += "]"
-
-        fichier.writeText(res)
-//        for (i in fruits){
-//            Json.encodeToJsonElement(i)
+//        var res : String = "[\n"
+//        for (i in 0 until fruits.size){
+//            if (i==fruits.size-1){
+//                res+="{\n" +
+//                        """ "nom" """ + " : "+""""${fruits[i].nom}"""" +",\n"+
+//                        """"quantite"""" + " : "+""""${fruits[i].quantite}"""" +",\n"+
+//                        """"prix"""" + " : "+""""${fruits[i].prix}"""" +"\n"+
+//                        "}\n"
+//            }
+//            else{
+//                res+="{\n" +
+//                        """"nom"""" + " : "+""""${fruits[i].nom}"""" +",\n"+
+//                        """"quantite"""" + " : "+""""${fruits[i].quantite}"""" +",\n"+
+//                        """"prix"""" + " : "+""""${fruits[i].prix}"""" +"\n"+
+//                        "},\n"
+//            }
+//
 //        }
+//        res += "]"
+
+//        fichier.writeText(res)
+
+        val json = Json
+        fichier.writeText(json.encodeToString(fruits))
     }
 
     override fun ajouteUnFruit(fruit: Fruit) {
