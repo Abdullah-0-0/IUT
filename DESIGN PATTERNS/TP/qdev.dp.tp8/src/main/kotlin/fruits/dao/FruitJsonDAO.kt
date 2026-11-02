@@ -24,20 +24,29 @@ class FruitJsonDAO(private val fichier: File) : FruitDAO {
     }
 
     override fun donneLesFruitsCoutantMoinsQue(prix: Double): List<Fruit> {
+        var res : MutableList<Fruit> = mutableListOf()
         val fruits = donneLesFruits()
         for (i in fruits){
             if (i.prix < prix){
-                
+                res.add(i)
             }
         }
+        return res
     }
 
     override fun donneLeFruit(nom: String): Fruit? {
-        TODO("Not yet implemented")
+        val fruits = donneLesFruits()
+        for (i in fruits){
+            if (i.nom == nom){
+                return i
+            }
+        }
+        return null
     }
 
     override fun enregistreLesFruits(fruits: List<Fruit>) {
-        TODO("Not yet implemented")
+        val json = Json
+        TODO()
     }
 
     override fun ajouteUnFruit(fruit: Fruit) {
