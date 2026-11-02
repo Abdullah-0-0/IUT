@@ -1,0 +1,257 @@
+package testexo1
+
+import exo1.*
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.CsvSource
+
+class TestUsageTarif {
+
+    lateinit var tarif : TarifA
+
+    @ParameterizedTest(name = "prix classe eco ({0}) => {1}")
+    @CsvSource (
+        "0.0, 0.0",
+        "10.0, 10.0",
+        "25.0, 25.0",
+        "42.01, 42.01",
+        "50.0, 50.0",
+        "100.0, 100.0",
+        "200.0, 200.0",
+        "300.0, 300.0"
+    )
+    fun testPrixClasseEco(prixAvant : Double, prixApres : Double) {
+        tarif = TarifClasse(Classe.ECONOMIQUE)
+        assertEquals(prixApres, tarif.calculPrix(prixAvant), 0.01)
+    }
+
+    @ParameterizedTest(name = "prix classe affaire ({0}) => {1}")
+    @CsvSource (
+        "0.0, 0.0",
+        "10.0, 15.0",
+        "25.0, 37.50",
+        "42.01, 63.01",
+        "50.0, 75.0",
+        "100.0, 150.0",
+        "200.0, 300.0",
+        "300.0, 450.0"
+    )
+    fun testPrixClasseAffaire(prixAvant : Double, prixApres : Double) {
+        tarif = TarifClasse(Classe.AFFAIRE)
+        assertEquals(prixApres, tarif.calculPrix(prixAvant), 0.01)
+    }
+
+    @ParameterizedTest(name = "prix premiere classe ({0}) => {1}")
+    @CsvSource (
+        "0.0, 0.0",
+        "10.0, 30.0",
+        "25.0, 75.0",
+        "42.01, 126.03",
+        "50.0, 150.0",
+        "100.0, 300.0",
+        "200.0, 600.0",
+        "300.0, 900.0"
+    )
+    fun testPrixClassePremiere(prixAvant : Double, prixApres : Double) {
+        tarif = TarifClasse(Classe.PREMIERE)
+        assertEquals(prixApres, tarif.calculPrix(prixAvant), 0.01)
+    }
+
+    @ParameterizedTest(name = "prix saison normale ({0}) => {1}")
+    @CsvSource (
+        "0.0, 0.0",
+        "10.0, 10.0",
+        "25.0, 25.0",
+        "42.01, 42.01",
+        "50.0, 50.0",
+        "100.0, 100.0",
+        "200.0, 200.0",
+        "300.0, 300.0"
+    )
+    fun testPrixSaisonNormale(prixAvant : Double, prixApres : Double) {
+        tarif = TarifSaison(Saison.NORMALE)
+        assertEquals(prixApres, tarif.calculPrix(prixAvant), 0.01)
+    }
+
+    @ParameterizedTest(name = "prix saison haute ({0}) => {1}")
+    @CsvSource (
+        "0.0, 0.0",
+        "10.0, 12.0",
+        "25.0, 30.0",
+        "42.01, 50.41",
+        "50.0, 60.0",
+        "100.0, 120.0",
+        "200.0, 240.0",
+        "300.0, 360.0"
+    )
+    fun testPrixSaisonHaute(prixAvant : Double, prixApres : Double) {
+        tarif = TarifSaison(Saison.HAUTE)
+        assertEquals(prixApres, tarif.calculPrix(prixAvant), 0.01)
+    }
+
+    @ParameterizedTest(name = "prix saison basse ({0}) => {1}")
+    @CsvSource (
+        "0.0, 0.0",
+        "1.0, 0.85",
+        "10.0, 8.50",
+        "25.0, 21.25",
+        "42.01, 35.71",
+        "50.0, 42.50",
+        "100.0, 85.0",
+        "200.0, 170.0",
+        "300.0, 255.0"
+    )
+    fun testPrixSaisonBasse(prixAvant : Double, prixApres : Double) {
+        tarif = TarifSaison(Saison.BASSE)
+        assertEquals(prixApres, tarif.calculPrix(prixAvant), 0.01)
+    }
+
+    @ParameterizedTest(name = "prix demande forte ({0}) => {1}")
+    @CsvSource (
+        "0.0, 50.0",
+        "10.0, 60.0",
+        "25.0, 75.0",
+        "42.01, 92.01",
+        "50.0, 100.0",
+        "100.0, 150.0",
+        "200.0, 250.0",
+        "300.0, 350.0"
+    )
+    fun testPrixDemandeForte(prixAvant : Double, prixApres : Double) {
+        tarif = TarifDemande(Demande.FORTE)
+        assertEquals(prixApres, tarif.calculPrix(prixAvant), 0.01)
+    }
+
+    @ParameterizedTest(name = "prix demande faible ({0}) => {1}")
+    @CsvSource (
+        "0.0, 0.0",
+        "10.0, 10.0",
+        "25.0, 25.0",
+        "42.01, 42.01",
+        "50.0, 25.0",
+        "100.0, 75.0",
+        "200.0, 175.0",
+        "300.0, 275.0"
+    )
+    fun testPrixDemandeFaible(prixAvant : Double, prixApres : Double) {
+        tarif = TarifDemande(Demande.FAIBLE)
+        assertEquals(prixApres, tarif.calculPrix(prixAvant), 0.01)
+    }
+
+    //classe, saison
+    @ParameterizedTest(name = "prix classe premiere, saison haute ({0}) => {1}")
+    @CsvSource (
+        "0.0, 0.0",
+        "10.0, 36.0",
+        "25.0, 90.0",
+        "42.01, 151.24",
+        "50.0, 180.0",
+        "100.0, 360.0",
+        "200.0, 720.0",
+        "300.0, 1080.0"
+    )
+    fun testPrixClassePremiereSaisonHaute(prixAvant : Double, prixApres : Double) {
+        tarif = TarifCombine(TarifClasse(Classe.PREMIERE), TarifSaison(Saison.HAUTE))
+        assertEquals(prixApres, tarif.calculPrix(prixAvant), 0.01)
+    }
+
+    @ParameterizedTest(name = "prix classe eco, saison basse ({0}) => {1}")
+    @CsvSource (
+        "0.0, 0.0",
+        "1.0, 0.85",
+        "10.0, 8.50",
+        "25.0, 21.25",
+        "42.01, 35.71",
+        "50.0, 42.50",
+        "100.0, 85.0",
+        "200.0, 170.0",
+        "300.0, 255.0"
+    )
+    fun testPrixClasseEcoSaisonBasse(prixAvant : Double, prixApres : Double) {
+        tarif = TarifCombine(TarifClasse(Classe.ECONOMIQUE), TarifSaison(Saison.BASSE))
+        assertEquals(prixApres, tarif.calculPrix(prixAvant), 0.01)
+    }
+
+    //saison, demande
+    @ParameterizedTest(name = "prix saison basse, demande faible ({0}) => {1}")
+    @CsvSource (
+        "0.0, 0.0",
+        "1.0, 0.85",
+        "10.0, 8.50",
+        "25.0, 21.25",
+        "42.01, 35.71",
+        "50.0, 42.50",
+        "100.0, 60.0",
+        "200.0, 145.0",
+        "300.0, 230.0"
+    )
+    fun testPrixSaisonBasseDemandeFaible(prixAvant : Double, prixApres : Double) {
+        tarif = TarifCombine(TarifSaison(Saison.BASSE), TarifDemande(Demande.FAIBLE))
+        assertEquals(prixApres, tarif.calculPrix(prixAvant), 0.01)
+    }
+
+    //classe, demande
+    @ParameterizedTest(name = "prix class eco, demande faible ({0}) => {1}")
+    @CsvSource (
+        "0.0, 0.0",
+        "10.0, 10.0",
+        "25.0, 25.0",
+        "42.01, 42.01",
+        "50.0, 25.0",
+        "100.0, 75.0",
+        "200.0, 175.0",
+        "300.0, 275.0"
+    )
+    fun testPrixClasseEcoDemandeFaible(prixAvant : Double, prixApres : Double) {
+        tarif = TarifCombine(TarifClasse(Classe.ECONOMIQUE), TarifDemande(Demande.FAIBLE))
+        assertEquals(prixApres, tarif.calculPrix(prixAvant), 0.01)
+    }
+
+    // prix négatif
+    @Test
+    fun testPrixNegatif() {
+        val tarifs = listOf(
+            TarifClasse(Classe.ECONOMIQUE), TarifClasse(Classe.AFFAIRE), TarifClasse(Classe.PREMIERE),
+            TarifSaison(Saison.HAUTE), TarifSaison(Saison.NORMALE), TarifSaison(Saison.BASSE),
+            TarifDemande(Demande.FORTE), TarifDemande(Demande.FAIBLE),
+            TarifCombine(TarifClasse(Classe.AFFAIRE), TarifSaison(Saison.HAUTE))
+        )
+        tarifs.forEach { assertThrows<PrixNegatifException> { it.calculPrix(-0.01) } }
+    }
+
+    // bornes de la demande faible : la réduction de 25 ne doit pas dépasser la moitié du prix
+    @ParameterizedTest(name = "prix demande faible, bornes ({0}) => {1}")
+    @CsvSource(
+        "49.99, 49.99",
+        "50.0, 25.0",
+        "50.01, 25.01"
+    )
+    fun testPrixDemandeFaibleBornes(prixAvant : Double, prixApres : Double) {
+        assertEquals(prixApres, TarifDemande(Demande.FAIBLE).calculPrix(prixAvant), 0.001)
+    }
+
+    // l'ordre de combinaison compte : tarif1 puis tarif2
+    @Test
+    fun testOrdreCombinaison() {
+        // basse saison (85) puis demande faible (-25) = 60
+        assertEquals(60.0, TarifCombine(TarifSaison(Saison.BASSE), TarifDemande(Demande.FAIBLE)).calculPrix(100.0), 0.01)
+        // demande faible (75) puis basse saison (x0.85) = 63.75
+        assertEquals(63.75, TarifCombine(TarifDemande(Demande.FAIBLE), TarifSaison(Saison.BASSE)).calculPrix(100.0), 0.01)
+    }
+
+    // combinaison de plus de deux tarifs et classe affaire
+    @Test
+    fun testCombineTrois() {
+        val t = TarifCombine(TarifCombine(TarifClasse(Classe.AFFAIRE), TarifSaison(Saison.HAUTE)), TarifDemande(Demande.FORTE))
+        assertEquals(230.0, t.calculPrix(100.0), 0.01) // 150 -> 180 -> 230
+    }
+
+    // la moitié s'entend du prix reçu par TarifDemande, pas du prix d'origine
+    @Test
+    fun testDemandeFaibleMoitieDuPrixRecu() {
+        val t = TarifCombine(TarifSaison(Saison.BASSE), TarifDemande(Demande.FAIBLE))
+        assertEquals(26.0, t.calculPrix(60.0), 0.01) // 60 -> 51 -> 26
+    }
+}

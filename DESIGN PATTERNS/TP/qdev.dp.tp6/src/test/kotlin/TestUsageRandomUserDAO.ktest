@@ -1,0 +1,51 @@
+import netprime.datalayer.RandomUserDAO
+import netprime.datalayer.datamodel.users.User
+import netprime.datalayer.iUserDAO
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
+
+class TestUsageRandomUserDAO {
+
+    val BASE_URL_RANDOMUSER = "https://randomuser.me/api/?nat=gb,fr&noinfo"
+
+    lateinit var users: Set<User>
+    lateinit var userDAO: iUserDAO
+
+    @BeforeEach
+    fun reinit() {
+        users = setOf()
+        userDAO = RandomUserDAO()
+    }
+
+    @Test
+    fun test0user() {
+        assertEquals(0, users.size)
+    }
+
+    @Test
+    fun test1User() {
+        users = userDAO.addFrom(BASE_URL_RANDOMUSER)
+        println(users)
+        assertEquals(1, users.size)
+        assertTrue(users.all { it.nat == netprime.datalayer.datamodel.users.NAT.FR || it.nat == netprime.datalayer.datamodel.users.NAT.GB })
+    }
+
+    @Test
+    fun test10user() {
+        users = userDAO.addFrom(BASE_URL_RANDOMUSER + "&results=10")
+        println(users)
+        assertEquals(10, users.size)
+        assertTrue(users.all { it.nat == netprime.datalayer.datamodel.users.NAT.FR || it.nat == netprime.datalayer.datamodel.users.NAT.GB })
+    }
+
+
+    @Test
+    fun test100user() {
+        users = userDAO.addFrom(BASE_URL_RANDOMUSER + "&results=100")
+        println(users)
+        assertEquals(100, users.size)
+        assertTrue(users.all { it.nat == netprime.datalayer.datamodel.users.NAT.FR || it.nat == netprime.datalayer.datamodel.users.NAT.GB })
+    }
+}

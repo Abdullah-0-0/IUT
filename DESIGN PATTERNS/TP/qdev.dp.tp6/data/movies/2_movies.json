@@ -1,0 +1,24 @@
+[
+  {
+    "id": "tt9999013",
+    "rank": "1",
+    "title": "Movie A",
+    "fullTitle": "Movie A (2000)",
+    "year": 2000,
+    "image": "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX128_CR0,12,128,176_AL_.jpg",
+    "crew": "Frank Darabont (dir.), Tim Robbins, Morgan Freeman",
+    "imDbRating": 8.5,
+    "imDbRatingCount": "2651870"
+  },
+  {
+    "id": "tt9999284",
+    "rank": "1",
+    "title": "Movie B",
+    "fullTitle": "Movie B (2001)",
+    "year": "2001",
+    "image": "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX128_CR0,12,128,176_AL_.jpg",
+    "crew": "Frank Darabont (dir.), Tim Robbins, Morgan Freeman",
+    "imDbRating": "7.5",
+    "imDbRatingCount": "2651870"
+  }
+]

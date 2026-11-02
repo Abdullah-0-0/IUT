@@ -1,0 +1,19 @@
+services:
+  tomcat:
+    container_name: tomcat_container
+    build:
+      context: tomcat_app
+      target: builder
+    ports:
+#     exposition du port des applications
+      - "8888:8080"
+#     exposition du port de débogage
+      - "5005:5005"
+    command: "catalina.sh run"
+    volumes:
+#     Montage de ./target de l'hôte vers le répertoire de déploiement du serveur
+      - "./tomcat/webapps:/usr/local/tomcat/webapps"
+    environment:
+      JAVA_OPTS: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=0.0.0.0:5005"
+      JAVA_TOOL_OPTIONS: "-Djava.net.preferIPv4Stack=true"
+

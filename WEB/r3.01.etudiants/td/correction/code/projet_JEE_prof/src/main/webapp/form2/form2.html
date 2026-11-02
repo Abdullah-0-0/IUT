@@ -1,0 +1,19 @@
+<!-- Formulaire HTML qui envoie en POST les données à la servlet
+/src/main/java/iut/nantes/form2/Form2Servlet
+qui affiche le login et le password en envoyé en GET ou en POST si
+le login et Joe et le password est JoJo44 sinon renvoie vers la page d'origine si elle existe et sinon vers index
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire 1</title>
+</head>
+<body>
+    <form method="POST" action="../form2-servlet">
+        <input type="text" name="login" placeholder="Login">
+        <input type="password" name="password" placeholder="Mot de passe">
+        <input type="submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,45 @@
+package testexo2
+
+import exo2.Application
+import exo2.Cocktail
+import exo2.IngredientBasique
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
+
+
+class TestUsageCocktails {
+
+    val application = Application()
+
+    @Test
+    fun prepareDesCocktails() {
+        val eau = IngredientBasique("Eau gazeuse", 10.0)
+        assertEquals("Eau gazeuse [10.0]", eau.toString())
+
+        val soda = IngredientBasique("Soda citron", 2.0)
+        assertEquals("Soda citron [2.0]", soda.toString())
+
+        val sodamix = Cocktail("Soda Mix")
+        sodamix.ajouter(eau)
+        sodamix.ajouter(soda)
+        assertEquals("Soda Mix : [Eau gazeuse [10.0], Soda citron [2.0]]", sodamix.toString())
+
+        val sucre = IngredientBasique("Sucre", 1.0)
+        val jus = IngredientBasique("Jus de citron", 2.0)
+        val menthe = IngredientBasique("Feuille de menthe", 6.0)
+        val virgin = Cocktail("Virgin mojito", mutableListOf(sucre, jus, menthe, sodamix))
+        assertEquals("Virgin mojito : [Sucre [1.0], Jus de citron [2.0], Feuille de menthe [6.0], Soda Mix : [Eau gazeuse [10.0], Soda citron [2.0]]]", virgin.toString())
+
+        val rhum = IngredientBasique("Rhum", 5.0)
+        val mojito = Cocktail("Mojito", mutableListOf(virgin, rhum))
+        assertEquals("Mojito : [Virgin mojito : [Sucre [1.0], Jus de citron [2.0], Feuille de menthe [6.0], Soda Mix : [Eau gazeuse [10.0], Soda citron [2.0]]], Rhum [5.0]]", mojito.toString())
+
+        application.ajouterAlaCarte(sodamix)
+        application.ajouterAlaCarte(virgin)
+        application.ajouterAlaCarte(mojito)
+
+        println(application.toString())
+        assertEquals("[Soda Mix : [Eau gazeuse [10.0], Soda citron [2.0]], Virgin mojito : [Sucre [1.0], Jus de citron [2.0], Feuille de menthe [6.0], Soda Mix : [Eau gazeuse [10.0], Soda citron [2.0]]], Mojito : [Virgin mojito : [Sucre [1.0], Jus de citron [2.0], Feuille de menthe [6.0], Soda Mix : [Eau gazeuse [10.0], Soda citron [2.0]]], Rhum [5.0]]]", application.toString())
+    }
+}

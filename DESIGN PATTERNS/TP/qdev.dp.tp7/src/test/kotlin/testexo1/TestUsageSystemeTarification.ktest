@@ -1,0 +1,335 @@
+package testexo1
+
+import exo1.*
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertNotSame
+import org.junit.jupiter.api.Assertions.assertSame
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.CsvSource
+
+class TestUsageSystemeTarification {
+
+    lateinit var contexte : Contexte
+    var systeme = SystemeTarification()
+
+    @ParameterizedTest(name = "prix classe eco ({0}) => {1}")
+    @CsvSource (
+        "0.0, 0.0",
+        "10.0, 10.0",
+        "25.0, 25.0",
+        "42.01, 42.01",
+        "50.0, 50.0",
+        "100.0, 100.0",
+        "200.0, 200.0",
+        "300.0, 300.0"
+    )
+    fun testPrixClasseEco(prixAvant : Double, prixApres : Double) {
+        contexte = Contexte(c= Classe.ECONOMIQUE)
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertThrows<PrixNegatifException> {  systeme.calculPrix(-10.0, contexte) }
+    }
+
+    @ParameterizedTest(name = "prix classe affaire ({0}) => {1}")
+    @CsvSource (
+        "0.0, 0.0",
+        "10.0, 15.0",
+        "25.0, 37.50",
+        "42.01, 63.01",
+        "50.0, 75.0",
+        "100.0, 150.0",
+        "200.0, 300.0",
+        "300.0, 450.0"
+    )
+    fun testPrixClasseAffaire(prixAvant : Double, prixApres : Double) {
+        contexte = Contexte(c= Classe.AFFAIRE)
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertThrows<PrixNegatifException> {  systeme.calculPrix(-10.0, contexte) }
+    }
+
+    @ParameterizedTest(name = "prix premiere classe ({0}) => {1}")
+    @CsvSource (
+        "0.0, 0.0",
+        "10.0, 30.0",
+        "25.0, 75.0",
+        "42.01, 126.03",
+        "50.0, 150.0",
+        "100.0, 300.0",
+        "200.0, 600.0",
+        "300.0, 900.0"
+    )
+    fun testPrixClassePremiere(prixAvant : Double, prixApres : Double) {
+        contexte = Contexte(c= Classe.PREMIERE)
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertThrows<PrixNegatifException> {  systeme.calculPrix(-10.0, contexte) }
+    }
+
+    @ParameterizedTest(name = "prix saison normale ({0}) => {1}")
+    @CsvSource (
+        "0.0, 0.0",
+        "10.0, 10.0",
+        "25.0, 25.0",
+        "42.01, 42.01",
+        "50.0, 50.0",
+        "100.0, 100.0",
+        "200.0, 200.0",
+        "300.0, 300.0"
+    )
+    fun testPrixSaisonNormale(prixAvant : Double, prixApres : Double) {
+        contexte = Contexte(s = Saison.NORMALE)
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertThrows<PrixNegatifException> {  systeme.calculPrix(-10.0, contexte) }
+    }
+
+    @ParameterizedTest(name = "prix saison haute ({0}) => {1}")
+    @CsvSource (
+        "0.0, 0.0",
+        "10.0, 12.0",
+        "25.0, 30.0",
+        "42.01, 50.41",
+        "50.0, 60.0",
+        "100.0, 120.0",
+        "200.0, 240.0",
+        "300.0, 360.0"
+    )
+    fun testPrixSaisonHaute(prixAvant : Double, prixApres : Double) {
+        contexte = Contexte(s = Saison.HAUTE)
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertThrows<PrixNegatifException> {  systeme.calculPrix(-10.0, contexte) }
+    }
+
+    @ParameterizedTest(name = "prix saison basse ({0}) => {1}")
+    @CsvSource (
+        "0.0, 0.0",
+        "1.0, 0.85",
+        "10.0, 8.50",
+        "25.0, 21.25",
+        "42.01, 35.71",
+        "50.0, 42.50",
+        "100.0, 85.0",
+        "200.0, 170.0",
+        "300.0, 255.0"
+    )
+    fun testPrixSaisonBasse(prixAvant : Double, prixApres : Double) {
+        contexte = Contexte(s = Saison.BASSE)
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertThrows<PrixNegatifException> {  systeme.calculPrix(-10.0, contexte) }
+    }
+
+    @ParameterizedTest(name = "prix demande forte ({0}) => {1}")
+    @CsvSource (
+        "0.0, 50.0",
+        "10.0, 60.0",
+        "25.0, 75.0",
+        "42.01, 92.01",
+        "50.0, 100.0",
+        "100.0, 150.0",
+        "200.0, 250.0",
+        "300.0, 350.0"
+    )
+    fun testPrixDemandeForte(prixAvant : Double, prixApres : Double) {
+        contexte = Contexte(d = Demande.FORTE)
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertThrows<PrixNegatifException> {  systeme.calculPrix(-10.0, contexte) }
+    }
+
+    @ParameterizedTest(name = "prix demande faible ({0}) => {1}")
+    @CsvSource (
+        "0.0, 0.0",
+        "10.0, 10.0",
+        "25.0, 25.0",
+        "42.01, 42.01",
+        "50.0, 25.0",
+        "100.0, 75.0",
+        "200.0, 175.0",
+        "300.0, 275.0"
+    )
+    fun testPrixDemandeFaible(prixAvant : Double, prixApres : Double) {
+        contexte = Contexte(d = Demande.FAIBLE)
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertThrows<PrixNegatifException> {  systeme.calculPrix(-10.0, contexte) }
+    }
+
+    //classe, saison
+    @ParameterizedTest(name = "prix classe premiere, saison haute ({0}) => {1}")
+    @CsvSource (
+        "0.0, 0.0",
+        "10.0, 36.0",
+        "25.0, 90.0",
+        "42.01, 151.24",
+        "50.0, 180.0",
+        "100.0, 360.0",
+        "200.0, 720.0",
+        "300.0, 1080.0"
+    )
+    fun testPrixClassePremiereSaisonHaute(prixAvant : Double, prixApres : Double) {
+        contexte = Contexte(c = Classe.PREMIERE, s = Saison.HAUTE)
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertThrows<PrixNegatifException> {  systeme.calculPrix(-10.0, contexte) }
+    }
+
+    @ParameterizedTest(name = "prix classe eco, saison basse ({0}) => {1}")
+    @CsvSource (
+        "0.0, 0.0",
+        "1.0, 0.85",
+        "10.0, 8.50",
+        "25.0, 21.25",
+        "42.01, 35.71",
+        "50.0, 42.50",
+        "100.0, 85.0",
+        "200.0, 170.0",
+        "300.0, 255.0"
+    )
+    fun testPrixClasseEcoSaisonBasse(prixAvant : Double, prixApres : Double) {
+        contexte = Contexte(c = Classe.ECONOMIQUE, s = Saison.BASSE)
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertThrows<PrixNegatifException> {  systeme.calculPrix(-10.0, contexte) }
+    }
+
+    //saison, demande
+    @ParameterizedTest(name = "prix saison basse, demande faible ({0}) => {1}")
+    @CsvSource (
+        "0.0, 0.0",
+        "1.0, 0.85",
+        "10.0, 8.50",
+        "25.0, 21.25",
+        "42.01, 35.71",
+        "50.0, 42.50",
+        "100.0, 60.0",
+        "200.0, 145.0",
+        "300.0, 230.0"
+    )
+    fun testPrixSaisonBasseDemandeFaible(prixAvant : Double, prixApres : Double) {
+        contexte = Contexte(s = Saison.BASSE, d = Demande.FAIBLE)
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertThrows<PrixNegatifException> {  systeme.calculPrix(-10.0, contexte) }
+    }
+
+    //classe, demande
+    @ParameterizedTest(name = "prix classe eco, demande faible ({0}) => {1}")
+    @CsvSource (
+        "0.0, 0.0",
+        "10.0, 10.0",
+        "25.0, 25.0",
+        "42.01, 42.01",
+        "50.0, 25.0",
+        "100.0, 75.0",
+        "200.0, 175.0",
+        "300.0, 275.0"
+    )
+    fun testPrixClasseEcoDemandeFaible(prixAvant : Double, prixApres : Double) {
+        contexte = Contexte(c = Classe.ECONOMIQUE, d = Demande.FAIBLE)
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertThrows<PrixNegatifException> {  systeme.calculPrix(-10.0, contexte) }
+    }
+
+    @ParameterizedTest(name = "prix classe eco, saison normale demande faible ({0}) => {1}")
+    @CsvSource (
+        "0.0, 0.0",
+        "10.0, 10.0",
+        "25.0, 25.0",
+        "42.01, 42.01",
+        "50.0, 25.0",
+        "100.0, 75.0",
+        "200.0, 175.0",
+        "300.0, 275.0"
+    )
+    fun testPrixClasseEcoSaisonNormaleDemandeFaible(prixAvant : Double, prixApres : Double) {
+        contexte = Contexte(Classe.ECONOMIQUE, Saison.NORMALE, Demande.FAIBLE)
+        assertEquals(prixApres,systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertThrows<PrixNegatifException> {  systeme.calculPrix(-10.0, contexte) }
+    }
+
+    @ParameterizedTest(name = "prix premiere classe, saison haute, demande forte ({0}) => {1}")
+    @CsvSource (
+        "0.0, 50.0",
+        "10.0, 86.0",
+        "25.0, 140.0",
+        "42.01, 201.24",
+        "50.0, 230.0",
+        "100.0, 410.0",
+        "200.0, 770.0",
+        "300.0, 1130.0"
+    )
+    fun testPrixClassePremiereSaisonHauteDemandeForte(prixAvant : Double, prixApres : Double) {
+        contexte = Contexte(Classe.PREMIERE, Saison.HAUTE, Demande.FORTE)
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertEquals(prixApres, systeme.calculPrix(prixAvant, contexte), 0.01)
+        //
+        assertThrows<PrixNegatifException> {  systeme.calculPrix(-10.0, contexte) }
+    }
+
+    @Test
+    fun testContexteNull() {
+        contexte = Contexte()
+        assertThrows<ContexteImpossibleException> { systeme.calculPrix(200.0, contexte) }
+    }
+
+    @Test
+    fun testChangementDeContexte() {
+        // le même système doit recalculer la règle quand le contexte change
+        assertEquals(150.0, systeme.calculPrix(50.0, Contexte(c = Classe.PREMIERE)), 0.01)
+        assertEquals(120.0, systeme.calculPrix(100.0, Contexte(s = Saison.HAUTE)), 0.01)
+        assertEquals(100.0, systeme.calculPrix(100.0, Contexte(c = Classe.ECONOMIQUE)), 0.01)
+    }
+
+    @Test
+    fun testTarifConserveSiContexteIdentique() {
+        systeme.calculPrix(100.0, Contexte(c = Classe.AFFAIRE))
+        val tarifAvant = systeme.tarif
+        // un contexte égal (mais autre instance) ne change pas le tarif
+        systeme.calculPrix(50.0, Contexte(c = Classe.AFFAIRE))
+        assertSame(tarifAvant, systeme.tarif)
+        // un contexte différent le change
+        systeme.calculPrix(50.0, Contexte(c = Classe.PREMIERE))
+        assertNotSame(tarifAvant, systeme.tarif)
+        assertEquals(Contexte(c = Classe.PREMIERE), systeme.contexte)
+    }
+
+    @Test
+    fun testContexteImpossibleApresContexteValide() {
+        systeme.calculPrix(100.0, Contexte(c = Classe.AFFAIRE))
+        assertThrows<ContexteImpossibleException> { systeme.calculPrix(100.0, Contexte()) }
+    }
+}

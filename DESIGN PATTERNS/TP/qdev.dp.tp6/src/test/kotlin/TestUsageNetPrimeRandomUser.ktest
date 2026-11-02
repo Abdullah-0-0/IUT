@@ -1,0 +1,136 @@
+import netprime.businesslayer.NetPrime
+import netprime.businesslayer.iUserRepository
+import netprime.datalayer.MediaDAO
+import netprime.datalayer.RandomUserDAO
+import netprime.datalayer.datamodel.users.GENDER
+import netprime.datalayer.datamodel.users.NAT
+import netprime.datalayer.datamodel.users.Name
+import netprime.exceptions.UserException
+import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
+
+/**
+ * Tests de [NetPrime] alimenté par un [RandomUserDAO] (nécessite un accès
+ * réseau à https://randomuser.me). Les utilisateurs étant aléatoires, les
+ * tests portent sur les propriétés des résultats, pas sur des valeurs précises.
+ */
+class TestUsageNetPrimeRandomUser {
+
+    val BASE_URL_RANDOMUSER = "https://randomuser.me/api/?nat=gb,fr&noinfo"
+
+    lateinit var netPrime: iUserRepository
+
+    @BeforeEach
+    fun reinit() {
+        netPrime = NetPrime(userDao = RandomUserDAO(), mediaDAO = MediaDAO())
+    }
+
+    @Test
+    fun test0user() {
+        assertEquals(0, netPrime.nbUsers())
+    }
+
+    @Test
+    fun test1user() {
+        netPrime.loadUsersFrom(BASE_URL_RANDOMUSER)
+        assertEquals(1, netPrime.nbUsers())
+    }
+
+    @Test
+    fun test10user() {
+        netPrime.loadUsersFrom("$BASE_URL_RANDOMUSER&results=10")
+        assertEquals(10, netPrime.nbUsers())
+    }
+
+    @Test
+    fun test100user() {
+        netPrime.loadUsersFrom("$BASE_URL_RANDOMUSER&results=100")
+        assertEquals(100, netPrime.nbUsers())
+    }
+
+    @Test
+    fun testLoadSeveralTimes() {
+        netPrime.loadUsersFrom("$BASE_URL_RANDOMUSER&results=10")
+        netPrime.loadUsersFrom("$BASE_URL_RANDOMUSER&results=5")
+        assertEquals(15, netPrime.nbUsers())
+    }
+
+    @Test
+    fun testListByNatPartitionsUsers() {
+        netPrime.loadUsersFrom("$BASE_URL_RANDOMUSER&results=50")
+
+        val fr = netPrime.listByNat(NAT.FR)
+        val gb = netPrime.listByNat(NAT.GB)
+        assertEquals(50, fr.size + gb.size)
+        assertTrue(fr.all { it.nat == NAT.FR })
+        assertTrue(gb.all { it.nat == NAT.GB })
+    }
+
+    @Test
+    fun testListByNatSortedByEmail() {
+        netPrime.loadUsersFrom("$BASE_URL_RANDOMUSER&results=50")
+
+        for (nat in NAT.entries) {
+            val emails = netPrime.listByNat(nat).map { it.email }
+            assertEquals(emails.sorted(), emails)
+        }
+    }
+
+    @Test
+    fun testOnlyRequestedNationalities() {
+        netPrime.loadUsersFrom("https://randomuser.me/api/?nat=fr&noinfo&results=20")
+        assertEquals(20, netPrime.listByNat(NAT.FR).size)
+        assertTrue(netPrime.listByNat(NAT.GB).isEmpty())
+    }
+
+    @Test
+    fun testListByGenderPartitionsUsers() {
+        netPrime.loadUsersFrom("$BASE_URL_RANDOMUSER&results=50")
+
+        val males = netPrime.listByGender(GENDER.male)
+        val females = netPrime.listByGender(GENDER.female)
+        assertEquals(50, males.size + females.size)
+        assertEquals(males.map { it.last }.sorted(), males.map { it.last })
+        assertEquals(females.map { it.last }.sorted(), females.map { it.last })
+    }
+
+    @Test
+    fun testOnlyRequestedGender() {
+        netPrime.loadUsersFrom("$BASE_URL_RANDOMUSER&gender=female&results=20")
+        assertEquals(20, netPrime.listByGender(GENDER.female).size)
+        assertTrue(netPrime.listByGender(GENDER.male).isEmpty())
+    }
+
+    @Test
+    fun testContainsAndDelete() {
+        netPrime.loadUsersFrom("$BASE_URL_RANDOMUSER&results=10")
+        val user = netPrime.listByNat(NAT.FR).plus(netPrime.listByNat(NAT.GB)).first()
+
+        assertTrue(netPrime.contains(user))
+        netPrime.deleteByEmail(user.email)
+        assertFalse(netPrime.contains(user))
+        assertEquals(9, netPrime.nbUsers())
+        assertThrows<UserException> { netPrime.deleteByEmail(user.email) }
+    }
+
+    @Test
+    fun testListByFirstnameAndGiveLogin() {
+        netPrime.loadUsersFrom("$BASE_URL_RANDOMUSER&results=20")
+        val user = netPrime.listByNat(NAT.FR).plus(netPrime.listByNat(NAT.GB)).first()
+
+        val logins = netPrime.listByFirstname(user.name.first)
+        assertTrue(logins.contains(user.login))
+        assertTrue(netPrime.containsByLastname(user.name.last))
+        assertEquals(user.login.username to user.login.password, netPrime.giveLogin(user.name))
+    }
+
+    @Test
+    fun testGiveLoginUnknownName() {
+        netPrime.loadUsersFrom(BASE_URL_RANDOMUSER)
+        assertThrows<UserException> {
+            netPrime.giveLogin(Name("Xxxxx", "Xxxxx"))
+        }
+    }
+}

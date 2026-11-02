@@ -1,0 +1,46 @@
+package testexo2
+
+import exo2.Application
+import exo2.Cocktail
+import exo2.IngredientBasique
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
+
+class TestUsageCocktailsLimites {
+
+    @Test
+    fun cocktailVide() {
+        assertEquals("Vide : []", Cocktail("Vide").toString())
+    }
+
+    @Test
+    fun carteVide() {
+        assertEquals("[]", Application().toString())
+    }
+
+    @Test
+    fun ajouterConserveLOrdre() {
+        val c = Cocktail("Ordre")
+        c.ajouter(IngredientBasique("B", 2.0))
+        c.ajouter(IngredientBasique("A", 1.0))
+        c.ajouter(IngredientBasique("C", 3.0))
+        assertEquals("Ordre : [B [2.0], A [1.0], C [3.0]]", c.toString())
+    }
+
+    @Test
+    fun listeFournieAuConstructeurEstConservee() {
+        val liste = mutableListOf<exo2.Ingredient>(IngredientBasique("Sucre", 1.0))
+        val c = Cocktail("Partage", liste)
+        liste.add(IngredientBasique("Menthe", 6.0))
+        assertEquals("Partage : [Sucre [1.0], Menthe [6.0]]", c.toString())
+    }
+
+    @Test
+    fun cocktailPartageEntreDeuxParents() {
+        val soda = Cocktail("Soda", mutableListOf(IngredientBasique("Eau", 10.0)))
+        val a = Cocktail("A", mutableListOf(soda))
+        val b = Cocktail("B", mutableListOf(soda))
+        assertEquals("A : [Soda : [Eau [10.0]]]", a.toString())
+        assertEquals("B : [Soda : [Eau [10.0]]]", b.toString())
+    }
+}

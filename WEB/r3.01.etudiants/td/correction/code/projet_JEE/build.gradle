@@ -1,0 +1,54 @@
+plugins {
+   id 'war'
+}
+
+group 'iut.nantes'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    compileOnly('jakarta.servlet:jakarta.servlet-api:6.2.0-M2')
+
+}
+
+war {
+    archiveFileName = 'demo.war'
+}
+
+tasks.register('deleteMyWar',Delete) {
+
+    doLast {
+        println("Suppression du war : ./tomcat/webapps/${war.archiveFileName.get()}")
+        println("Done")
+    }
+    delete files("./tomcat/webapps/${war.archiveFileName.get()}")
+
+}
+
+tasks.register('copyMyWar',Copy){
+
+    doLast {
+        println("Copy ${war.archiveFileName.get()} from ${project.buildDir}/libs to ./tomcat/webapps")
+        println("Done")
+    }
+    from "${project.buildDir}/libs"
+    into  "./tomcat/webapps"
+    include "${war.archiveFileName.get()}"
+}
+
+
+
