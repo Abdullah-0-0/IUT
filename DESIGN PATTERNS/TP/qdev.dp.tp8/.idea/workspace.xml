@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="63a55e4a-98e7-498a-bdc4-a5273adc2d5e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/testPerso.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/persons.h2.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/persons.h2.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/fruits/dao/FruitJsonDAO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/fruits/dao/FruitJsonDAO.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RESEAU/r3_06.tp3" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RESEAU/r3_06.tp3" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3LXxXFwOe4JZRJ00wHUxTT4DRCU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.TestUMLFruitAccess.executor": "Run",
+    "Gradle.TestUMLFruitJsonDAO.executor": "Run",
+    "Gradle.qdev.dp.tp8 [:ExempleH2Kt.main()].executor": "Run",
+    "Gradle.qdev.dp.tp8 [:TestPersoKt.main()].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/var/home/E257390X/reseau/Perso/Documents/BUT2/GITHUB/IUT/DESIGN PATTERNS/TP/qdev.dp.tp8"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="TestPersoKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestPersoKt" />
+      <module name="qdev_dp_tp8.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="qdev.dp.tp8" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="qdev.dp.tp8" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.TestPersoKt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="63a55e4a-98e7-498a-bdc4-a5273adc2d5e" name="Changes" comment="" />
+      <created>1793614251513</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1793614251513</updated>
+    </task>
+    <servers />
+  </component>
+</project>

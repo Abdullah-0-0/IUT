@@ -18,6 +18,12 @@ Ces manipulations devront être transparentes pour l'utilisateur.
 
 Finissez d'implémenter correctement les méthodes `compareTo()` et `equals()` de la classe `Fruit`.
 
+> [!TIP]
+> Les tests `TestUMLFruit` et `TestUsageFruit` (package `testmodel`) vous permettent de valider
+> votre implémentation de `Fruit`.
+>
+> Renommez d'abord `TestUsageFruit.ktest` en `TestUsageFruit.kt` pour activer ce test.
+
 ## Lecture d'un fichier JSON
 
 Le fichier `data/fruits.json` contient des fruits au format JSON
@@ -45,8 +51,10 @@ Si nécessaire, rechargez `build.gradle.kts` en cliquant sur le "petit éléphan
 > Ne pas stocker de liste de fruits dans le DAO : le DA0 n'est qu'un "intermédiaire".
 
 > [!TIP]
-> Les fichiers `TestUMLFruitJsonDAO` et `TestUsageFruitJsonDAO` doivent vous permettre de tester
+> Les tests `TestUMLFruitJsonDAO` et `TestUsageFruitJsonDAO` (package `testdao`) vous permettent de valider
 > votre implémentation de `FruitJsonDAO`.
+>
+> Renommez d'abord `TestUsageFruitJsonDAO.ktest` en `TestUsageFruitJsonDAO.kt` pour activer ce test.
 
 
 > [!NOTE] dans le `@BeforeEach` de `TestUsageFruitJsonDAO`, on commence
@@ -68,10 +76,15 @@ Vous pouvez :
 2. ou bien tout faire à la main.
 
 > [!TIP]
-> `TestUMLFruitCsvDAO` et `TestUsageFruitCsvDAO` vous permettront de tester votre implémentation.
+> Les tests `TestUMLFruitCsvDAO` et `TestUsageFruitCsvDAO` (package `testdao`) vous permettent de valider
+> votre implémentation de `FruitCsvDAO`.
+>
+> Renommez d'abord `TestUsageFruitCsvDAO.ktest` en `TestUsageFruitCsvDAO.kt` pour activer ce test.
 
 > [!TIP]
-> `TestUsageFruitCsv_Vs_JsonDAO` compare les deux implémentations du DAO `FruitDAO`.
+> Le test `TestUsageFruitCsv_Vs_JsonDAO` (package `testdao`) compare les deux implémentations du DAO `FruitDAO`.
+>
+> Renommez d'abord `TestUsageFruitCsv_Vs_JsonDAO.ktest` en `TestUsageFruitCsv_Vs_JsonDAO.kt` pour activer ce test.
 
 ## Accès à des Bases de données
 
@@ -112,14 +125,20 @@ On réalisera les requêtes dans la table dont le nom sera passé en paramètre 
 **Vous ferez bien entendu TOUS les traitements sur les données, au niveau des requêtes SQL.**
 
 > [!TIP]
-`TestUMLFruitH2DAO` et `TestUsageFruitH2DAO` vous permettront de tester votre implémentation.
+> Les tests `TestUMLFruitH2DAO` et `TestUsageFruitH2DAO` (package `testdao`) vous permettent de valider
+> votre implémentation de `FruitH2DAO`.
+>
+> Renommez d'abord `TestUsageFruitH2DAO.ktest` en `TestUsageFruitH2DAO.kt` pour activer ce test.
 
 > [!NOTE] Dans le `@BeforeEach` de `TestUsageFruitH2DAO`, on commence
 > par "copier" dans la BDD la table `DB_Fruits` avant de charger
 > le DAO avec une table `DB_Fruits_XXXXX` ;
 > cela permet d'exécuter chaque cas de tests dans un environnement initial maîtrisé._
 
-> [!TIP] `TestUsageFruitH2_Vs_JsonDAO` compare deux implémentations du DAO `FruitDAO`.
+> [!TIP]
+> Le test `TestUsageFruitH2_Vs_JsonDAO` (package `testdao`) compare deux implémentations du DAO `FruitDAO`.
+>
+> Renommez d'abord `TestUsageFruitH2_Vs_JsonDAO.ktest` en `TestUsageFruitH2_Vs_JsonDAO.kt` pour activer ce test.
 
 ### Base de données SQLite
 
@@ -138,7 +157,10 @@ Une BDD définissant une table `DB_Fruits` vous est fournie dans `data/fruits.sq
 Implémentez maintenant la classe `FruitSqliteDAO` qui réalise `FruitDAO`.
 
 > [!TIP]
-> `TestUMLFruitSqliteDAO` et `TestUsageFruitSqliteDAO` vous permettent de tester votre implémentation.
+> Les tests `TestUMLFruitSqliteDAO` et `TestUsageFruitSqliteDAO` (package `testdao`) vous permettent de valider
+> votre implémentation de `FruitSqliteDAO`.
+>
+> Renommez d'abord `TestUsageFruitSqliteDAO.ktest` en `TestUsageFruitSqliteDAO.kt` pour activer ce test.
 
 Vous devriez constater que cette implémentation ne change pas grand-chose
 à celle de `FruitH2DAO`.
@@ -152,8 +174,7 @@ ajoutez une classe `FruitDatabaseDAO`, comme suit :
 
 > [!TIP]
 > Remplacez les `TestUMLFruit****DAO.kt` par ceux indiqués V2 : `TestUMLFruit****DAO.kt.v2` ; les tests d'usage
-> devraient
-> continuer à fonctionner normalement
+> devraient continuer à fonctionner normalement
 
 ### Base de données MariaDB
 
@@ -192,8 +213,11 @@ Implémentez la classe `FruitMariaDbDAO` ; il vous faut le bon driver JDBC (c'es
         implementation("org.slf4j:slf4j-simple:1.7.30")
     }
 
-> [!TIP] `TestUMLFruitMariaDbDAO` et `TestUsageFruitMariaDbDAO` vous
-> permettent de tester votre implémentation.
+> [!TIP]
+> Les tests `TestUMLFruitMariaDbDAO` et `TestUsageFruitMariaDbDAO` (package `testdao`) vous permettent de valider
+> votre implémentation de `FruitMariaDbDAO`.
+>
+> Renommez d'abord `TestUsageFruitMariaDbDAO.ktest` en `TestUsageFruitMariaDbDAO.kt` pour activer ce test.
 
 > [!IMPORTANT]
 > Vérifiez que l'IP de la machine virtuelle correspond bien à la variable `host`
@@ -212,3 +236,9 @@ ajouts, suppressions et
 rechargements faits ensuite ne la modifient pas, et la modifier ne change pas le dépôt.
 
 ![](plantuml/fruits-repository.png)
+
+> [!TIP]
+> Les tests `TestUMLFruitAccess`, `TestUMLFruitRepository` et `TestUsageFruitRepository` (package `testrepository`)
+> vous permettent de valider votre implémentation de `FruitRepository`.
+>
+> Renommez d'abord `TestUsageFruitRepository.ktest` en `TestUsageFruitRepository.kt` pour activer ce test.

@@ -19,7 +19,7 @@ fun main() {
 
         // On efface la table Person
         sqlRequest = "DROP TABLE " + table
-        println(sqlRequest)
+        kotlin.io.println(sqlRequest)
         statement.executeUpdate(sqlRequest)
 
         // On recréé une table Person
@@ -29,7 +29,7 @@ fun main() {
                 "    Salary REAL NOT NULL," +
                 "    Age INT NOT NULL" +
                 ")"
-        println(sqlRequest)
+        kotlin.io.println(sqlRequest)
         statement.executeUpdate(sqlRequest)
 
         // On insère des personnes
@@ -40,36 +40,36 @@ fun main() {
                 "(32, 'JFB', 2456.6, 19), " +
                 "(30, 'TBLF', 2343.00, 22)," +
                 "(33, 'EB', 2342.99, 22) ;"
-        println(sqlRequest)
+        kotlin.io.println(sqlRequest)
         statement.executeUpdate(sqlRequest)
 
         // On consulte la table Person
         sqlRequest = "SELECT * FROM " + table + " WHERE Salary > 2000.0 ORDER BY Age ;"
-        println(sqlRequest)
+        kotlin.io.println(sqlRequest)
         var result = statement.executeQuery(sqlRequest)
         while (result.next()) {
-            println("${result.getInt("Id")} : ${result.getString("Name")}")
+            kotlin.io.println("${result.getInt("Id")} : ${result.getString("Name")}")
         }
 
         sqlRequest = "SELECT * FROM " + table + " WHERE Name = 'JFB' ; "
-        println(sqlRequest)
+        kotlin.io.println(sqlRequest)
         result = statement.executeQuery(sqlRequest)
         while (result.next()) {
-            println("${result.getString("Name")} (${result.getInt("Salary")})")
+            kotlin.io.println("${result.getString("Name")} (${result.getInt("Salary")})")
         }
 
         sqlRequest = "SELECT * FROM " + table + " WHERE Name = 'JFR' ; "
-        println(sqlRequest)
+        kotlin.io.println(sqlRequest)
         result = statement.executeQuery(sqlRequest)
         while (result.next()) {
-            println("${result.getString("Name")} (${result.getInt("Salary")})")
+            kotlin.io.println("${result.getString("Name")} (${result.getInt("Salary")})")
         }
 
         statement.close()
         connection.close()
 
     } catch (e: SQLException) {
-        println(e.message)
+        kotlin.io.println(e.message)
     }
 
 

@@ -1,11 +1,14 @@
-package testdao
-
 import fruits.dao.FruitH2DAO
+import fruits.model.Fruit
+import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import univ.nantes.UMLChecker
+import kotlin.reflect.full.createType
+import kotlin.reflect.full.declaredMemberFunctions
+import kotlin.reflect.full.valueParameters
 
-/***** UMLChecker Test Cases for FruitH2DAO (the 5 FruitDAO methods are inherited from FruitDatabaseDAO) *****/
+/***** UMLChecker Test Cases for FruitH2DAO (plantuml/fruits-dao.plantuml) *****/
 
 class TestUMLFruitH2DAO {
 
@@ -13,7 +16,7 @@ class TestUMLFruitH2DAO {
 
     @BeforeEach
     fun init() {
-        uml = UMLChecker.create(FruitH2DAO::class)
+        uml = UMLChecker.Companion.create(FruitH2DAO::class)
     }
 
     @Test
@@ -28,15 +31,53 @@ class TestUMLFruitH2DAO {
     }
 
     @Test
-    fun `test2 - 'FruitH2DAO' extends FruitDatabaseDAO`() {
-        uml.extend("FruitDatabaseDAO")
+    fun `test2 - 'FruitH2DAO' realizes FruitDAO`() {
+        uml.extend("FruitDAO")
     }
 
     @Test
-    fun `test3 - 'FruitH2DAO' constructeur`() {
+    fun `test4 - 'FruitH2DAO' constructeur`() {
         uml.constructorCheck(
             Triple("fullPath", String::class, false),
             Triple("table", String::class, false)
+        )
+    }
+
+    @Test
+    fun `test5 - 'FruitH2DAO' overrides donneLesFruits`() {
+        uml.methodCheck("donneLesFruits", List::class, false, methIsOpen = true, methIsOverride = true)
+    }
+
+    @Test
+    fun `test6 - 'FruitH2DAO' overrides donneLesFruitsCoutantMoinsQue`() {
+        uml.methodCheck(
+            "donneLesFruitsCoutantMoinsQue", List::class, false,
+            Triple("prix", Double::class, false), methIsOpen = true, methIsOverride = true
+        )
+    }
+
+    @Test
+    fun `test7 - 'FruitH2DAO' overrides donneLeFruit`() {
+        uml.methodCheck(
+            "donneLeFruit", Fruit::class, true,
+            Triple("nom", String::class, false), methIsOpen = true, methIsOverride = true
+        )
+    }
+
+    @Test
+    fun `test8 - 'FruitH2DAO' overrides enregistreLesFruits`() {
+        // UMLChecker cannot build the parameterized type List<Fruit>, so the signature is checked by reflection
+        val m = FruitH2DAO::class.declaredMemberFunctions.single { it.name == "enregistreLesFruits" }
+        Assertions.assertEquals("fruits", m.valueParameters.single().name)
+        Assertions.assertEquals(Unit::class.createType(), m.returnType)
+        Assertions.assertTrue(m.isOpen)
+    }
+
+    @Test
+    fun `test9 - 'FruitH2DAO' overrides ajouteUnFruit`() {
+        uml.methodCheck(
+            "ajouteUnFruit", Unit::class, false,
+            Triple("fruit", Fruit::class, false), methIsOpen = true, methIsOverride = true
         )
     }
 }
