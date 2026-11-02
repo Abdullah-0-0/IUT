@@ -1,9 +1,10 @@
 package fruits.dao
-
+import fruits.exceptions.FruitDejaPresentException
 import fruits.exceptions.ImportFruitsException
 import fruits.model.Fruit
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.encodeToJsonElement
 import java.io.File
 
 
@@ -15,23 +16,23 @@ import java.io.File
 @OptIn(ExperimentalSerializationApi::class)
 class FruitJsonDAO(private val fichier: File) : FruitDAO {
     override fun donneLesFruits(): List<Fruit> {
-        if (!fichier.exists()){
-            throw ImportFruitsException("le fichier n'existe pas")
+        if (!fichier.name.contains(".json")){
+            throw ImportFruitsException("fichier introuvable")
         }
-        val conString = fichier.readText()
-        val fruits : List<Fruit> = Json.decodeFromString(conString)
+        val conv = fichier.readText()
+        val fruits : List<Fruit> = Json.decodeFromString(conv)
         return fruits
     }
 
     override fun donneLesFruitsCoutantMoinsQue(prix: Double): List<Fruit> {
-        var res : MutableList<Fruit> = mutableListOf()
         val fruits = donneLesFruits()
+        val res : MutableList<Fruit> = mutableListOf()
         for (i in fruits){
-            if (i.prix < prix){
+            if (i.prix< prix){
                 res.add(i)
             }
         }
-        return res
+        return  res
     }
 
     override fun donneLeFruit(nom: String): Fruit? {
@@ -45,16 +46,44 @@ class FruitJsonDAO(private val fichier: File) : FruitDAO {
     }
 
     override fun enregistreLesFruits(fruits: List<Fruit>) {
-        val json = Json
-        TODO()
+        var res : String = "[\n"
+        for (i in 0 until fruits.size){
+            if (i==fruits.size-1){
+                res+="{\n" +
+                        """ "nom" """ + " : "+""""${fruits[i].nom}"""" +",\n"+
+                        """"quantite"""" + " : "+""""${fruits[i].quantite}"""" +",\n"+
+                        """"prix"""" + " : "+""""${fruits[i].prix}"""" +"\n"+
+                        "}\n"
+            }
+            else{
+                res+="{\n" +
+                        """"nom"""" + " : "+""""${fruits[i].nom}"""" +",\n"+
+                        """"quantite"""" + " : "+""""${fruits[i].quantite}"""" +",\n"+
+                        """"prix"""" + " : "+""""${fruits[i].prix}"""" +"\n"+
+                        "},\n"
+            }
+
+        }
+        res += "]"
+
+        fichier.writeText(res)
+//        for (i in fruits){
+//            Json.encodeToJsonElement(i)
+//        }
     }
 
     override fun ajouteUnFruit(fruit: Fruit) {
-        TODO("Not yet implemented")
-    }
-
-    override fun equals(other: Any?): Boolean {
-        return super.equals(other)
+        if (donneLesFruits().contains(fruit)) {
+            throw FruitDejaPresentException("fruit déjà present")
+        }
+        val listeFruitActu = donneLesFruits()
+        val res: MutableList<Fruit> = mutableListOf()
+        for (i in listeFruitActu) {
+            res.add(i)
+        }
+        res.add(fruit)
+        println(res)
+        enregistreLesFruits(res)
     }
 
 

@@ -1,22 +1,2 @@
-r11:33:41 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe FruitJsonDAO réussi
-n11:33:41 INFO  - univ.nantes.UMLChecker > Test de la méthode ajouteUnFruit de la classe FruitJsonDAO réussi
-r11:33:41 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe FruitJsonDAO réussi
-c11:33:41 INFO  - univ.nantes.UMLChecker > Test si la classe FruitJsonDAO est une interface réussi
-_11:33:41 INFO  - univ.nantes.UMLChecker > Test si la classe FruitJsonDAO est abstraite réussi
-r11:33:41 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe FruitJsonDAO réussi
-]11:33:41 INFO  - univ.nantes.UMLChecker > Test d'héritage de la classe FruitJsonDAO réussi
-r11:33:41 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe FruitJsonDAO réussi
-m11:33:41 INFO  - univ.nantes.UMLChecker > Test de la méthode donneLeFruit de la classe FruitJsonDAO réussi
-r11:33:41 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe FruitJsonDAO réussi
-a11:33:41 INFO  - univ.nantes.UMLChecker > Test du constructeur de la classe FruitJsonDAO réussi
-r11:33:41 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe FruitJsonDAO réussi
-Z11:33:41 INFO  - univ.nantes.UMLChecker > Test si la classe FruitJsonDAO est open réussi
-r11:33:41 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe FruitJsonDAO réussi
-	r11:33:41 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe FruitJsonDAO réussi
-	o11:33:41 INFO  - univ.nantes.UMLChecker > Test de la méthode donneLesFruits de la classe FruitJsonDAO réussi
-
-r11:33:41 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe FruitJsonDAO réussi
-
-g11:33:41 INFO  - univ.nantes.UMLChecker > Test de l'attribut fichier de la classe FruitJsonDAO réussi
-r11:33:41 INFO  - univ.nantes.UMLChecker > Création de l'UMLChecker en Kotlin pour la classe FruitJsonDAO réussi
-~11:33:41 INFO  - univ.nantes.UMLChecker > Test de la méthode donneLesFruitsCoutantMoinsQue de la classe FruitJsonDAO réussi
+�[Fruit(nom=Kiwi, prix=4.5, quantite=10), Fruit(nom=Pomme, prix=6.4, quantite=20), Fruit(nom=Banane, prix=8.4, quantite=30), Fruit(nom=Poire, prix=10.4, quantite=30), Fruit(nom=Framboise, prix=12.4, quantite=50), Fruit(nom=Mûre, prix=14.4, quantite=60), Fruit(nom=Pêche, prix=16.4, quantite=70), Fruit(nom=Abricot, prix=18.4, quantite=80), Fruit(nom=Raisin, prix=20.4, quantite=90), Fruit(nom=Nectarine, prix=22.4, quantite=100), Fruit(nom=Goyave, prix=24.4, quantite=0), Fruit(nom=Orange, prix=26.4, quantite=120), Fruit(nom=Melon, prix=28.4, quantite=130), Fruit(nom=Ananas, prix=30.4, quantite=140), Fruit(nom=Fraise, prix=8.7, quantite=25), Fruit(nom=XXX, prix=4.2, quantite=42)]
+�[Fruit(nom=Kiwi, prix=4.5, quantite=10), Fruit(nom=Pomme, prix=6.4, quantite=20), Fruit(nom=Banane, prix=8.4, quantite=30), Fruit(nom=Poire, prix=10.4, quantite=30), Fruit(nom=Framboise, prix=12.4, quantite=50), Fruit(nom=Mûre, prix=14.4, quantite=60), Fruit(nom=Pêche, prix=16.4, quantite=70), Fruit(nom=Abricot, prix=18.4, quantite=80), Fruit(nom=Raisin, prix=20.4, quantite=90), Fruit(nom=Nectarine, prix=22.4, quantite=100), Fruit(nom=Goyave, prix=24.4, quantite=0), Fruit(nom=Orange, prix=26.4, quantite=120), Fruit(nom=Melon, prix=28.4, quantite=130), Fruit(nom=Ananas, prix=30.4, quantite=140), Fruit(nom=Fraise, prix=8.7, quantite=25)]

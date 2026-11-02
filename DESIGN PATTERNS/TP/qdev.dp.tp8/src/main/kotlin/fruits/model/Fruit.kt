@@ -29,7 +29,14 @@ data class Fruit(
      * respectivement avant, égal ou après celui de [other]
      */
     override fun compareTo(other: Fruit): Int {
-        TODO()
+        if (this.nom < other.nom){
+            return -1
+        }
+        if (this.nom > other.nom){
+            return  1
+        }
+        return 0
+
     }
 
     /**
@@ -40,7 +47,20 @@ data class Fruit(
      * @return `true` si [other] est un [Fruit] égal à celui-ci
      */
     override fun equals(other: Any?): Boolean {
-        TODO()
+        if (other !is Fruit){
+            return false
+        }
+        if (this.nom == other.nom){
+            if (this.quantite == other.quantite){
+                if (this.prix - other.prix == 0.0 ||
+                    this.prix-0.01< other.prix && other.prix< this.prix + 0.01||
+                    other.prix+0.01< this.prix && this.prix< other.prix - 0.01){
+                    return true
+                }
+            }
+
+        }
+        return false
     }
 
 }
