@@ -1,5 +1,6 @@
 package fruits.dao
 
+import fruits.exceptions.FruitDejaPresentException
 import fruits.exceptions.ImportFruitsException
 import fruits.model.Fruit
 import org.h2.tools.Csv
@@ -44,6 +45,7 @@ class FruitCsvDAO(private val fichier: File) : FruitDAO {
     }
 
     override fun enregistreLesFruits(fruits: List<Fruit>) {
+        val fruitsActu = donneLesFruits()
         val contenu = buildString {
             fruits.forEach {
                 appendLine("${it.nom}, ${it.quantite} , ${it.prix}")
@@ -53,7 +55,10 @@ class FruitCsvDAO(private val fichier: File) : FruitDAO {
     }
 
     override fun ajouteUnFruit(fruit: Fruit) {
-        TODO("Not yet implemented")
+        if (donneLesFruits().contains(fruit)) {
+            throw FruitDejaPresentException("${fruit.nom} est déjà present")
+        }
+        enregistreLesFruits(donneLesFruits() + fruit)
     }
 
 }
