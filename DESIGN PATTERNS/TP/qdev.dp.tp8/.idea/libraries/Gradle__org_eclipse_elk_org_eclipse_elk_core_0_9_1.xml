@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: org.eclipse.elk:org.eclipse.elk.core:0.9.1" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.eclipse.elk" artifactId="org.eclipse.elk.core" version="0.9.1" baseVersion="0.9.1" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.elk/org.eclipse.elk.core/0.9.1/24d58ade8056cc0b00b354cabfcdc6d930484377/org.eclipse.elk.core-0.9.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

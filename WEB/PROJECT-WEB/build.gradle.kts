@@ -16,6 +16,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     compileOnly("jakarta.servlet:jakarta.servlet-api:6.2.0-M2")
+    compileOnly("jakarta.servlet.jsp:jakarta.servlet.jsp-api:4.0.0")
 }
 
 tasks.war{

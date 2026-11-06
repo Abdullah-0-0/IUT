@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: univ.nantes:univ.nantes.umlchecker:2.2.1" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="univ.nantes" artifactId="univ.nantes.umlchecker" version="2.2.1" baseVersion="2.2.1" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/univ.nantes/univ.nantes.umlchecker/2.2.1/246e737bceefc7d11c377b7eababa762b52d93dd/univ.nantes.umlchecker-2.2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

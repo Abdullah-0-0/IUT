@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: net.sourceforge.plantuml:plantuml:1.2025.2" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="net.sourceforge.plantuml" artifactId="plantuml" version="1.2025.2" baseVersion="1.2025.2" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sourceforge.plantuml/plantuml/1.2025.2/b740a2b0562bdcaed11cd819699949c8e6d09471/plantuml-1.2025.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

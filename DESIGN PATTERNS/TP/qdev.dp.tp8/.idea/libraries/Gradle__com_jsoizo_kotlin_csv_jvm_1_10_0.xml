@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.jsoizo:kotlin-csv-jvm:1.10.0" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="com.jsoizo" artifactId="kotlin-csv-jvm" version="1.10.0" baseVersion="1.10.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jsoizo/kotlin-csv-jvm/1.10.0/9a8bf40deb08d4764fb6a475becedd5c82a413dd/kotlin-csv-jvm-1.10.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

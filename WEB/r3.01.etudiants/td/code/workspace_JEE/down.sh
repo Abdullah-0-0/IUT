@@ -1,2 +1,2 @@
-podman compose down 
-podman logout docker.io
+docker compose down
+docker logout docker.io

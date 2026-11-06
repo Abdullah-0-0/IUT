@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="testdao.TestUsageFruitCsv_Vs_JsonDAO" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-11-03T17:43:02" hostname="LAPTOP-9CDQ7NIQ" time="0.201">
+  <properties/>
+  <testcase name="testTousLesFruits()" classname="testdao.TestUsageFruitCsv_Vs_JsonDAO" time="0.152"/>
+  <testcase name="testEnregistrement()" classname="testdao.TestUsageFruitCsv_Vs_JsonDAO" time="0.032"/>
+  <testcase name="testFruitsCoutantMoinsQue10()" classname="testdao.TestUsageFruitCsv_Vs_JsonDAO" time="0.012"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
