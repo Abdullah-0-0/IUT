@@ -1,7 +1,5 @@
-
-package iut.nantes.hibernate.repositories;
-
 import iut.nantes.hibernate.entities.Product;
+import iut.nantes.hibernate.repositories.ProductRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.TypedQuery;

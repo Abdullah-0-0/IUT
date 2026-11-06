@@ -1,8 +1,8 @@
 package iut.nantes.hibernate.repositories;
 
 import iut.nantes.hibernate.entities.Product;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.*;
+import org.hibernate.mapping.Any;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,11 +14,33 @@ public class ProductRepository implements CrudRepository<Product, Integer> {
 
     public ProductRepository(EntityManager entityManager) {
         this.entityManager = entityManager;
+        //this.requete = entityManager.createQuery("from Product",Product.class);
     }
 
 
     @Override
     public <S extends Product> S save(S entity) {
+        if (entity == null){
+            throw new IllegalArgumentException("");
+        }
+
+        try {
+            entityManager.getTransaction().begin();
+            if (entity.getId() !=null){
+                S r =  entityManager.merge(entity);
+                entityManager.getTransaction().commit(); 
+                return r;
+            }else {
+                entityManager.persist(entity);
+                entityManager.getTransaction().commit();
+                return entity;
+            }
+
+
+        } catch (Exception e) {
+            entityManager.getTransaction().rollback();
+            e.printStackTrace();
+        }
         return null;
     }
 
@@ -34,7 +56,7 @@ public class ProductRepository implements CrudRepository<Product, Integer> {
 
     @Override
     public boolean existsById(Integer integer) {
-        return false;
+        return null != entityManager.find(Product.class, integer);
     }
 
     @Override
@@ -49,6 +71,7 @@ public class ProductRepository implements CrudRepository<Product, Integer> {
 
     @Override
     public long count() {
+
         return 0;
     }
 
