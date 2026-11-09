@@ -27,9 +27,9 @@ public class ProductRepository implements CrudRepository<Product, Integer> {
         try {
             entityManager.getTransaction().begin();
             if (entity.getId() !=null){
-                S r =  entityManager.merge(entity);
+                S produitExistant =  entityManager.merge(entity);
                 entityManager.getTransaction().commit(); 
-                return r;
+                return produitExistant ;
             }else {
                 entityManager.persist(entity);
                 entityManager.getTransaction().commit();
@@ -38,7 +38,10 @@ public class ProductRepository implements CrudRepository<Product, Integer> {
 
 
         } catch (Exception e) {
-            entityManager.getTransaction().rollback();
+            if (entityManager.getTransaction().isActive()){
+                entityManager.getTransaction().rollback();
+            }
+
             e.printStackTrace();
         }
         return null;
