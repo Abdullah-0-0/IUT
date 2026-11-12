@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.errorprone:error_prone_annotations:2.52.0" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="com.google.errorprone" artifactId="error_prone_annotations" version="2.52.0" baseVersion="2.52.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.52.0/83177bbb5db5bfe120666ae93fdaf44625ad7a7d/error_prone_annotations-2.52.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
