@@ -104,3 +104,64 @@ ORA-20001: Un employe avec le meme numero existe deja
 ORA-06512: à "S3A02A.MAJ", ligne 10
 ORA-06512: à ligne 2
 */
+
+//exo 3 
+
+Create or replace package lecture is
+type cur_empl is REF CURSOR ;
+procedure liste_employes( liste out cur_empl) ;
+end ;
+/
+Create or replace package BODY lecture is
+procedure liste_employes(liste out cur_empl) is
+begin
+open liste for select * from employe ;
+ end ;
+end ;
+/
+
+//crée une variable de type référence curseur dans
+//SQLPLUS
+VARIABLE li REFCURSOR
+EXECUTE lecture.liste_employes(:li);
+SET PAGESIZE 100
+PRINT li
+
+//b Modifier la procédure liste_employes en donnant en sortie : les infos de l’employé et le
+//nom du service où il est affecté.
+
+CREATE OR REPLACE PACKAGE BODY LECTURE IS
+  PROCEDURE LISTE_EMPLOYES(LISTE OUT CUR_EMPL) IS
+  BEGIN
+    SET TRANSACTION READ ONLY;
+    OPEN LISTE FOR
+      SELECT E.*, S.NOMSERV
+      FROM EMPLOYE E LEFT JOIN SERVICE S ON S.NUSERV = E.AFFECT;
+    COMMIT;
+  EXCEPTION
+    WHEN OTHERS THEN
+      ROLLBACK;
+      RAISE_APPLICATION_ERROR(-20999, 'Erreur inattendue ' || SQLCODE);
+  END;
+END;
+/
+
+//c idem que la question précédente en rajoutant le total des heures de projets sur
+//lesquels il travaille.
+
+CREATE OR REPLACE PACKAGE BODY LECTURE IS
+  PROCEDURE LISTE_EMPLOYES(LISTE OUT CUR_EMPL) IS
+  BEGIN
+    SET TRANSACTION READ ONLY;
+    OPEN LISTE FOR
+      SELECT E.*, S.NOMSERV,
+             (SELECT NVL(SUM(T.DUREE), 0) FROM TRAVAIL T WHERE T.NUEMPL = E.NUEMPL) AS TOTAL_HEURES
+      FROM EMPLOYE E LEFT JOIN SERVICE S ON S.NUSERV = E.AFFECT;
+    COMMIT;
+  EXCEPTION
+    WHEN OTHERS THEN
+      ROLLBACK;
+      RAISE_APPLICATION_ERROR(-20999, 'Erreur inattendue ' || SQLCODE);
+  END;
+END;
+/
