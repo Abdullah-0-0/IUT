@@ -111,21 +111,42 @@ déclenchent.
 
 /*
 CREATE OR REPLACE TRIGGER TRG_VERIF_TRAVAIL
-AFTER INSERT OR UPDATE OF DUREE, NUEMPL
-ON TRAVAIL
-DECLARE v_employe EMPLOYE%ROWTYPE;
+AFTER INSERT OR UPDATE OF DUREE, NUEMPL ON TRAVAIL
+FOR EACH ROW
+DECLARE
+  -- Indique à Oracle que ce trigger s'exécute dans une transaction séparée
+  PRAGMA AUTONOMOUS_TRANSACTION;
+  
+  V_TOTAL_DUREE NUMBER;
+  V_HEBDO NUMBER;
 BEGIN
-    SELECT * INTO v_employe FROM EMPLOYE e WHERE (
-        SELECT SUM(duree) FROM TRAVAIL t WHERE e.nuempl = t.nuempl) 
-        > e.hebdo;
-    RAISE_APPLICATION_ERROR(-20010,
-    'ERREUR : la somme des durées de travail dépasse la durée hebdomadaire'
-    );
+  -- 1. On peut maintenant interroger la table TRAVAIL sans erreur de table en mutation
+  SELECT NVL(SUM(T.DUREE), 0)
+  INTO V_TOTAL_DUREE
+  FROM TRAVAIL T
+  WHERE T.NUEMPL = :NEW.NUEMPL;
 
-EXCEPTION
-    WHEN NO_DATA_FOUND THEN
-        NULL;
+  -- 2. Récupérer la limite hebdomadaire (HEBDO) de l'employé
+  SELECT NVL(E.HEBDO, 0)
+  INTO V_HEBDO
+  FROM EMPLOYE E
+  WHERE E.NUEMPL = :NEW.NUEMPL;
+
+  -- 3. Vérifier si le total dépasse la limite
+  IF V_TOTAL_DUREE > V_HEBDO THEN
+    -- TRÈS IMPORTANT : il faut faire un COMMIT ou un ROLLBACK 
+    -- dans une transaction autonome avant de lever l'erreur, sinon Oracle lève une autre exception.
+    ROLLBACK;
+    
+    RAISE_APPLICATION_ERROR(-20010, 
+      'ERREUR : La somme des durées de travail (' || V_TOTAL_DUREE || 
+      ') dépasse la durée hebdomadaire autorisée (' || V_HEBDO || ') pour l''employé ' || :NEW.NUEMPL);
+  END IF;
+  
+  -- Si tout va bien, on valide la transaction autonome du trigger
+  COMMIT;
 END;
+
 */
 //PUIS SUR CELUI DE LA TABLE EMPLOYE
 /*

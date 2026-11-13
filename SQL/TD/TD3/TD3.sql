@@ -94,8 +94,10 @@ END MAJ;
 /
 
 // creation d'un employé avec un id déjà utilisé , creation impossible
+bEGIN
 MAJ.CREE_EMPLOYE(20,'test',35,3,2000);
-
+END;
+/
 /*
 ERROR à la ligne 1:
 ORA-20001: Un employe avec le meme numero existe deja
