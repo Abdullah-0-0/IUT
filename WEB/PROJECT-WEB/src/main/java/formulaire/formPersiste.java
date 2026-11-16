@@ -26,6 +26,7 @@ public class formPersiste extends HttpServlet {
     private String login;
     private String password;
     private Cookie[] cookies ;
+
     @Override
     public void init() throws ServletException {
         super.init();
@@ -42,12 +43,14 @@ public class formPersiste extends HttpServlet {
 //        page.println("<html> <body>");
 //        page.println("<h1> get partie persistente </h1>");
 //        page.println(" </body> </html>");
-        System.out.println("_______________________________GET___________________");
+
+        System.out.println("_______________________________GET__________________________");
         String loginMemo = "";
         cookies = req.getCookies();
         if (cookies!= null){
             for (Cookie c : cookies){
                 System.out.println("cookie : " + c.getName() + " = " + c.getValue());
+                // la recherche du cookies de nom login puisque y a plusieurs cookies sur
                 if ("login".equals(c.getName())){
                     loginMemo = URLDecoder.decode(c.getValue(), StandardCharsets.UTF_8);
                     break;

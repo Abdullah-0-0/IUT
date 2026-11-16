@@ -26,35 +26,60 @@ public class ProductRepository implements CrudRepository<Product, Integer> {
 
         try {
             entityManager.getTransaction().begin();
-            if (entity.getId() !=null){
-                S produitExistant =  entityManager.merge(entity);
-                entityManager.getTransaction().commit(); 
-                return produitExistant ;
-            }else {
+            if (entity.getId()== null){
                 entityManager.persist(entity);
                 entityManager.getTransaction().commit();
-                return entity;
+                return  entity;
+            }
+            else {
+                S produitExistant = entityManager.merge(entity);
+                entityManager.getTransaction().commit();
+                return  produitExistant;
             }
 
-
-        } catch (Exception e) {
+        } catch (RuntimeException e) {
             if (entityManager.getTransaction().isActive()){
                 entityManager.getTransaction().rollback();
-            }
 
+            }
             e.printStackTrace();
+            throw e;
         }
-        return null;
+
     }
 
     @Override
     public <S extends Product> Iterable<S> saveAll(Iterable<S> entities) {
-        return null;
+        List<S> produits = new ArrayList<>();
+        if (entities == null){
+            throw new IllegalArgumentException();
+        }
+        try{
+            for ( S i : entities){
+                produits.add(save(i));
+            }
+        } catch (Exception e) {
+            throw e;
+        }
+
+        return produits;
     }
 
     @Override
     public Optional<Product> findById(Integer integer) {
-        return Optional.empty();
+        if (integer == null){
+            throw new IllegalArgumentException();
+        }
+        try {
+            Product n = entityManager.find(Product.class,integer);
+            if ( n != null){
+                return Optional.of(n);
+            }
+            return Optional.empty();
+        } catch (Exception e) {
+            throw e ;
+        }
+
     }
 
     @Override
@@ -64,33 +89,93 @@ public class ProductRepository implements CrudRepository<Product, Integer> {
 
     @Override
     public Iterable<Product> findAll() {
-        return null;
+        TypedQuery<Product> requeteSelect = entityManager.createQuery("SELECT p FROM Product p",Product.class);
+        return requeteSelect.getResultList();
     }
 
     @Override
     public Iterable<Product> findAllById(Iterable<Integer> integers) {
-        return null;
+        if ( integers == null){
+            throw new IllegalArgumentException();
+        }
+        integers.forEach(element -> {
+            if (element == null){
+                throw  new IllegalArgumentException();
+            }
+        });
+        TypedQuery<Product>  requete = entityManager.createQuery(
+                "SELECT p FROM Product p WHERE p.id IN :ids",
+                Product.class);
+        requete.setParameter("ids",integers);
+        return requete.getResultList();
     }
 
     @Override
     public long count() {
+        TypedQuery<Long>  requete = entityManager.createQuery("SELECT COUNT(p) FROM Product p",Long.class);
 
-        return 0;
+        return requete.getSingleResult();
     }
 
     @Override
     public void deleteById(Integer integer) {
+        if (integer == null){
+            throw  new IllegalArgumentException();
+        }
+        try {
+            entityManager.getTransaction().begin();
+            if (entityManager.find(Product.class,integer)!=null){
+                entityManager.remove(findById(integer).get());
+            }
+            entityManager.getTransaction().commit();
+        } catch (RuntimeException e) {
+            if (entityManager.getTransaction().isActive()){
+                entityManager.getTransaction().rollback();
+            }
 
+            throw e;
+        }
     }
 
     @Override
     public void delete(Product entity) {
+        if (entity == null){
+            throw new IllegalArgumentException();
+        }
+        try {
+            entityManager.getTransaction().begin();
+
+            if (entity.getId() != null){
+                if (entityManager.find(Product.class,entity.getId()) != null){
+                    entityManager.remove(entity);
+                }
+            }
+
+            entityManager.getTransaction().commit();
+        } catch (RuntimeException e) {
+            throw new RuntimeException(e);
+        }
+
 
     }
 
     @Override
     public void deleteAllById(Iterable<? extends Integer> integers) {
+        if (integers == null){
+            throw  new IllegalArgumentException();
+        }
 
+        try {
+            entityManager.getTransaction().begin();
+            integers.forEach(element -> {
+                if (element == null){
+                    throw new IllegalArgumentException();
+                }
+                else {
+                    delete(element);
+                }
+            });
+        }
     }
 
     @Override
