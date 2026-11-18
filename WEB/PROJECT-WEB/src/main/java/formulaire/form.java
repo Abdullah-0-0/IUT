@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet(
         urlPatterns = {"/formule" , "/formulaire"},
@@ -48,15 +49,17 @@ public class form extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("______________________Methode do Post()______________________________");
-        req.setCharacterEncoding("UTF-8");
+        //req.setCharacterEncoding("UTF-8");
         login = req.getParameter("login");
         password = req.getParameter("password");
         System.out.println("Login recu : " + login+" " + password);
         if ("joe".equals(login) && "JoJo44".equals(password)){
-            String pageOrigne = resp.getHeader("Referer");
             // redirection
-            resp.sendRedirect(req.getContextPath()+"/index.jsp");
+            resp.sendRedirect("demo/index.jsp");
             return;
+        }
+        else{
+            req.getRequestDispatcher("formulaire.jsp").forward(req,resp);
         }
     }
 }

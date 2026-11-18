@@ -4,10 +4,7 @@ import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebInitParam;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.Cookie;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,7 +13,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 @WebServlet(
-        urlPatterns = "/formule1",
+            urlPatterns = "/formule1",
         initParams = {
                 @WebInitParam(name = "login",value = ""),
                 @WebInitParam(name = "password",value = "")
@@ -47,6 +44,11 @@ public class formPersiste extends HttpServlet {
         System.out.println("_______________________________GET__________________________");
         String loginMemo = "";
         cookies = req.getCookies();
+        HttpSession session = req.getSession(false);
+        if (session != null && session.getAttribute("user") !=null ){
+            req.setAttribute("user",session.getAttribute("user"));
+        }
+
         if (cookies!= null){
             for (Cookie c : cookies){
                 System.out.println("cookie : " + c.getName() + " = " + c.getValue());
