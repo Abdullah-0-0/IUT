@@ -1,0 +1,13 @@
+package Application
+
+import BD.SessionOracle
+import DAO.DAOEmploye
+
+fun main(args: Array<String>) {
+    var ss= SessionOracle("user","passwd")
+
+   // var dd=DAOProjet(ss)
+   // dd.read()
+
+
+}
