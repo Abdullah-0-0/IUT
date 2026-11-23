@@ -15,7 +15,7 @@ class SessionOracle(username : String = "s3a02a",password : String = "1968") {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver").newInstance()
             conn = DriverManager.getConnection("jdbc:oracle:thin:@172.26.82.31:1521:xe",username, password)
-            println("connexion réussie")
+            println("\nconnexion réussie\n")
         } catch (ex: SQLException) {
             println(ex.errorCode)//numéro d'erreur
             println(ex.message)// message d'erreur qui provient d'oracle,
