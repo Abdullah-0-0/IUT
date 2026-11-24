@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63a55e4a-98e7-498a-bdc4-a5273adc2d5e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../WEB/PROJECT-WEB/src/main/java/dao/old/ProductMemoryDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../WEB/PROJECT-WEB/src/main/java/EtatMental.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../WEB/PROJECT-WEB/src/main/java/Promotion/EtatMental.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../WEB/PROJECT-WEB/src/main/java/Etudiant.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../WEB/PROJECT-WEB/src/main/java/Promotion/Etudiant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../WEB/PROJECT-WEB/src/main/java/EtudiantAvecEtatMental.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../WEB/PROJECT-WEB/src/main/java/Promotion/EtudiantAvecEtatMental.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../WEB/PROJECT-WEB/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../WEB/PROJECT-WEB/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../WEB/PROJECT-WEB/src/main/java/Promotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../WEB/PROJECT-WEB/src/main/java/Promotion/Promotion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../WEB/r3.01.etudiants/td/code/projet_JPA/src/main/java/iut/nantes/hibernate/repositories/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../WEB/r3.01.etudiants/td/code/projet_JPA/src/main/java/iut/nantes/hibernate/repositories/ProductRepository.java" afterDir="false" />
-    </list>
+    <list default="true" id="63a55e4a-98e7-498a-bdc4-a5273adc2d5e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,38 +62,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.TestUMLFruitAccess.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.TestUMLFruitCsvDAO.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.TestUMLFruitDAO.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.TestUMLFruitJsonDAO.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.TestUsageFruitCsvDAO.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.TestUsageFruitCsvDAO.testEnregistrement.executor&quot;: &quot;Debug&quot;,
-    &quot;Gradle.TestUsageFruitCsv_Vs_JsonDAO.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.TestUsageFruitJsonDAO.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.qdev.dp.tp8 [:ExempleH2Kt.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.qdev.dp.tp8 [:MainKt.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.qdev.dp.tp8 [:TestPersoKt.main()].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/chams/Documents/IUT/BUT2/GITHUB/IUT/DESIGN PATTERNS/TP/qdev.dp.tp8&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.TestUMLFruitAccess.executor": "Run",
+    "Gradle.TestUMLFruitCsvDAO.executor": "Run",
+    "Gradle.TestUMLFruitDAO.executor": "Run",
+    "Gradle.TestUMLFruitJsonDAO.executor": "Run",
+    "Gradle.TestUsageFruitCsvDAO.executor": "Run",
+    "Gradle.TestUsageFruitCsvDAO.testEnregistrement.executor": "Debug",
+    "Gradle.TestUsageFruitCsv_Vs_JsonDAO.executor": "Run",
+    "Gradle.TestUsageFruitJsonDAO.executor": "Run",
+    "Gradle.qdev.dp.tp8 [:ExempleH2Kt.main()].executor": "Run",
+    "Gradle.qdev.dp.tp8 [:MainKt.main()].executor": "Run",
+    "Gradle.qdev.dp.tp8 [:TestPersoKt.main()].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/var/home/E257390X/reseau/Perso/Documents/BUT2/GITHUB/IUT/DESIGN PATTERNS/TP/qdev.dp.tp9",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Gradle.TestUMLFruitDAO">
     <configuration name="TestUMLFruitDAO" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>

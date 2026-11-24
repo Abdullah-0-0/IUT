@@ -1,0 +1,24 @@
+2026/11/24-12:02:40.077 29 Reusing MANIFEST /var/home/E257390X/reseau/Perso/Documents/BUT2/GITHUB/IUT/gaming-iut-amis/chrome-profile/Default/IndexedDB/https_play.xbox.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/11/24-12:02:40.079 29 Recovering log #3
+2026/11/24-12:02:40.103 29 Reusing old log /var/home/E257390X/reseau/Perso/Documents/BUT2/GITHUB/IUT/gaming-iut-amis/chrome-profile/Default/IndexedDB/https_play.xbox.com_0.indexeddb.leveldb/000003.log 
+2026/11/24-12:02:44.932 2d Level-0 table #5: started
+2026/11/24-12:02:44.957 2d Level-0 table #5: 1113618 bytes OK
+2026/11/24-12:02:44.964 2d Delete type=0 #3
+2026/11/24-12:04:41.449 3a Level-0 table #7: started
+2026/11/24-12:04:41.479 3a Level-0 table #7: 1065503 bytes OK
+2026/11/24-12:04:41.484 3a Delete type=0 #4
+2026/11/24-12:04:41.504 3d Compacting 1@1 + 1@2 files
+2026/11/24-12:04:41.537 3d Generated table #8@1: 11739 keys, 1078440 bytes
+2026/11/24-12:04:41.537 3d Compacted 1@1 + 1@2 files => 1078440 bytes
+2026/11/24-12:04:41.538 3d compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/11/24-12:04:41.543 3d Delete type=2 #5
+2026/11/24-12:04:41.544 3d Delete type=2 #7
+2026/11/24-12:05:32.202 29 Level-0 table #10: started
+2026/11/24-12:05:32.226 29 Level-0 table #10: 1152252 bytes OK
+2026/11/24-12:05:32.231 29 Delete type=0 #6
+2026/11/24-12:05:35.933 2d Compacting 1@1 + 1@2 files
+2026/11/24-12:05:35.975 2d Generated table #11@1: 17498 keys, 1580488 bytes
+2026/11/24-12:05:35.975 2d Compacted 1@1 + 1@2 files => 1580488 bytes
+2026/11/24-12:05:35.976 2d compacted to: files[ 0 0 1 0 0 0 0 ]
+2026/11/24-12:05:35.981 2d Delete type=2 #8
+2026/11/24-12:05:35.981 2d Delete type=2 #10
