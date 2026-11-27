@@ -1,0 +1,406 @@
+BUT Info 2
+Cryptographie
+2026-2027
+BUT Informatique
+semestre 3 Cryptographie
+Math´ ematiques
+TD
+Exercice 1 Nombres premiers
+1.1. D´ emontrer que si un nombre n n’est pas premier son plus petit diviseur
+premier est inf´ erieur ou ´ egal ` a√n. Ecrire une fonction permettant de tester si un
+nombre est premier (on pourra ´ eventuellement utiliser le r´ esultat d´ emontr´ e)
+1.2. Ecrire une fonction permettant de renvoyer la liste des nombres premiers
+inf´ erieurs ` a un nombre pass´ e en argument. Calculer la proportion de nombre pre-
+miers inf´ erieurs ` an. Comparer ` a 1ln(n) pour remarquer que les nombres premiers ont
+tendance ` a se rar´ efier quand on envisage des nombres de plus en plus grands.
+1.3. Bonus :
+a. Ecrire une fonction permettant de tester (sans strat´ egie particuli` ere) si les
+nombres 13, 1009, 10007,...
+100000000000031 sont premiers (nombres rappel´ es dans une liste dans le fichier
+tp1_crypto.py). Consigner dans une liste le temps mis pour obtenir la r´ eponse.
+b. Repr´ esenter avec matplotlib le nuage de points montrant la relation entre
+le nombre de chiffres apparaissant dans l’´ ecriture d´ ecimale de chacun de ces
+nombres et le temps mis pour renvoyer le r´ esultat.
+c. Remarquer la nature de ce lien si on repr´ esente en ordonn´ ees le logarithme du
+temps de calcul plutˆ ot que le temps de calcul lui-mˆ eme. Effectuer une r´ egression
+lin´ eaire avec la biblioth` eque scipy.stats entre les deux variables repr´ esent´ ees.
+Exercice 2
+2.1. D´ eterminer le pgcd de 3315 et 154 et les coefficients de B´ ezout associ´ es en
+d´ etaillant vos calculs avec une d´ emarche li´ ee avec celle de l’algorithme d’Euclide.
+2.2. Justifier le fait que 154 soit inversible dans Z/3315Z et donner son inverse. Tous
+les ´ el´ ements non nuls deZ/3315Z sont-ils inversibles ? (Justifier)
+2.3. Quel est le plus petit entier naturel n tel que n × 154 ≡ 1533[3315] ?
+2.4. Ecrire une fonction r´ ealisant l’algorithme d’Euclide ´ etendu en prenant en
+arguments deux entiers naturels a et b et en renvoyant le triplet form´ e du pgcdd de
+ces deux entiers et de deux entiers u et v v´ erifiantau + bv = d.
+Exercice 3
+3.1. D´ emontrer que le nombre 7n + 1 est divisible par 8 si n est impair et donner
+le reste de sa division par 8 dans le cas o` u n est pair.
+3.2. Trouver le reste de la division par 13 du nombre 100 1000.
+Exercice 4 chiffrement affine
+Un dictionnaire est fourni pour permettre d’associer ` a chaque lettre une valeur
+correspondant ` a sa position dans l’alphabet en plus de certains caract` eres sp´ eciaux
+(comme on va travailler dans Z/31Z la 31` eme position attribu´ e au caract` ere ’ :’ est
+associ´ ee ` a la valeur 0.
+4.1. Mettre en place un dictionnaire permettant d’associer ` a chaque valeur dans
+Z/31Z le caract` ere qu’elle repr´ esente.
+4.2. R´ ealiser une fonctionchiff_affine(mess,a,b) permettant le chiffrement
+d’un message par transformation de chaque caract` ere ` a partir du calcul dansZ/31Z
+de a ∗ position(caractere) +b. La fonction renverra le message chiffr´ e sous forme de
+texte
+1
+BUT Informatique
+semestre 3 Cryptographie
+Math´ ematiques
+TD
+4.3. R´ ealiser une fonctiondechiff_affine(mess,a,b) permettant de d´ echiffrer
+un message re¸ cu
+4.4. Si on ignore la cl´ e utilis´ ee, combien de cl´ es va-t-on devoir tester si on souhaite
+casser ce syst` eme en explorant exhaustivement toutes les solutions ?
+4.5. Par quel proc´ ed´ e (expliquez-en le principe de mani` ere d´ etaill´ ee) les deux
+correspondants peuvent-ils ´ echanger secr` etement la cl´ e (couple d’entiers) ?
+Exercice 5 Probl` eme du logarithme discret
+5.1. Ecrire une fonction renvoyant, pour un nombre premier p pass´ e en argument,
+un g´ en´ erateur de (Z/pZ)∗ choisi al´ eatoirement (choisir un nombre al´ eatoire et tester
+s’il est g´ en´ erateur et reproduire l’op´ eration jusqu’` a ce que ce soit le cas).
+5.2. Ecrire une fonction log_discret(y,g,p) pour un ´ el´ ementy de (Z/pZ)∗ et un
+g´ en´ erateurg de (Z/pZ)∗, l’´ el´ ementx tel que gx ≡ y[p].
+5.3. Ecrire une fonction, avec l’algorithme de Shanks des pas de b´ eb´ e, pas de
+g´ eant :
+ Soit s = 1 + ⌊√p⌋
+ Calculer g−s
+ Cr´ eer deux listes :
+— L1 : 1, g, g2, g3, · · ·, gs−1
+— L2 : y, y.g−s, , y.g−2s, , y.g−3s, · · ·, , y.g−(s−1)×s
+ Trouver une occurrence commune gr0 et y.g −k0s respectivement dans les listes
+L1 et L2
+ x = r0 + k0.s est une solution
+5.4. Bonus : Justifier que cet algorithme permet bien de renvoyer le logarithme
+discret de y (s’il existe). Pour cela en posant x0 (avec 1 ≤ x0 ≤ p − 1 ce logarithme
+discret tel que gx0 = y, consid´ erer la division euclidienne dex0 par s : x0 = k0×s+r0.
+5.5. Bonus : Comparer les temps d’ex´ ecution moyens, des deux fonctions r´ ealis´ ees
+pour l’obtention du log discret, par exemple avec un ´ echantillon de 100 essais avec
+p = 10007 et des g´ en´ erateursg et des valeurs cibles y choisis ≪ al´ eatoirement≫ (la
+liste des g´ en´ erateurs vous est fournie pour faciliter ces tests).
+Exercice 6 RSA
+Bernard et Alice communiquent ensemble en utilisant le cryptosyst` eme RSA. Dans
+une premi` ere partie on imagine que Bernard souhaite envoyer un message chiffr´ e
+(message prenant la forme d’un simple entier). Pour cela il dispose de la cl´ e publique
+d’Alice (n, e)
+6.1. Vous g´ en´ ererez cette cl´ e (comme si vous mettiez une fonction ` a disposition
+d’Alice pour qu’elle l’ex´ ecute elle-mˆ eme) avec une fonctionkey_creation() ren-
+voyant un tuple (n,e,d) compos´ ee de la cl´ e publique(n,e) d’Alice et de sa cl´ e
+priv´ eed. Deux nombres premiers p et q distincts seront choisis al´ eatoirement entre
+le 26 ` eme et le 1000 ` eme (le 26 ` eme ´ etant ´ egal ` a 101, ceci assure que le produit sera
+sup´ erieur ` a 10000 ce qui est n´ ecessaire si on veut pouvoir crypter et d´ ecrypter des
+nombres de 4 chiffres ou moins).
+6.2. R´ ealiser une fonctionencryption_int(n,e,m) et une fonction decryption_int(n,d,c)
+permettant respectivement le chiffrement d’un entier m et le d´ echiffrement d’un en-
+tier c. (n,e) correspond ` a la cl´ e publique d’Alice etd ` a sa cl´ e priv´ ee
+Bernard souhaite maintenant envoyer un message (non confidentiel) sign´ e num´ eriquement.
+2
+BUT Informatique
+semestre 3 Cryptographie
+Math´ ematiques
+TD
+Pour cela il va envoyer ` a Alice le messagem (que vous imaginerez) ainsi que le chif-
+frement d’une empreinte de celui-ci g´ en´ er´ ee par une fonction de hachage soite(h(m))
+o` ue repr´ esente la fonctionencryption.
+6.3. R´ ealiser une fonctionencryption(n,e,msg) qui prend en entr´ ee la cl´ e pu-
+blique (n,e) et un message msg correspondant ` a un nombre entier potentiellement
+grand, ` a d´ ecouper par paquets de 4 chiffres et qui renvoie le message chiffr´ e (qui
+prendra la forme d’une liste de nombres : voir ci-dessous). Dans le contexte par-
+ticulier de cette application pour signer et authentifier le message, le nombre msg
+correspondra au hachage obtenu pour le message de Bob (encore appel´ e empreinte
+ci-apr` es) et la cl´ ee correspondra ` a la cl´ e priv´ ee de Bob
+6.4. R´ ealiser une fonctiondecryption(n,d,msg) qui prend notamment en entr´ ee
+la cl´ e priv´ eed et un message chiffr´ emsg et qui renvoie le message d´ ecrypt´ e. Dans
+le contexte particulier de cette application d repr´ esente l’exposant choisi dans la cl´ e
+publique de Bernard.
+6.5. Pour l’envoi du message de Bernard vous allez :
+a. Calculer l’empreinte du message de Bernard en utilisant la biblioth` equehashlib :
+1 import hashlib as hash
+2 message="Je d´ eclare ^ etre bien l'auteur de ce texte par lequel\
+3 je te d´ eclare ma flamme. Bien romantiquement. Bernard"
+4 #Mais Bernard c'est un peu confidentiel ¸ ca quand m^ eme
+5 message_utf8=message.encode()
+6 '''utilisation de la fonction de hashage SHA256 et encode
+7 en hexad´ ecimal :'''
+8 message_hash=hash.sha256(message_utf8).hexdigest()
+9 #conversion en entier base 10 :
+10 number_message_hash=int(message_hash,16)
+b. Proc´ eder au chiffrement de l’empreinte du message. Quels sont les ´ el´ ements
+que Bernard doit envoyer ` a Alice ?
+c. Comment Alice peut-elle s’assurer que Bernard est bien l’auteur de ce message
+(non r´ epudiation) ? Si cela s’av` ere bien ˆ etre le cas on remarquera que l’op´ eration
+permet aussi de s’assurer de l’int´ egrit´ e du message re¸ cu par rapport ` a celui
+envoy´ e. Proc´ edez ` a ces v´ erifications.
+Exercice 7 Code Hamming : application m´ ethode sur papier
+On veut pouvoir v´ erifier l’int´ egrit´ e d’un message, transmis sous forme de suite de
+bits, ` a sa r´ eception. Pour cela sont ajout´ es des ´ el´ ements lors de son envoi selon le
+code de Hamming (en faisant ici le choix, comme dans le cours, d’indexer la position
+des bits en commen¸ cant ` a 1 ` a partir de la gauche).
+7.1. Si le message ` a transmettre est le suivant : 0 1 1 0 1 1 0 0 1 0 . Quel message
+va ˆ etre envoy´ e une fois que des bits de parit´ e auront ´ et´ e rajout´ es ? (D´ etailler la
+d´ emarche)
+7.2. Si on recevait avec l’exploitation du code de Hamming le message suivant (sans
+rapport avec celui de la question pr´ ec´ edente) : 1 0 1 1 0 0 1 0 0 0, que pourrait-on
+en d´ eduire ?
+3
+BUT Informatique
+semestre 3 Cryptographie
+Math´ ematiques
+TD
+Exercice 8 Impl´ ementation code Hamming
+8.1. On veut pouvoir, ` a partir d’un message d’information sous forme de liste de
+bits, renvoyer le message ` a envoyer int´ egrant des bits de parit´ e suivant la m´ ethode
+vue en cours. On se propose ici de le faire avec un message de taille quelconque
+qui sera cod´ e par un message avec un certain nombre de bits de parit´ e rajout´ es
+(redondance) en fonction de la taille du message initial (` a noter qu’on pourrait faire
+un autre choix consistant ` a d´ ecouper le message initial en blocs de taille d´ etermin´ ee
+pour ensuite appeler la m´ ethode du code de Hamming autant de fois qu’il y a de
+blocs avec un nombre de bits de parit´ e d´ etermin´ e selon la taille choisie pour les
+blocs).
+a. R´ ealiser une fonctionconvert_binaire(n) renvoyant une liste d´ ecrivant la
+d´ ecomposition en base 2 d’un nombre n (convert_binaire(14) renvoyant
+par exemple [0,1,1,1]) et une variantecomplet_convert_binaire(n,f) ren-
+voyant une liste d´ ecrivant la d´ ecomposition en base 2 d’un nombren en compl´ etant
+au besoin pour atteindre au moinsf ´ el´ ements (complet_convert_binaire(14,6)
+renvoyant par exemple [0,1,1,1,0,0])
+b. R´ ealiser une fonctiondet_nb_bit_parite(n) qui prend en entr´ ee la longueur
+du message ` a transmettre et renvoie le nombre de bits de parit´ e ` a pr´ evoir.
+L’usage d’une fonction d´ efinie par r´ ecurrence est recommand´ e (le cas de base
+avec une longueur de message ´ egale ` a 1 devant renvoyer la n´ ecessit´ e d’avoir
+deux bits de parit´ e)
+On peut v´ erifier que l’application ϕ renvoyant le code c ` a partir de l’information
+contenue dans le message ` a transmettrei est une transformation lin´ eaire (en v´ erifiant
+que ∀i, i′, ϕ(i + i′) = ϕ(i) + ϕ(i′). D` es lors on va calculer les images de cette appli-
+cation ϕ : Fm2 → Fn2 en exploitant la matrice M , qu’on appellera matrice g´ en´ eratrice
+repr´ esentant cette application avecϕ(i) = M · i = c.
+En prenant comme exemple le code de Hamming(7,4) codant des messages de lon-
+gueur 4 par l’ajout de trois bits de parit´ e, cette matrice g´ en´ eratriceM est la sui-
+vante :
+M =
+
+
+1 1 0 1
+1 0 1 1
+1 0 0 0
+0 1 1 1
+0 1 0 0
+0 0 1 0
+0 0 0 1
+
+
+On peut effectuer le lien avec la pr´ ec´ edente pr´ esentation du code de Hamming en
+constatant qu’on retrouve dans les colonnes de la matrice les images respectives
+des vecteurs e1 = (1 , 0, 0, 0), e2 = (0 , 1, 0, 0), e3 = (0 , 0, 1, 0) et e4 = (0 , 0, 0, 1). En
+effet en consid´ erant le message[1,0,0,0] on peut v´ erifier que cela conduit au code
+[1,1,1,0,0,0,0] (qu’on retrouve dans la premi` ere colonne de la matrice) o` u les
+deux premiers ´ el´ ements ´ egaux ` a 1 sont les deux premiers bits de parit´ e et le troisi` eme
+´ el´ ement (´ egal ` a 1 lui-aussi) est le premier bit du message ` a transmettre.
+4
+BUT Informatique
+semestre 3 Cryptographie
+Math´ ematiques
+TD
+c. R´ ealiser une fonctionmat_gen_hamming(mess) renvoyant la matrice g´ en´ eratrice
+de Hamming ` a utiliser pour coder ce message. Cette matrice sera de dimension
+(n, m) o` um d´ esigne la taille du message etn = m + k o` uk d´ esigne le nombre
+de bits de parit´ e ` a utiliser.
+8.2. On souhaite maintenant pouvoir, ` a partir d’un message re¸ cu, contrˆ oler la
+pr´ esence d’une erreur potentielle (en partant de l’hypoth` ese de la pr´ esence d’une
+seule erreur ´ eventuelle). Dans le cas de la pr´ esence d’une erreur on cherchera ` a
+renvoyer le message corrig´ e.
+a. R´ ealiser une fonction interm´ ediairedet_nb_bit_parite_recu(mess_recu) ren-
+voyant le nombre de bits de parit´ e int´ egr´ es dans le message re¸ cu.
+On peut l` a encore r´ ealiser les op´ erations de contrˆ oles pr´ evues sur les bits de parit´ es
+par l’exploitation d’une matrice (appel´ ee matrice de contrˆ ole) et not´ eeH traduisant
+l’application lin´ eaireψ : Fn2 → Fk2 renvoyant les sommes de contrˆ oles sur les diff´ erents
+bits de parit´ e. Lorsqu’aucune erreur n’est d´ ecel´ ee dans un codec, l’application doit
+renvoyer le vecteur nul comportant donc k fois la valeur 0. Dans l’exemple du code
+de Hamming(7,4) pr´ esentant 3 bits de parit´ ep1, p2 et p3 on place en premi` ere ligne
+la somme de contrˆ ole surp1, en deuxi` eme ligne la somme de contrˆ ole surp2 et en
+derni` ere ligne la somme de contrˆ ole surp3. Si l’image d’un code par cette fonction est
+non nul, par exemple y = (0, 1, 1) on pourra retrouver la position du bit incrimin´ e :
+pos = Pki=0 y[i] × 2i soit le sixi` eme bit pour l’exemple donn´ e.
+Ainsi pour ce code de Hamming(7,4) cela donne la matrice de contrˆ ole H suivante :
+H =
+
+
+1 0 1 0 1 0 1
+0 1 1 0 0 1 1
+0 0 0 1 1 1 1
+
+
+b. R´ ealiser une fonctionmat_cont_hamming(mess_recu) renvoyant la matrice de
+contrˆ ole de Hamming ` a utiliser pour contrˆ oler le message re¸ cu. Cette matrice
+sera de dimension ( k, n) o` un d´ esigne la taille du message re¸ cu etk le nombre
+de bits de parit´ e qui y figurent.
+5
+BUT Informatique
+semestre 3 Cryptographie
+Math´ ematiques
+TD
+Exercice 9
+Les fonctions de permutations
+Ces fonctions vont permettre de m´ elanger les bits dans le mot. Par exemple la
+permutation P =
+1 2 3 4
+4 1 3 2
+
+se comprend comme la transformation pla¸ cant le
+premier bit en quatri` eme position, le deuxi` eme en premi` ere... Cette op´ eration peut
+ˆ etre r´ ealis´ ee par l’exploitation d’une matrice de permutationP :
+
+
+2
+4
+3
+1
+
+ =
+
+
+0 1 0 0
+0 0 0 1
+0 0 1 0
+1 0 0 0
+
+ ×
+
+
+1
+2
+3
+4
+
+
+Dans le fichier tpdes.py propos´ e, les permutations seront expos´ ees comme une
+liste de valeurs l donnant les positions occup´ ees par les bits avant permutation
+(synth´ etique ici mais moins compatible avec une exploitation math´ ematique). Ainsi
+avec l’exemple pr´ ec´ edent on donnerait la liste : [2, 4, 3, 1].
+Cr´ eer une fonctiontrans_permut_list_to_array(l) permettant le renvoi de la
+matrice carr´ ee de permutation de taille correspondante ` a la liste l explicitant la
+transformation associ´ ee ` a cette permutation selon la description donn´ ee ci-dessus.
+Fonction d’expansion
+Elle permet de transformer un bloc de 32 bits en un bloc de 48 bits. Elle s’utilise
+comme les fonctions de permutation mais duplique par ailleurs 16 bits (ceux aux
+positions 1, 4, 5, 8, 9, 12, 13, 16, 17, 20, 21, 24, 25, 28 et 29) et les diss´ emine parmi
+les 48 bits renvoy´ es. Elle va ˆ etre utile lors dans la mise en place de la fonction f
+qui exploite le bloc de droite avec une sous-cl´ e. Voici un extrait de la fonction que
+l’on utilisera (pr´ esent´ ee ici comme une permutation mais notons bien que ¸ ca n’en
+est pas une car elle n’est pas injective) :
+Cr´ eer une fonctiontrans_exp_list_to_array(l,n,p) permettant le renvoi de la
+matrice de taille ( n, p) associ´ ee ` a la listel r´ ealisant cette transformation par mul-
+tiplication selon la mˆ eme id´ ee que celle utilis´ ee pour les permutations. Ici n est
+sup´ erieur ` ap mais on pourra r´ eutiliser cette fonction dans le cas contraire d’une
+compression ult´ erieurement.
+E =
+ 1 2 3 4 ... 29 30 31 32
+{2, 48} 3 4 {5, 7} ... {42, 44} 45 46 47
+
+Vous retrouverez, dans le fichier, la liste de 48 valeurs donnant l’expression int´ egrale
+de cette fonction (on pourra la traduire sous forme de matrice de dimensions 48×32).
+M´ ethode de chiffrement
+Cr´ eation de sous-cl´ esLa cl´ e K donn´ ee est pr´ esent´ ee sur 56 bits, l’ajout de 8 bits de
+contrˆ ole de parit´ e ´ etant pr´ evus pour s’assurer de son int´ egrit´ e apr` es la transmission
+6
+BUT Informatique
+semestre 3 Cryptographie
+Math´ ematiques
+TD
+transmission. Nous utiliserons la cl´ eK suivante :
+K =
+
+
+0 1 0 1 1 1 1
+0 1 0 1 1 0 1
+0 1 0 1 0 0 1
+0 1 1 1 1 1 1
+0 1 0 1 0 0 0
+0 0 0 1 1 0 1
+1 0 1 1 1 1 0
+1 0 0 1 0 0 0
+
+
+ On commence par lui faire subir une premi` ere permutation CP 1. Vous devrez
+pour cela exploiter la fonction trans_permut_list_to_array(l) appliqu´ ee ici
+` alist_CP1. Une fois la permutation r´ ealis´ ee :
+ On s´ epare la cl´ e obtenue en deux parties de 28 bits G (cleg) et D ( cled)
+On va alors r´ ealiser le processus suivant pour obtenir 16 sous-cl´ es qu’on pourra
+stocker dans une matrice de dimensions (16,48) :
+ Ecraser G et D en effectuant pour chacune un d´ ecalage de 1 bit vers la gauche
+(le premier bit devenant le dernier)
+ La cl´ eK1 est le r´ esultat de la ”permutation” par CP 2 de la concat´ enation de
+G et D (attention CP2 est plutˆ ot une compression permut´ ee car elle transforme
+une cl´ e de 56 bits en cl´ e de 48 bits, 8 d’entre eux ´ etant supprim´ es)
+ Ecraser G et D en effectuant un nouveau d´ ecalage de 1 bit vers la gauche
+ La cl´ eK2 est le r´ esultat de la ”permutation” parCP 2 de la concat´ enation de G
+et D
+ on continue de mˆ eme jusqu’` a la cr´ eation deK16
+Chiffrement du message
+Paquetage : On divise le message en paquet de 64 bits en compl´ etant ´ eventuellement
+les bits manquant par des 0 au d´ ebut. On chiffre ensuite s´ epar´ ement les diff´ erents
+paquets. On d´ etaille la m´ ethode pour un paquet not´ eM .
+ On commence par lui faire subir une permutation initiale P I: cr´ eer pour cela
+la matrice de permutation de taille 64 × 64 ` a partir delist_PI.
+ On note M Gla partie de gauche du r´ esultat (les 32 premiers bits) et M Dsa
+partie droite.
+On va ensuite effectuer 16 rondes. Chacune de ces rondes suit le mˆ eme sch´ ema ` a
+ceci pr` es qu’` a la rondek on utilisera la cl´ eKk. Le processus des rondes suivant est
+` a r´ ealiser dans unefonction_ronde(Left_block,Right_block,num_ronde) :
+ On applique la fonction d’expansion au blocM D. On obtient un messageE[M D]
+non plus sur 32 mais sur 48 bits.
+ On calcule E[M D] ⊕ Kk (lors de la ronde k)
+ On d´ ecoupe ensuiteE[M D] ⊕ Kk en 8 blocs de 6 bits. Notons B1, · · ·, B8 ces 8
+blocs avec Bi = x1x2x3x4x5x6. On consid` ere l’entiern dont l’´ ecriture en binaire
+est x1x6 (donc 0 ≤ n ≤ 3). On consid` ere l’entierm dont l’´ ecriture en binaire
+est x2x3x4x5 (donc 0 ≤ m ≤ 15). On va remplacer chaque Bi par l’´ ecriture en
+binaire du nombre que l’on trouve ` a la ligne n + 1 et la colonne m + 1 de la
+7
+BUT Informatique
+semestre 3 Cryptographie
+Math´ ematiques
+TD
+matrice de substitution Si (donn´ ees dans le fichiertp_des.py). Par construction
+chaque Bi a alors ´ et´ e remplac´ e par un bloc de 4 bits. En regroupant les 8 blocs
+de 4 bits on obtient alors S[E[M D] ⊕ Kk] en notant S l’application transformant
+successivement les 8 blocs .
+ On applique au r´ esultat pr´ ec´ edent la permutation des rondesP R(` a d´ efinir via
+une matrice de dimensions 32 × 32 ` a partir de list_PR) et on obtient ainsi
+P R[S[E[M D] ⊕ Kk]].
+ On remplace :
+M Dpar P R[S[E[M D] ⊕ Kk]]| {z }
+f (M D,Kk)
+⊕M Get M Gpar M D
+Une fois les 16 rondes effectu´ ees :
+ On recolle la partie gauche et la partie droite obtenue pour obtenir M ′
+ On applique la permutation inverse de la permutation initiale ` a M (comment
+obtient-on P I−1 ?) pour obtenir le message chiffr´ e :C = P I−1[M ′]
+D´ echiffrement du message : Il suffit d’appliquer les mˆ emes op´ erations mais dans
+l’ordre inverse ! En effet on a apr` es chaque rondeM Dk = f (M Dk−1, Kk)⊕M Gk−1 =
+f (M Gk, Kk)⊕M Gk−1. D’o` u (comme comme soustraction et addition sont identiques
+dans Z/2Z :
+M Gk−1 = RGk ⊕ f (M Gk, Kk)
+Ainsi connaissant M Gk,RGk et Kk on retrouve M Gk−1 (et de mani` ere ´ evidente
+M Dk−1. En utilisant ` a bon escient la fonction
+fonction_ronde(Left_block,Right_block,num_ronde) d´ efinie pr´ ec´ edemment vous
+devez donc pouvoir ` a moindre frais d´ echiffrer le message chiffr´ e obtenu.
+8
+BUT Informatique
+semestre 3 Cryptographie
+Math´ ematiques
+TD
+M Gi−1 M Di−1
+M Gi M Di−1
+(KG i−1, KDi−1)
+(KG i, KDi)
+D´ ecalage D´ ecalage
+Concat´ enation
+Compression/Permutation
+Expansion
+Permutation
+S-box Substitution
+P-box Permutation
+9
