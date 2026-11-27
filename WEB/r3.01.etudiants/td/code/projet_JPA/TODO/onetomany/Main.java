@@ -1,12 +1,13 @@
 
-package iut.nantes.hibernate;
+package onetomany;
 
-import iut.nantes.hibernate.entities.onetomany.Product;
-import iut.nantes.hibernate.entities.onetomany.User;
+
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import manytomanywithparameter.Product;
+import manytomanywithparameter.User;
 
 public class Main {
 

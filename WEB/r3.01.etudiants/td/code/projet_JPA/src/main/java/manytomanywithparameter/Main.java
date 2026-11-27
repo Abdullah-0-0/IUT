@@ -1,8 +1,8 @@
-package iut.nantes.hibernate.entities.manytomanywithparameter;
+package manytomanywithparameter;
 
-import iut.nantes.hibernate.entities.manytomanywithparameter.User;
-import iut.nantes.hibernate.entities.manytomanywithparameter.Product;
-import iut.nantes.hibernate.entities.manytomanywithparameter.UserProduct;
+import manytomanywithparameter.User;
+import manytomanywithparameter.Product;
+import manytomanywithparameter.UserProduct;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;

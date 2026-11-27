@@ -1,4 +1,4 @@
-package iut.nantes.hibernate.entities.manytomanywithparameter;
+package manytomanywithparameter;
 
 import jakarta.persistence.*;
 

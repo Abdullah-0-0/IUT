@@ -1,7 +1,7 @@
-package iut.nantes.hibernate.entities.manytomany;
+package manytomany;
 
-import iut.nantes.hibernate.entities.manytomany.Product;
-import iut.nantes.hibernate.entities.manytomany.User;
+import manytomany.Product;
+import manytomany.User;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;

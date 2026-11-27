@@ -38,11 +38,10 @@ public class ProductRepository implements CrudRepository<Product, Integer> {
             }
 
         } catch (RuntimeException e) {
-            if (entityManager.getTransaction().isActive()){
+            if (entityManager.getTransaction().isActive()) {
                 entityManager.getTransaction().rollback();
 
             }
-            e.printStackTrace();
             throw e;
         }
 
@@ -95,18 +94,25 @@ public class ProductRepository implements CrudRepository<Product, Integer> {
 
     @Override
     public Iterable<Product> findAllById(Iterable<Integer> integers) {
+        List<Integer> testcontenu = new ArrayList<>();
         if ( integers == null){
             throw new IllegalArgumentException();
         }
         integers.forEach(element -> {
+            testcontenu.add(element);
             if (element == null){
                 throw  new IllegalArgumentException();
             }
         });
+        if (testcontenu.isEmpty()){
+            return new ArrayList<Product>();
+        }
         TypedQuery<Product>  requete = entityManager.createQuery(
                 "SELECT p FROM Product p WHERE p.id IN :ids",
                 Product.class);
-        requete.setParameter("ids",integers);
+
+
+        TypedQuery<Product> res = requete.setParameter("ids",integers);
         return requete.getResultList();
     }
 
@@ -172,15 +178,29 @@ public class ProductRepository implements CrudRepository<Product, Integer> {
                     throw new IllegalArgumentException();
                 }
                 else {
-                    delete(element);
+                    deleteById(element);
                 }
             });
+            entityManager.getTransaction().commit();
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException(e);
         }
     }
 
     @Override
     public void deleteAll(Iterable<? extends Product> entities) {
+        if (entities == null){
+            throw new IllegalArgumentException();
+        }
+        entities.forEach( element -> {
+                    if (element == null) {
+                        throw new IllegalArgumentException();
+                    }
+                    delete(element);
+                }
 
+
+        );
     }
 
     @Override

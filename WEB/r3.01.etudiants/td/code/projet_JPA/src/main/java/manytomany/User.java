@@ -1,4 +1,4 @@
-package iut.nantes.hibernate.entities.manytomany;
+package manytomany;
 
 import jakarta.persistence.*;
 import java.util.HashSet;
